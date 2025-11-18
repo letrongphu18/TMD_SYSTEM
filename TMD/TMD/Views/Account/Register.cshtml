@@ -1,175 +1,175 @@
-﻿@model TMDSystem.Models.ViewModels.RegisterViewModel
-@{
-    ViewData["Title"] = "Tạo tài khoản";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿    @model TMDSystem.Models.ViewModels.RegisterViewModel
+    @{
+        ViewData["Title"] = "Tạo tài khoản";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-<link href="~/css/user-management.css" rel="stylesheet" />
+    <link href="~/css/user-management.css" rel="stylesheet" />
+<link href="~/css/register-reset.css" rel="stylesheet" />
+    <div class="container-fluid px-4 py-4 um-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="um-form-card">
+                    <div class="um-form-header">
+                        <h4><i class="fas fa-user-plus"></i> Tạo tài khoản mới</h4>
+                        <p class="mb-0">Nhập thông tin để tạo tài khoản nhân viên</p>
+                    </div>
+                    <div class="um-form-body">
+                        <form id="registerForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Tên đăng nhập <span class="um-text-danger">*</span></label>
+                                    <input type="text" id="username" class="um-form-control" placeholder="Tên đăng nhập" required />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Họ và tên <span class="um-text-danger">*</span></label>
+                                    <input type="text" id="fullName" class="um-form-control" placeholder="Họ và tên đầy đủ" required />
+                                </div>
+                            </div>
 
-<div class="container-fluid px-4 py-4 um-container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="um-form-card">
-                <div class="um-form-header">
-                    <h4><i class="fas fa-user-plus"></i> Tạo tài khoản mới</h4>
-                    <p class="mb-0">Nhập thông tin để tạo tài khoản nhân viên</p>
-                </div>
-                <div class="um-form-body">
-                    <form id="registerForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Tên đăng nhập <span class="um-text-danger">*</span></label>
-                                <input type="text" id="username" class="um-form-control" placeholder="Tên đăng nhập" required />
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Mật khẩu <span class="um-text-danger">*</span></label>
+                                    <input type="password" id="password" class="um-form-control" placeholder="Mật khẩu (tối thiểu 6 ký tự)" required />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Xác nhận mật khẩu <span class="um-text-danger">*</span></label>
+                                    <input type="password" id="confirmPassword" class="um-form-control" placeholder="Nhập lại mật khẩu" required />
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Họ và tên <span class="um-text-danger">*</span></label>
-                                <input type="text" id="fullName" class="um-form-control" placeholder="Họ và tên đầy đủ" required />
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Mật khẩu <span class="um-text-danger">*</span></label>
-                                <input type="password" id="password" class="um-form-control" placeholder="Mật khẩu (tối thiểu 6 ký tự)" required />
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Email</label>
+                                    <input type="email" id="email" class="um-form-control" placeholder="email@example.com" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Số điện thoại</label>
+                                    <input type="tel" id="phoneNumber" class="um-form-control" placeholder="0123456789" />
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Xác nhận mật khẩu <span class="um-text-danger">*</span></label>
-                                <input type="password" id="confirmPassword" class="um-form-control" placeholder="Nhập lại mật khẩu" required />
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Email</label>
-                                <input type="email" id="email" class="um-form-control" placeholder="email@example.com" />
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Phòng ban <span class="um-text-danger">*</span></label>
+                                    <select id="departmentId" class="um-form-select" required>
+                                        <option value="">-- Chọn phòng ban --</option>
+                                        @foreach (var dept in ViewBag.Departments)
+                                        {
+                                            <option value="@dept.DepartmentId">@dept.DepartmentName</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="um-form-label">Vai trò <span class="um-text-danger">*</span></label>
+                                    <select id="roleId" class="um-form-select" required>
+                                        <option value="">-- Chọn vai trò --</option>
+                                        @foreach (var role in ViewBag.Roles)
+                                        {
+                                            <option value="@role.RoleId">@role.RoleName</option>
+                                        }
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Số điện thoại</label>
-                                <input type="tel" id="phoneNumber" class="um-form-control" placeholder="0123456789" />
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Phòng ban <span class="um-text-danger">*</span></label>
-                                <select id="departmentId" class="um-form-select" required>
-                                    <option value="">-- Chọn phòng ban --</option>
-                                    @foreach (var dept in ViewBag.Departments)
-                                    {
-                                        <option value="@dept.DepartmentId">@dept.DepartmentName</option>
-                                    }
-                                </select>
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="um-btn um-btn-primary">
+                                    <i class="fas fa-save me-1"></i> Tạo tài khoản
+                                </button>
+                                <a href="/Admin/UserList" class="um-btn um-btn-secondary">
+                                    <i class="fas fa-times me-1"></i> Hủy
+                                </a>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="um-form-label">Vai trò <span class="um-text-danger">*</span></label>
-                                <select id="roleId" class="um-form-select" required>
-                                    <option value="">-- Chọn vai trò --</option>
-                                    @foreach (var role in ViewBag.Roles)
-                                    {
-                                        <option value="@role.RoleId">@role.RoleName</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="d-flex gap-2">
-                            <button type="submit" class="um-btn um-btn-primary">
-                                <i class="fas fa-save me-1"></i> Tạo tài khoản
-                            </button>
-                            <a href="/Admin/UserList" class="um-btn um-btn-secondary">
-                                <i class="fas fa-times me-1"></i> Hủy
-                            </a>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-@section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+    @section Scripts {
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('registerForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
 
-            const formData = {
-                username: document.getElementById('username').value,
-                fullName: document.getElementById('fullName').value,
-                password: document.getElementById('password').value,
-                confirmPassword: document.getElementById('confirmPassword').value,
-                email: document.getElementById('email').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                departmentId: parseInt(document.getElementById('departmentId').value),
-                roleId: parseInt(document.getElementById('roleId').value)
-            };
+                const formData = {
+                    username: document.getElementById('username').value,
+                    fullName: document.getElementById('fullName').value,
+                    password: document.getElementById('password').value,
+                    confirmPassword: document.getElementById('confirmPassword').value,
+                    email: document.getElementById('email').value,
+                    phoneNumber: document.getElementById('phoneNumber').value,
+                    departmentId: parseInt(document.getElementById('departmentId').value),
+                    roleId: parseInt(document.getElementById('roleId').value)
+                };
 
-            // Validate
-            if (formData.password !== formData.confirmPassword) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Lỗi',
-                    text: 'Mật khẩu xác nhận không khớp',
-                    confirmButtonColor: '#e74a3b'
-                });
-                return;
-            }
-
-            if (formData.password.length < 6) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Lỗi',
-                    text: 'Mật khẩu phải có ít nhất 6 ký tự',
-                    confirmButtonColor: '#e74a3b'
-                });
-                return;
-            }
-
-            Swal.fire({
-                title: 'Đang xử lý...',
-                text: 'Vui lòng đợi',
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-
-            try {
-                const response = await fetch('/Account/RegisterJson', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thành công!',
-                        text: result.message,
-                        confirmButtonColor: '#667eea'
-                    }).then(() => {
-                        window.location.href = result.redirectUrl;
-                    });
-                } else {
+                // Validate
+                if (formData.password !== formData.confirmPassword) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Thất bại',
-                        text: result.message,
+                        title: 'Lỗi',
+                        text: 'Mật khẩu xác nhận không khớp',
+                        confirmButtonColor: '#e74a3b'
+                    });
+                    return;
+                }
+
+                if (formData.password.length < 6) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Mật khẩu phải có ít nhất 6 ký tự',
+                        confirmButtonColor: '#e74a3b'
+                    });
+                    return;
+                }
+
+                Swal.fire({
+                    title: 'Đang xử lý...',
+                    text: 'Vui lòng đợi',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                try {
+                    const response = await fetch('/Account/RegisterJson', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: result.message,
+                            confirmButtonColor: '#667eea'
+                        }).then(() => {
+                            window.location.href = result.redirectUrl;
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Thất bại',
+                            text: result.message,
+                            confirmButtonColor: '#e74a3b'
+                        });
+                    }
+                } catch (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi!',
+                        text: 'Có lỗi xảy ra. Vui lòng thử lại.',
                         confirmButtonColor: '#e74a3b'
                     });
                 }
-            } catch (error) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Lỗi!',
-                    text: 'Có lỗi xảy ra. Vui lòng thử lại.',
-                    confirmButtonColor: '#e74a3b'
-                });
-            }
-        });
-    </script>
-}
+            });
+        </script>
+    }

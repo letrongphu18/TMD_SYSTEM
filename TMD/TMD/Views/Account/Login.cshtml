@@ -1,160 +1,122 @@
-﻿@model TMDSystem.Models.ViewModels.LoginViewModel
-@{
-    ViewData["Title"] = "Đăng nhập";
-    Layout = null;
-}
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập - TMD System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        .login-page {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .login-page__container {
-            max-width: 450px;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .login-page__card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-
-        .login-page__header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-
-        .login-page__header i {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .login-page__body {
-            padding: 40px 30px;
-        }
-
-        .login-page__form-control {
-            border-radius: 10px;
-            padding: 12px 15px;
-            border: 2px solid #e3e6f0;
-        }
-
-        .login-page__form-control:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .login-page__btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border: none;
-            border-radius: 10px;
-            padding: 12px;
-            font-weight: bold;
-            color: white;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .login-page__btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .login-page__input-group-text {
-            background: #f8f9fc;
-            border: 2px solid #e3e6f0;
-            border-right: none;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .login-page__input-group .login-page__form-control {
-            border-left: none;
-            border-right: none;
-            border-radius: 0;
-        }
-
-        /* Password Toggle Button */
-        .login-page__password-toggle {
-            background: #f8f9fc;
-            border: 2px solid #e3e6f0;
-            border-left: none;
-            border-radius: 0 10px 10px 0;
-            padding: 0 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .login-page__password-toggle:hover {
-            background: #e3e6f0;
-        }
-
-        .login-page__password-toggle i {
-            color: #667eea;
-        }
-    </style>
+	<link href="~/css/login.css" rel="stylesheet" />
 </head>
-<body class="login-page">
-    <div class="login-page__container">
-        <div class="login-page__card">
-            <div class="login-page__header">
-                <i class="fas fa-building"></i>
-                <h3 class="mb-0">TMD System</h3>
-                <p class="mb-0">Hệ thống quản lý nhân sự</p>
-            </div>
-            <div class="login-page__body">
-                <form id="loginForm">
-                    <div class="mb-3">
-                        <label class="form-label">Tên đăng nhập</label>
-                        <div class="input-group">
-                            <span class="login-page__input-group-text">
-                                <i class="fas fa-user"></i>
-                            </span>
-                            <input type="text" id="username" class="form-control login-page__form-control" placeholder="Nhập tên đăng nhập" required />
+<body>
+    <div class="login-container">
+        <!-- Left Side - Branding -->
+        <div class="login-branding">
+            <div class="branding-content">
+                <div class="branding-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h1 class="branding-title">TMD System</h1>
+                <p class="branding-subtitle">Hệ thống quản lý nhân sự hiện đại</p>
+
+                <div class="branding-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-text">
+                            Chấm công thông minh với GPS và nhận diện khuôn mặt
                         </div>
                     </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Mật khẩu</label>
-                        <div class="input-group">
-                            <span class="login-page__input-group-text">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                            <input type="password" id="password" class="form-control login-page__form-control" placeholder="Nhập mật khẩu" required />
-                            <button type="button" class="login-page__password-toggle" id="togglePassword" title="Hiện/Ẩn mật khẩu">
-                                <i class="fas fa-eye" id="toggleIcon"></i>
-                            </button>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-text">
+                            Quản lý công việc và dự án hiệu quả
                         </div>
                     </div>
-
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe" />
-                        <label class="form-check-label" for="rememberMe">Ghi nhớ đăng nhập</label>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">
+                            Báo cáo và thống kê chi tiết theo thời gian thực
+                        </div>
                     </div>
-
-                    <button type="submit" class="btn login-page__btn">
-                        <i class="fas fa-sign-in-alt"></i> Đăng nhập
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
 
-        <div class="text-center mt-3 text-white">
-            <small>&copy; 2024 TMD System. All rights reserved.</small>
+        <!-- Right Side - Login Form -->
+        <div class="login-form-section">
+            <div class="form-header">
+                <h2>Chào mừng trở lại!</h2>
+                <p>Đăng nhập để tiếp tục sử dụng hệ thống</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Tên đăng nhập</label>
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text"
+                               id="username"
+                               class="form-control"
+                               placeholder="Nhập tên đăng nhập của bạn"
+                               required
+                               autocomplete="username" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password"
+                               id="password"
+                               class="form-control"
+                               placeholder="Nhập mật khẩu của bạn"
+                               required
+                               autocomplete="current-password" />
+                        <button type="button" class="password-toggle" id="togglePassword">
+                            <i class="fas fa-eye" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="rememberMe" />
+                        <label for="rememberMe">Ghi nhớ đăng nhập</label>
+                    </div>
+                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="btn-login" id="btnLogin">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Đăng nhập</span>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>hoặc đăng nhập với</span>
+            </div>
+
+            <div class="social-login">
+                <button type="button" class="btn-social">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button type="button" class="btn-social">
+                    <i class="fab fa-microsoft"></i>
+                    Microsoft
+                </button>
+            </div>
+
+            <div class="footer-text">
+                &copy; 2024 TMD System. All rights reserved.
+            </div>
         </div>
     </div>
 
@@ -167,11 +129,9 @@
         const toggleIcon = document.getElementById('toggleIcon');
 
         togglePassword.addEventListener('click', function() {
-            // Toggle type attribute
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
 
-            // Toggle icon
             if (type === 'password') {
                 toggleIcon.classList.remove('fa-eye-slash');
                 toggleIcon.classList.add('fa-eye');
@@ -185,28 +145,24 @@
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const username = document.getElementById('username').value;
+            const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
             const rememberMe = document.getElementById('rememberMe').checked;
+            const btnLogin = document.getElementById('btnLogin');
 
             if (!username || !password) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Thiếu thông tin',
                     text: 'Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu',
-                    confirmButtonColor: '#667eea'
+                    confirmButtonColor: '#E74C3C'
                 });
                 return;
             }
 
-            Swal.fire({
-                title: 'Đang đăng nhập...',
-                text: 'Vui lòng đợi',
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                }
-            });
+            // Show loading state
+            btnLogin.classList.add('loading');
+            btnLogin.innerHTML = '<i class="fas fa-spinner"></i><span>Đang đăng nhập...</span>';
 
             try {
                 const response = await fetch('/Account/LoginJson', {
@@ -224,29 +180,40 @@
                         icon: 'success',
                         title: 'Thành công!',
                         text: result.message,
-                        confirmButtonColor: '#667eea',
+                        confirmButtonColor: '#27AE60',
                         timer: 1500,
                         showConfirmButton: false
                     }).then(() => {
                         window.location.href = result.redirectUrl;
                     });
                 } else {
+                    btnLogin.classList.remove('loading');
+                    btnLogin.innerHTML = '<i class="fas fa-sign-in-alt"></i><span>Đăng nhập</span>';
+
                     Swal.fire({
                         icon: 'error',
                         title: 'Đăng nhập thất bại',
                         text: result.message,
-                        confirmButtonColor: '#e74a3b'
+                        confirmButtonColor: '#E74C3C'
                     });
                 }
             } catch (error) {
+                btnLogin.classList.remove('loading');
+                btnLogin.innerHTML = '<i class="fas fa-sign-in-alt"></i><span>Đăng nhập</span>';
+
                 Swal.fire({
                     icon: 'error',
                     title: 'Lỗi!',
                     text: 'Có lỗi xảy ra. Vui lòng thử lại.',
-                    confirmButtonColor: '#e74a3b'
+                    confirmButtonColor: '#E74C3C'
                 });
             }
         });
+
+        // Prevent form resubmission on page refresh
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
     </script>
 </body>
 </html>

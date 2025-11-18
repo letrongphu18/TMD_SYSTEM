@@ -223,6 +223,9 @@
                     <h5>
                         <i class="fas fa-tasks me-2"></i> Công việc của tôi
                     </h5>
+                    <a href="/Staff/MyTasks" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-list me-1"></i> Xem tất cả
+                    </a>
                 </div>
                 <div class="sd-card-body p-0">
                     <div id="myTasksToday" class="sd-task-container">
@@ -231,13 +234,10 @@
                             <p class="mt-2 sd-text-muted">Đang tải công việc...</p>
                         </div>
                     </div>
-                    <div id="taskLoadMore" style="display: none;" class="p-2 border-top bg-light">
-                        <button class="btn btn-sm btn-outline-primary w-100 mb-1" onclick="loadMoreTasks()">
+                    <div id="taskLoadMore" style="display: none;" class="p-3 border-top bg-light">
+                        <button class="btn btn-sm btn-outline-primary w-100" onclick="loadMoreTasks()">
                             <i class="fas fa-chevron-down me-1"></i> <span id="loadMoreText">Xem thêm</span>
                         </button>
-                        <a href="/Staff/MyTasks" class="btn btn-sm btn-primary w-100">
-                            <i class="fas fa-list me-1"></i> Xem tất cả
-                        </a>
                     </div>
                 </div>
             </div>
@@ -291,6 +291,10 @@
             align-items: center;
         }
 
+            .sd-card-header h5 {
+                margin: 0;
+            }
+
         .sd-card-actions {
             margin-left: auto;
         }
@@ -317,29 +321,30 @@
         .sd-task-item {
             padding: 0.875rem;
             border-radius: 8px;
-            background: #f8f9fa;
+            background: #ffffff;
             margin-bottom: 0.75rem;
             transition: all 0.2s;
             cursor: pointer;
-            border-left: 3px solid transparent;
+            border: 1px solid #e9ecef;
+            border-left-width: 3px;
         }
 
             .sd-task-item:hover {
-                background: #e9ecef;
+                background: #f8f9fa;
                 transform: translateX(3px);
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
 
             .sd-task-item.priority-high {
-                border-left-color: #dc3545;
+                border-left-color: #E74C3C;
             }
 
             .sd-task-item.priority-medium {
-                border-left-color: #ffc107;
+                border-left-color: #F39C12;
             }
 
             .sd-task-item.priority-low {
-                border-left-color: #28a745;
+                border-left-color: #27AE60;
             }
 
         .sd-task-header {
@@ -355,6 +360,7 @@
             font-size: 0.9rem;
             flex: 1;
             line-height: 1.4;
+            color: #2C3E50;
         }
 
         .sd-task-badge {
@@ -367,17 +373,17 @@
 
             .sd-task-badge.badge-high {
                 background: #fee;
-                color: #dc3545;
+                color: #E74C3C;
             }
 
             .sd-task-badge.badge-medium {
                 background: #fff3cd;
-                color: #856404;
+                color: #F39C12;
             }
 
             .sd-task-badge.badge-low {
                 background: #d4edda;
-                color: #155724;
+                color: #27AE60;
             }
 
         .sd-task-meta {
@@ -405,6 +411,20 @@
                 color: #dee2e6;
                 margin-bottom: 1rem;
             }
+
+        #taskLoadMore {
+            background: #f8f9fa;
+        }
+
+            #taskLoadMore button {
+                border-color: #E74C3C;
+                color: #E74C3C;
+            }
+
+                #taskLoadMore button:hover {
+                    background: #E74C3C;
+                    color: white;
+                }
     </style>
     <script>
         // ========== GLOBAL VARIABLES ==========
@@ -892,9 +912,6 @@
                         <div class="sd-empty-state">
                             <i class="fas fa-inbox fa-3x"></i>
                             <p class="mt-3">Bạn chưa có công việc nào</p>
-                            <a href="/Staff/MyTasks" class="btn btn-outline-primary btn-sm mt-2">
-                                <i class="fas fa-plus me-1"></i> Xem chi tiết
-                            </a>
                         </div>
                     `;
                     loadMoreBtn.style.display = 'none';
@@ -966,9 +983,7 @@
             } else {
                 loadMoreBtn.style.display = 'block';
                 const remaining = allTasks.length - displayedTasksCount;
-                loadMoreBtn.querySelector('button').innerHTML = `
-                    <i class="fas fa-chevron-down me-1"></i> Xem thêm (${remaining} công việc)
-                `;
+                document.getElementById('loadMoreText').textContent = `Xem thêm (${remaining} công việc)`;
             }
         }
 
@@ -977,7 +992,6 @@
         }
 
         async function viewTaskDetail(taskId) {
-            // You can implement a modal to show task details or redirect to task page
             window.location.href = `/Staff/MyTasks`;
         }
 

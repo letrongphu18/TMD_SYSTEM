@@ -39,7 +39,19 @@ public partial class User
 
     public virtual Department? Department { get; set; }
 
+    public virtual ICollection<LateRequest> LateRequestReviewedByNavigations { get; set; } = new List<LateRequest>();
+
+    public virtual ICollection<LateRequest> LateRequestUsers { get; set; } = new List<LateRequest>();
+
+    public virtual ICollection<LeaveRequest> LeaveRequestReviewedByNavigations { get; set; } = new List<LeaveRequest>();
+
+    public virtual ICollection<LeaveRequest> LeaveRequestUsers { get; set; } = new List<LeaveRequest>();
+
     public virtual ICollection<LoginHistory> LoginHistories { get; set; } = new List<LoginHistory>();
+
+    public virtual ICollection<OvertimeRequest> OvertimeRequestReviewedByNavigations { get; set; } = new List<OvertimeRequest>();
+
+    public virtual ICollection<OvertimeRequest> OvertimeRequestUsers { get; set; } = new List<OvertimeRequest>();
 
     public virtual ICollection<PasswordResetHistory> PasswordResetHistoryResetByUsers { get; set; } = new List<PasswordResetHistory>();
 
@@ -50,6 +62,8 @@ public partial class User
     public virtual ICollection<PasswordResetToken> PasswordResetTokens { get; set; } = new List<PasswordResetToken>();
 
     public virtual Role Role { get; set; } = null!;
+
+    public virtual ICollection<SystemSetting> SystemSettings { get; set; } = new List<SystemSetting>();
 
     public virtual ICollection<UserTask> UserTasks { get; set; } = new List<UserTask>();
 }

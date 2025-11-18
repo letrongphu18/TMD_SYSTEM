@@ -1,0 +1,507 @@
+﻿@model List<TMD.Models.SystemSetting>
+@{
+    ViewData["Title"] = "Cấu Hình Hệ Thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .settings-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .setting-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+    }
+
+        .setting-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .setting-card.modified {
+            border-left-color: #ffc107;
+            background-color: #fffbf0;
+        }
+
+    .setting-input, .setting-select {
+        transition: border-color 0.3s;
+    }
+
+        .setting-input.modified, .setting-select.modified {
+            border-color: #ffc107 !important;
+            border-width: 2px !important;
+        }
+
+    .category-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    .badge-salary {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .badge-attendance {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .badge-general {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .badge-notification {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    .badge-customcode {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    .save-indicator {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 1050;
+        display: none;
+    }
+
+    .stats-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .monaco-editor-wrapper {
+        position: relative;
+    }
+
+    .monaco-editor-container {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+</style>
+
+<div class="settings-container container-fluid py-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="mb-1">
+                                <i class="fas fa-cog text-primary"></i> Cấu Hình Hệ Thống
+                            </h2>
+                            <p class="text-muted mb-0">
+                                <i class="fas fa-info-circle"></i>
+                                Quản lý các thông số hệ thống không cần sửa code
+                            </p>
+                        </div>
+                        <div>
+                            <button class="btn btn-success btn-lg" id="btnSaveAll">
+                                <i class="fas fa-save"></i> Lưu Tất Cả
+                                <span class="badge bg-white text-success ms-2" id="modifiedCount">0</span>
+                            </button>
+                            <button class="btn btn-secondary btn-lg ms-2" onclick="location.reload()">
+                                <i class="fas fa-redo"></i> Tải Lại
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-3 col-6 mb-3">
+            <div class="stats-card">
+                <h6 class="opacity-75 mb-2">Tổng Cấu Hình</h6>
+                <h3 class="mb-0">@Model.Count</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="stats-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <h6 class="opacity-75 mb-2">Lương</h6>
+                <h3 class="mb-0">@Model.Count(s => s.Category == "Salary")</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="stats-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h6 class="opacity-75 mb-2">Chấm Công</h6>
+                <h3 class="mb-0">@Model.Count(s => s.Category == "Attendance")</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="stats-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h6 class="opacity-75 mb-2">Đã Sửa</h6>
+                <h3 class="mb-0" id="modifiedCountLarge">0</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Indicator -->
+    <div class="save-indicator alert alert-warning" id="saveIndicator">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span id="modifiedText">Bạn có thay đổi chưa lưu!</span>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-pills mb-4" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#salary-tab">
+                <i class="fas fa-money-bill-wave"></i> Lương
+                <span class="badge bg-success ms-1">@Model.Count(s => s.Category == "Salary")</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#attendance-tab">
+                <i class="fas fa-clock"></i> Chấm Công
+                <span class="badge bg-info ms-1">@Model.Count(s => s.Category == "Attendance")</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#general-tab">
+                <i class="fas fa-cogs"></i> Chung
+                <span class="badge bg-secondary ms-1">@Model.Count(s => s.Category == "General")</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#notification-tab">
+                <i class="fas fa-bell"></i> Thông Báo
+                <span class="badge bg-warning text-dark ms-1">@Model.Count(s => s.Category == "Notification")</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#customcode-tab">
+                <i class="fas fa-code"></i> Custom Code
+                <span class="badge bg-danger ms-1">@Model.Count(s => s.Category == "CustomCode")</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <!-- TAB 1: LƯƠNG -->
+        <div class="tab-pane fade show active" id="salary-tab">
+            <div class="row">
+                @foreach (var setting in Model.Where(s => s.Category == "Salary"))
+                {
+                    <div class="col-md-6 mb-3">
+                        @Html.Partial("_SettingCard", setting)
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- TAB 2: CHẤM CÔNG -->
+        <div class="tab-pane fade" id="attendance-tab">
+            <div class="row">
+                @foreach (var setting in Model.Where(s => s.Category == "Attendance"))
+                {
+                    <div class="col-md-6 mb-3">
+                        @Html.Partial("_SettingCard", setting)
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- TAB 3: CHUNG -->
+        <div class="tab-pane fade" id="general-tab">
+            <div class="row">
+                @foreach (var setting in Model.Where(s => s.Category == "General"))
+                {
+                    <div class="col-md-6 mb-3">
+                        @Html.Partial("_SettingCard", setting)
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- TAB 4: THÔNG BÁO -->
+        <div class="tab-pane fade" id="notification-tab">
+            <div class="row">
+                @foreach (var setting in Model.Where(s => s.Category == "Notification"))
+                {
+                    <div class="col-md-6 mb-3">
+                        @Html.Partial("_SettingCard", setting)
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- TAB 5: CUSTOM CODE -->
+        <div class="tab-pane fade" id="customcode-tab">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                <strong>Lưu ý:</strong> Đây là nơi bạn có thể thêm CSS/JavaScript tùy chỉnh để thay đổi giao diện và chức năng mà không cần deploy lại code.
+                Sau khi lưu, code sẽ được áp dụng ngay lập tức trên tất cả các trang.
+            </div>
+            <div class="row">
+                @foreach (var setting in Model.Where(s => s.Category == "CustomCode"))
+                {
+                    <div class="col-12 mb-4">
+                        @Html.Partial("_SettingCard", setting)
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- MONACO EDITOR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+    <script>
+        let modifiedSettings = new Set();
+        let originalValues = {};
+        let monacoEditors = {}; // Lưu trữ các Monaco Editor instances
+
+        // Initialize
+        $(document).ready(function() {
+            initializeMonacoEditors();
+            initializeRegularInputs();
+        });
+
+        // Khởi tạo Monaco Editors
+        function initializeMonacoEditors() {
+            // Cấu hình Monaco
+            require.config({ paths: { 'vs': '/monaco/min/vs' } });
+
+            require(['vs/editor/editor.main'], function () {
+                // Tìm tất cả Monaco containers
+                $('.monaco-editor-container').each(function() {
+                    const containerId = $(this).attr('id');
+                    const settingKey = containerId.replace('editor-', '');
+                    const inputElement = $(`#input-${settingKey}`);
+                    const initialValue = inputElement.val() || '';
+
+                    // Xác định language dựa vào SettingKey
+                    let language = 'javascript';
+                    if (settingKey.includes('CSS')) {
+                        language = 'css';
+                    } else if (settingKey.includes('JS')) {
+                        language = 'javascript';
+                    }
+
+                    // Tạo editor
+                    const editor = monaco.editor.create(document.getElementById(containerId), {
+                        value: initialValue,
+                        language: language,
+                        theme: 'vs-dark',
+                        automaticLayout: true,
+                        minimap: { enabled: true },
+                        fontSize: 14,
+                        lineNumbers: 'on',
+                        roundedSelection: false,
+                        scrollBeyondLastLine: false,
+                        readOnly: false,
+                        wordWrap: 'on'
+                    });
+
+                    // Lưu editor instance
+                    monacoEditors[settingKey] = editor;
+
+                    // Store original value
+                    originalValues[settingKey] = initialValue;
+
+                    // Watch for changes
+                    editor.onDidChangeModelContent(function() {
+                        const newValue = editor.getValue();
+                        const originalValue = originalValues[settingKey];
+
+                        if (newValue !== originalValue) {
+                            modifiedSettings.add(settingKey);
+                            inputElement.addClass('modified');
+                            inputElement.closest('.setting-card').addClass('modified');
+                        } else {
+                            modifiedSettings.delete(settingKey);
+                            inputElement.removeClass('modified');
+                            inputElement.closest('.setting-card').removeClass('modified');
+                        }
+
+                        updateModifiedCount();
+                    });
+
+                    // Sync editor value to hidden input
+                    editor.onDidBlurEditorText(function() {
+                        inputElement.val(editor.getValue());
+                    });
+                });
+            });
+        }
+
+        // Khởi tạo các input thông thường (không phải Monaco)
+        function initializeRegularInputs() {
+            // Store original values
+            $('[data-key]:not(.monaco-input)').each(function() {
+                const key = $(this).data('key');
+                originalValues[key] = $(this).val() || $(this).data('original');
+            });
+
+            // Watch for changes
+            $('[data-key]:not(.monaco-input)').on('change input', function() {
+                const key = $(this).data('key');
+                const newValue = $(this).val();
+                const originalValue = originalValues[key];
+
+                if (newValue !== originalValue) {
+                    modifiedSettings.add(key);
+                    $(this).addClass('modified');
+                    $(this).closest('.setting-card').addClass('modified');
+                } else {
+                    modifiedSettings.delete(key);
+                    $(this).removeClass('modified');
+                    $(this).closest('.setting-card').removeClass('modified');
+                }
+
+                updateModifiedCount();
+            });
+
+            // Warn before leaving with unsaved changes
+            window.addEventListener('beforeunload', function(e) {
+                if (modifiedSettings.size > 0) {
+                    e.preventDefault();
+                    e.returnValue = '';
+                }
+            });
+        }
+
+        function updateModifiedCount() {
+            const count = modifiedSettings.size;
+            $('#modifiedCount').text(count);
+            $('#modifiedCountLarge').text(count);
+            $('#modifiedText').text(`Bạn có ${count} thay đổi chưa lưu!`);
+
+            if (count > 0) {
+                $('#saveIndicator').fadeIn();
+                $('#btnSaveAll').removeClass('btn-success').addClass('btn-warning');
+            } else {
+                $('#saveIndicator').fadeOut();
+                $('#btnSaveAll').removeClass('btn-warning').addClass('btn-success');
+            }
+        }
+
+        $('#btnSaveAll').click(function() {
+            if (modifiedSettings.size === 0) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Không có thay đổi',
+                    text: 'Bạn chưa thay đổi gì cả!',
+                    timer: 2000
+                });
+                return;
+            }
+
+            const settings = [];
+
+            // Sync Monaco editors to hidden inputs trước khi lưu
+            Object.keys(monacoEditors).forEach(key => {
+                const editor = monacoEditors[key];
+                const inputElement = $(`#input-${key}`);
+                inputElement.val(editor.getValue());
+            });
+
+            // Thu thập tất cả settings đã thay đổi
+            modifiedSettings.forEach(key => {
+                const element = $(`[data-key="${key}"]`);
+                settings.push({
+                    SettingKey: key,
+                    SettingValue: element.val()
+                });
+            });
+
+            Swal.fire({
+                title: 'Xác nhận lưu',
+                html: `Bạn có chắc muốn lưu <strong>${settings.length}</strong> cấu hình?`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: '<i class="fas fa-save"></i> Lưu',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: '#28a745'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    saveSettings(settings);
+                }
+            });
+        });
+
+        function saveSettings(settings) {
+            Swal.fire({
+                title: 'Đang lưu...',
+                html: 'Vui lòng đợi',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            fetch('/Settings/BatchUpdateSettings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(settings)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thành công!',
+                        html: `<p>${data.message}</p>
+                               <small class="text-muted">Đã cập nhật: ${data.updatedCount}/${data.totalRequests}</small>`,
+                        timer: 3000,
+                        timerProgressBar: true
+                    }).then(() => {
+                        // Update original values
+                        settings.forEach(s => {
+                            originalValues[s.SettingKey] = s.SettingValue;
+                        });
+
+                        // Clear modified state
+                        modifiedSettings.clear();
+                        $('.modified').removeClass('modified');
+                        updateModifiedCount();
+
+                        // Reload page để áp dụng custom code
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: data.message || 'Có lỗi xảy ra khi lưu!'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Không thể kết nối tới server!'
+                });
+            });
+        }
+
+        // Keyboard shortcut: Ctrl+S to save
+        $(document).keydown(function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+                e.preventDefault();
+                $('#btnSaveAll').click();
+            }
+        });
+    </script>
+}

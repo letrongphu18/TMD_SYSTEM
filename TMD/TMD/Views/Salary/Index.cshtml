@@ -1,0 +1,502 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Lương";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .salary-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 30px 0;
+    }
+
+    .main-card {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .card-header-custom {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 25px;
+        border: none;
+    }
+
+    .filter-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .stats-box {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s;
+    }
+
+        .stats-box:hover {
+            transform: translateY(-5px);
+        }
+
+    .stats-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-export {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+    }
+
+    .btn-preview {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+    }
+
+    .preview-table {
+        font-size: 0.9rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+        .preview-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+    .config-box {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="salary-container">
+    <div class="container-fluid px-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="main-card card border-0">
+                    <div class="card-header-custom">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="mb-0">
+                                    <i class="fas fa-file-invoice-dollar"></i> Quản Lý & Xuất Bảng Lương
+                                </h2>
+                                <p class="mb-0 opacity-75 mt-2">
+                                    <i class="fas fa-info-circle"></i>
+                                    Xuất báo cáo lương chi tiết từ dữ liệu chấm công với các quy tắc tính lương tự động
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <button class="btn btn-light" onclick="window.location.href='/Settings'">
+                                    <i class="fas fa-cog"></i> Cấu Hình
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="stats-box">
+                    <div class="stats-icon text-success">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h6 class="text-muted mb-2">Lương Cơ Bản</h6>
+                    <h4 class="mb-0 text-success">@String.Format("{0:N0}", ViewBag.BaseSalary) ₫</h4>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-box">
+                    <div class="stats-icon text-info">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h6 class="text-muted mb-2">Hệ Số Tăng Ca</h6>
+                    <h4 class="mb-0 text-info">x@(ViewBag.OvertimeRate ?? "1.5")</h4>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-box">
+                    <div class="stats-icon text-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h6 class="text-muted mb-2">Trừ Đi Muộn < 15p</h6>
+                    <h4 class="mb-0 text-warning">2 giờ công</h4>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-box">
+                    <div class="stats-icon text-danger">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h6 class="text-muted mb-2">Trừ Muộn > 1 tiếng</h6>
+                    <h4 class="mb-0 text-danger">50% ngày</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="filter-card">
+                    <h5 class="mb-4">
+                        <i class="fas fa-filter text-primary"></i> Bộ Lọc Xuất File
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">
+                                <i class="far fa-calendar-alt"></i> Từ Ngày <span class="text-danger">*</span>
+                            </label>
+                            <input type="date" class="form-control form-control-lg" id="fromDate" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">
+                                <i class="far fa-calendar-check"></i> Đến Ngày <span class="text-danger">*</span>
+                            </label>
+                            <input type="date" class="form-control form-control-lg" id="toDate" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-building"></i> Phòng Ban
+                            </label>
+                            <select class="form-select form-select-lg" id="departmentId">
+                                <option value="">-- Tất cả --</option>
+                                @foreach (var dept in ViewBag.Departments)
+                                {
+                                    <option value="@dept.DepartmentId">@dept.DepartmentName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-user"></i> Nhân Viên
+                            </label>
+                            <select class="form-select form-select-lg" id="userId">
+                                <option value="">-- Tất cả --</option>
+                                @foreach (var user in ViewBag.Users)
+                                {
+                                    <option value="@user.UserId">@user.FullName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <button class="btn btn-export btn-lg text-white" onclick="exportSalaryExcel()">
+                            <i class="fas fa-file-download"></i> Xuất Excel Chi Tiết
+                        </button>
+                        <button class="btn btn-preview btn-lg text-white" onclick="previewSalary()">
+                            <i class="fas fa-eye"></i> Xem Trước
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="setCurrentMonth()">
+                            <i class="fas fa-calendar"></i> Tháng Này
+                        </button>
+                        <button class="btn btn-dark btn-lg" onclick="setLastMonth()">
+                            <i class="fas fa-calendar-minus"></i> Tháng Trước
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Area -->
+        <div class="row" id="previewArea" style="display: none;">
+            <div class="col-12">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-header bg-gradient-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-table"></i> Xem Trước Bảng Lương
+                            <button class="btn btn-sm btn-light float-end" onclick="$('#previewArea').fadeOut()">
+                                <i class="fas fa-times"></i> Đóng
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover preview-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">STT</th>
+                                        <th width="8%">Mã NV</th>
+                                        <th width="15%">Họ Tên</th>
+                                        <th width="12%">Phòng Ban</th>
+                                        <th width="8%">Ngày Công</th>
+                                        <th width="7%">Đi Muộn</th>
+                                        <th width="8%">Tổng Giờ</th>
+                                        <th width="8%">Tăng Ca</th>
+                                        <th width="10%">Lương CB</th>
+                                        <th width="10%">Lương TC</th>
+                                        <th width="9%">Khấu Trừ</th>
+                                        <th width="10%">Tổng Lương</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="previewTableBody">
+                                    <!-- Data loaded via AJAX -->
+                                </tbody>
+                                <tfoot class="table-light">
+                                    <tr class="fw-bold">
+                                        <td colspan="11" class="text-end">TỔNG CỘNG:</td>
+                                        <td id="totalSalary" class="text-success">0 ₫</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuration Info -->
+        <div class="row">
+            <div class="col-12">
+                <div class="config-box">
+                    <h5 class="mb-3">
+                        <i class="fas fa-info-circle"></i> Quy Tắc Tính Lương Hiện Tại
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    <strong>Đi muộn dưới 15 phút:</strong> Trừ 2 giờ công
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    <strong>Đi muộn từ 15-60 phút:</strong> Trừ theo tỷ lệ thời gian
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    <strong>Đi muộn trên 1 tiếng:</strong> Trừ 50% lương ngày (4 giờ)
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-info"></i>
+                                    <strong>Quên checkout:</strong> Tự động tính 1 ngày công đủ
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-info"></i>
+                                    <strong>Tăng ca:</strong> Cần đề xuất và được duyệt trong 3 ngày
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-info"></i>
+                                    <strong>Có đề xuất được duyệt:</strong> Không bị trừ lương
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        window.onload = function() {
+            setCurrentMonth();
+        };
+
+        function setCurrentMonth() {
+            const now = new Date();
+            const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
+            const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+            document.getElementById('fromDate').value = firstDay.toISOString().split('T')[0];
+            document.getElementById('toDate').value = lastDay.toISOString().split('T')[0];
+        }
+
+        function setLastMonth() {
+            const now = new Date();
+            const firstDay = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+            const lastDay = new Date(now.getFullYear(), now.getMonth(), 0);
+            document.getElementById('fromDate').value = firstDay.toISOString().split('T')[0];
+            document.getElementById('toDate').value = lastDay.toISOString().split('T')[0];
+        }
+
+        function previewSalary() {
+            const fromDate = document.getElementById('fromDate').value;
+            const toDate = document.getElementById('toDate').value;
+            const userId = document.getElementById('userId').value;
+            const departmentId = document.getElementById('departmentId').value;
+
+            if (!fromDate || !toDate) {
+                Swal.fire('Cảnh báo', 'Vui lòng chọn khoảng thời gian!', 'warning');
+                return;
+            }
+
+            if (new Date(fromDate) > new Date(toDate)) {
+                Swal.fire('Lỗi', 'Ngày bắt đầu phải nhỏ hơn ngày kết thúc!', 'error');
+                return;
+            }
+
+            Swal.fire({
+                title: 'Đang tải dữ liệu...',
+                html: 'Đang tính toán bảng lương',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            fetch('/Salary/PreviewSalary', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    FromDate: fromDate,
+                    ToDate: toDate,
+                    UserId: userId || null,
+                    DepartmentId: departmentId || null
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                Swal.close();
+                if (data.success) {
+                    displayPreview(data.salaryData);
+                } else {
+                    Swal.fire('Lỗi', data.message || 'Không thể tải dữ liệu!', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire('Lỗi', 'Có lỗi xảy ra khi tải dữ liệu!', 'error');
+            });
+        }
+
+        function displayPreview(data) {
+            const tbody = $('#previewTableBody');
+            tbody.empty();
+
+            let totalSalary = 0;
+            let stt = 1;
+
+            data.forEach(item => {
+                totalSalary += item.totalSalary;
+
+                const row = `
+                    <tr>
+                        <td class="text-center">${stt++}</td>
+                        <td><strong>NV${String(item.userId).padStart(4, '0')}</strong></td>
+                        <td>${item.fullName}</td>
+                        <td><span class="badge bg-info">${item.departmentName}</span></td>
+                        <td class="text-center">${item.workedDays}</td>
+                        <td class="text-center">${item.lateDays > 0 ? `<span class="badge bg-warning">${item.lateDays}</span>` : '-'}</td>
+                        <td class="text-center">${item.totalHours.toFixed(1)}h</td>
+                        <td class="text-center">${item.overtimeHours > 0 ? `<span class="badge bg-success">${item.overtimeHours.toFixed(1)}h</span>` : '-'}</td>
+                        <td class="text-end">${formatCurrency(item.baseSalary)}</td>
+                        <td class="text-end text-success">${formatCurrency(item.overtimeSalary)}</td>
+                        <td class="text-end text-danger">${item.deduction > 0 ? '-' + formatCurrency(item.deduction) : '-'}</td>
+                        <td class="text-end fw-bold text-primary">${formatCurrency(item.totalSalary)}</td>
+                    </tr>
+                `;
+                tbody.append(row);
+            });
+
+            $('#totalSalary').html(formatCurrency(totalSalary) + ' ₫');
+            $('#previewArea').fadeIn();
+        }
+
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('vi-VN').format(Math.round(value));
+        }
+
+        function exportSalaryExcel() {
+            const fromDate = document.getElementById('fromDate').value;
+            const toDate = document.getElementById('toDate').value;
+            const departmentId = document.getElementById('departmentId').value;
+            const userId = document.getElementById('userId').value;
+
+            if (!fromDate || !toDate) {
+                Swal.fire('Cảnh báo', 'Vui lòng chọn khoảng thời gian!', 'warning');
+                return;
+            }
+
+            if (new Date(fromDate) > new Date(toDate)) {
+                Swal.fire('Lỗi', 'Ngày bắt đầu phải nhỏ hơn ngày kết thúc!', 'error');
+                return;
+            }
+
+            Swal.fire({
+                title: 'Xác nhận xuất file',
+                html: `<p>Bạn có chắc muốn xuất bảng lương?</p>
+                       <p><strong>Từ:</strong> ${fromDate}</p>
+                       <p><strong>Đến:</strong> ${toDate}</p>`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: '<i class="fas fa-download"></i> Xuất Excel',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: '#28a745'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Đang tạo file Excel...',
+                        html: 'Vui lòng đợi, đang xử lý dữ liệu',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    fetch('/Salary/ExportSalaryExcel', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            FromDate: fromDate,
+                            ToDate: toDate,
+                            UserId: userId || null,
+                            DepartmentId: departmentId || null
+                        })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => { throw err; });
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `BangLuong_${fromDate}_${toDate}_${new Date().getTime()}.xlsx`;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+                        window.URL.revokeObjectURL(url);
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: 'Đã tải xuống file Excel',
+                            timer: 2000,
+                            timerProgressBar: true
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire('Lỗi', error.message || 'Có lỗi xảy ra khi xuất file!', 'error');
+                    });
+                }
+            });
+        }
+    </script>
+}

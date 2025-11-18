@@ -1,0 +1,630 @@
+﻿/* ==========================================
+   ATTENDANCE MODAL DETAIL - ENHANCED CSS
+   ========================================== */
+
+/* Modal Dialog & Content */
+.att-modal .modal-dialog {
+    max-width: 1200px;
+}
+
+.att-modal .modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Modal Header */
+.att-modal .att-modal-header {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    padding: 1.5rem 2rem;
+    border-bottom: none;
+    color: white;
+}
+
+.att-modal .att-modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    color: white;
+}
+
+    .att-modal .att-modal-title i {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+.att-modal .btn-close-white {
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+/* Modal Body */
+.att-modal .att-modal-body {
+    padding: 2rem;
+    background: #F8F9FA;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+    /* Custom Scrollbar */
+    .att-modal .att-modal-body::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .att-modal .att-modal-body::-webkit-scrollbar-track {
+        background: #E9ECEF;
+        border-radius: 10px;
+    }
+
+    .att-modal .att-modal-body::-webkit-scrollbar-thumb {
+        background: #CED4DA;
+        border-radius: 10px;
+    }
+
+        .att-modal .att-modal-body::-webkit-scrollbar-thumb:hover {
+            background: #ADB5BD;
+        }
+
+/* User Card */
+.att-user-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #E74C3C;
+    margin-bottom: 2rem;
+}
+
+.att-user-avatar-large {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    border: 4px solid white;
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.3);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+    .att-user-avatar-large img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .att-user-avatar-large span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        z-index: 1;
+    }
+
+.att-user-card-info {
+    flex: 1;
+}
+
+.att-user-card-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 0.75rem;
+}
+
+.att-user-card-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.att-user-card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #6C757D;
+    background: #F8F9FA;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+    .att-user-card-meta-item i {
+        color: #E74C3C;
+        font-size: 1.125rem;
+    }
+
+/* Detail Sections */
+.att-detail-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid #E9ECEF;
+}
+
+.att-section-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #E9ECEF;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2C3E50;
+}
+
+    .att-section-title i {
+        font-size: 1.25rem;
+    }
+
+/* Info Groups */
+.att-info-group {
+    margin-bottom: 1.5rem;
+}
+
+    .att-info-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .att-info-group label {
+        font-weight: 600;
+        color: #6C757D;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .att-info-group label i {
+            color: #E74C3C;
+            font-size: 1rem;
+        }
+
+    .att-info-group p {
+        margin: 0;
+        padding: 1rem;
+        background: #F8F9FA;
+        border-radius: 8px;
+        border-left: 3px solid #E74C3C;
+        font-size: 1rem;
+        color: #2C3E50;
+        line-height: 1.6;
+    }
+
+    /* Buttons in Info Groups */
+    .att-info-group .att-btn {
+        margin-top: 0.5rem;
+    }
+
+/* Photo Preview */
+.att-photo-preview {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 0.75rem;
+}
+
+    .att-photo-preview img {
+        width: 100%;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .att-photo-preview img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+/* Status Section */
+.att-status-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.att-status-badge {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .att-status-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .att-status-badge i {
+        font-size: 1.125rem;
+    }
+
+    .att-status-badge.completed {
+        background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
+        color: white;
+    }
+
+    .att-status-badge.partial {
+        background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);
+        color: white;
+    }
+
+    .att-status-badge.late {
+        background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+        color: white;
+    }
+
+    .att-status-badge.ontime {
+        background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+        color: white;
+    }
+
+    .att-status-badge.outside {
+        background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+        color: white;
+    }
+
+    .att-status-badge.inside {
+        background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
+        color: white;
+    }
+
+/* Modal Footer */
+.att-modal .modal-footer {
+    padding: 1.5rem 2rem;
+    background: white;
+    border-top: 1px solid #E9ECEF;
+}
+
+/* Buttons */
+.att-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+    .att-btn i {
+        font-size: 1rem;
+    }
+
+.att-btn-primary {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+    .att-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+    }
+
+.att-btn-secondary {
+    background: #6C757D;
+    color: white;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+    .att-btn-secondary:hover {
+        background: #5A6268;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
+    }
+
+.att-btn-success {
+    background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+    .att-btn-success:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+    }
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Photo Modal Specific */
+#photoModal .att-modal-body {
+    padding: 1rem;
+    background: #2C3E50;
+}
+
+#photoModal .modal-footer {
+    background: white;
+}
+
+#photoModalImage {
+    max-height: 70vh;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Map Modal Specific */
+.att-map-container {
+    height: 500px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border: 3px solid #E9ECEF;
+}
+
+.att-map-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+    .att-map-info p {
+        margin-bottom: 0.75rem;
+        font-size: 0.9375rem;
+        color: #2C3E50;
+    }
+
+        .att-map-info p:last-child {
+            margin-bottom: 0;
+        }
+
+    .att-map-info strong {
+        color: #E74C3C;
+        font-weight: 700;
+    }
+
+.att-coordinates {
+    font-family: 'Courier New', monospace;
+    background: #F8F9FA;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 0.9375rem;
+    color: #2C3E50;
+    border-left: 3px solid #E74C3C;
+}
+
+/* Utility Classes for Modal */
+.att-text-primary {
+    color: #E74C3C !important;
+}
+
+.att-text-info {
+    color: #3498DB !important;
+}
+
+.att-fw-bold {
+    font-weight: 700 !important;
+}
+
+/* Responsive for Modal */
+@media (max-width: 1200px) {
+    .att-modal .modal-dialog {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .att-user-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .att-user-avatar-large {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .att-user-card-name {
+        font-size: 1.5rem;
+    }
+
+    .att-user-card-meta {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .att-detail-section {
+        padding: 1.25rem;
+    }
+
+    .att-section-title {
+        font-size: 1rem;
+    }
+
+    .att-info-group p {
+        padding: 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .att-status-container {
+        justify-content: center;
+    }
+
+    .att-status-badge {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    .att-modal .att-modal-body {
+        padding: 1.5rem;
+    }
+
+    .att-modal .att-modal-header,
+    .att-modal .modal-footer {
+        padding: 1.25rem;
+    }
+
+    .att-map-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .att-user-card-meta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .att-user-card-meta-item {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .att-modal .att-modal-title {
+        font-size: 1.25rem;
+    }
+
+    .att-modal .att-modal-body {
+        padding: 1.25rem;
+    }
+
+    .att-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Animation */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.att-modal.show .modal-content {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Loading State */
+.att-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #6C757D;
+}
+
+    .att-loading i {
+        font-size: 3rem;
+        color: #E74C3C;
+        animation: spin 1s linear infinite;
+    }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gap Utilities */
+.gap-1 {
+    gap: 0.25rem !important;
+}
+
+.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.gap-3 {
+    gap: 1rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.small {
+    font-size: 0.875rem !important;
+}

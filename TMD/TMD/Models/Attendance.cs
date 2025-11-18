@@ -51,5 +51,25 @@ public partial class Attendance
 
     public DateTime? CreatedAt { get; set; }
 
+    public bool HasLateRequest { get; set; }
+
+    public int? LateRequestId { get; set; }
+
+    public bool HasOvertimeRequest { get; set; }
+
+    public int? OvertimeRequestId { get; set; }
+
+    public bool IsOvertimeApproved { get; set; }
+
+    public decimal ApprovedOvertimeHours { get; set; }
+
+    public decimal DeductionHours { get; set; }
+
+    public decimal DeductionAmount { get; set; }
+
+    public virtual LateRequest? LateRequest { get; set; }
+
+    public virtual OvertimeRequest? OvertimeRequest { get; set; }
+
     public virtual User User { get; set; } = null!;
 }

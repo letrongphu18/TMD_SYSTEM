@@ -21,7 +21,13 @@ public partial class TmdContext : DbContext
 
     public virtual DbSet<Department> Departments { get; set; }
 
+    public virtual DbSet<LateRequest> LateRequests { get; set; }
+
+    public virtual DbSet<LeaveRequest> LeaveRequests { get; set; }
+
     public virtual DbSet<LoginHistory> LoginHistories { get; set; }
+
+    public virtual DbSet<OvertimeRequest> OvertimeRequests { get; set; }
 
     public virtual DbSet<PasswordResetHistory> PasswordResetHistories { get; set; }
 
@@ -31,11 +37,15 @@ public partial class TmdContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<SystemSetting> SystemSettings { get; set; }
+
     public virtual DbSet<Task> Tasks { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<UserTask> UserTasks { get; set; }
+
+    public virtual DbSet<VwPendingRequestsSummary> VwPendingRequestsSummaries { get; set; }
 
     public virtual DbSet<VwTaskPerformance> VwTaskPerformances { get; set; }
 
@@ -47,7 +57,7 @@ public partial class TmdContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.\\MSSQLSERVER02;Database=TMD;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=(local)\\MSSQLSERVER02;Database=TMD;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -57,6 +67,7 @@ public partial class TmdContext : DbContext
 
             entity.HasIndex(e => new { e.UserId, e.WorkDate }, "IX_Attendances_UserId_WorkDate");
 
+            entity.Property(e => e.ApprovedOvertimeHours).HasColumnType("decimal(5, 2)");
             entity.Property(e => e.CheckInAddress).HasMaxLength(500);
             entity.Property(e => e.CheckInIpaddress)
                 .HasMaxLength(50)
@@ -72,9 +83,19 @@ public partial class TmdContext : DbContext
             entity.Property(e => e.CheckOutLongitude).HasColumnType("decimal(11, 8)");
             entity.Property(e => e.CheckOutNotes).HasMaxLength(1000);
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.DeductionAmount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.DeductionHours).HasColumnType("decimal(5, 2)");
             entity.Property(e => e.IsLate).HasDefaultValue(false);
             entity.Property(e => e.IsWithinGeofence).HasDefaultValue(true);
             entity.Property(e => e.TotalHours).HasColumnType("decimal(5, 2)");
+
+            entity.HasOne(d => d.LateRequest).WithMany(p => p.Attendances)
+                .HasForeignKey(d => d.LateRequestId)
+                .HasConstraintName("FK_Attendances_LateRequest");
+
+            entity.HasOne(d => d.OvertimeRequest).WithMany(p => p.Attendances)
+                .HasForeignKey(d => d.OvertimeRequestId)
+                .HasConstraintName("FK_Attendances_OvertimeRequest");
 
             entity.HasOne(d => d.User).WithMany(p => p.Attendances)
                 .HasForeignKey(d => d.UserId)
@@ -112,6 +133,58 @@ public partial class TmdContext : DbContext
             entity.Property(e => e.IsActive).HasDefaultValue(true);
         });
 
+        modelBuilder.Entity<LateRequest>(entity =>
+        {
+            entity.HasKey(e => e.LateRequestId).HasName("PK__LateRequ__6814EE075B2D35BA");
+
+            entity.HasIndex(e => e.Status, "IX_LateRequests_Status");
+
+            entity.HasIndex(e => new { e.UserId, e.RequestDate }, "IX_LateRequests_UserId_RequestDate");
+
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.ProofDocument).HasMaxLength(500);
+            entity.Property(e => e.Reason).HasMaxLength(1000);
+            entity.Property(e => e.ReviewNote).HasMaxLength(500);
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("Pending");
+
+            entity.HasOne(d => d.ReviewedByNavigation).WithMany(p => p.LateRequestReviewedByNavigations)
+                .HasForeignKey(d => d.ReviewedBy)
+                .HasConstraintName("FK_LateRequests_Reviewer");
+
+            entity.HasOne(d => d.User).WithMany(p => p.LateRequestUsers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_LateRequests_User");
+        });
+
+        modelBuilder.Entity<LeaveRequest>(entity =>
+        {
+            entity.HasKey(e => e.LeaveRequestId).HasName("PK__LeaveReq__609421EE09998BE8");
+
+            entity.HasIndex(e => e.StartDate, "IX_LeaveRequests_StartDate");
+
+            entity.HasIndex(e => new { e.UserId, e.Status }, "IX_LeaveRequests_UserId_Status");
+
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.LeaveType).HasMaxLength(50);
+            entity.Property(e => e.ProofDocument).HasMaxLength(500);
+            entity.Property(e => e.Reason).HasMaxLength(1000);
+            entity.Property(e => e.ReviewNote).HasMaxLength(500);
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("Pending");
+            entity.Property(e => e.TotalDays).HasColumnType("decimal(5, 2)");
+
+            entity.HasOne(d => d.ReviewedByNavigation).WithMany(p => p.LeaveRequestReviewedByNavigations)
+                .HasForeignKey(d => d.ReviewedBy)
+                .HasConstraintName("FK_LeaveRequests_Reviewer");
+
+            entity.HasOne(d => d.User).WithMany(p => p.LeaveRequestUsers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_LeaveRequests_User");
+        });
+
         modelBuilder.Entity<LoginHistory>(entity =>
         {
             entity.HasKey(e => e.LoginHistoryId).HasName("PK__LoginHis__2773EA9F24699591");
@@ -135,6 +208,35 @@ public partial class TmdContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.LoginHistories)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__LoginHist__UserI__5BE2A6F2");
+        });
+
+        modelBuilder.Entity<OvertimeRequest>(entity =>
+        {
+            entity.HasKey(e => e.OvertimeRequestId).HasName("PK__Overtime__F97D0DCA560E4C6E");
+
+            entity.HasIndex(e => e.ExpiryDate, "IX_OvertimeRequests_ExpiryDate");
+
+            entity.HasIndex(e => new { e.IsExpired, e.Status }, "IX_OvertimeRequests_IsExpired_Status");
+
+            entity.HasIndex(e => new { e.UserId, e.WorkDate }, "IX_OvertimeRequests_UserId_WorkDate");
+
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.IsExpired).HasDefaultValue(false);
+            entity.Property(e => e.OvertimeHours).HasColumnType("decimal(5, 2)");
+            entity.Property(e => e.Reason).HasMaxLength(1000);
+            entity.Property(e => e.ReviewNote).HasMaxLength(500);
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("Pending");
+            entity.Property(e => e.TaskDescription).HasMaxLength(1000);
+
+            entity.HasOne(d => d.ReviewedByNavigation).WithMany(p => p.OvertimeRequestReviewedByNavigations)
+                .HasForeignKey(d => d.ReviewedBy)
+                .HasConstraintName("FK_OvertimeRequests_Reviewer");
+
+            entity.HasOne(d => d.User).WithMany(p => p.OvertimeRequestUsers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_OvertimeRequests_User");
         });
 
         modelBuilder.Entity<PasswordResetHistory>(entity =>
@@ -216,6 +318,29 @@ public partial class TmdContext : DbContext
             entity.Property(e => e.RoleName).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<SystemSetting>(entity =>
+        {
+            entity.HasKey(e => e.SettingId).HasName("PK__SystemSe__54372B1DEA688F4D");
+
+            entity.HasIndex(e => e.Category, "IX_SystemSettings_Category");
+
+            entity.HasIndex(e => e.IsActive, "IX_SystemSettings_IsActive");
+
+            entity.HasIndex(e => e.SettingKey, "UQ__SystemSe__01E719AD7D8ED9CB").IsUnique();
+
+            entity.Property(e => e.Category).HasMaxLength(100);
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.DataType).HasMaxLength(50);
+            entity.Property(e => e.Description).HasMaxLength(500);
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.SettingKey).HasMaxLength(100);
+            entity.Property(e => e.SettingValue).HasMaxLength(1000);
+
+            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.SystemSettings)
+                .HasForeignKey(d => d.UpdatedBy)
+                .HasConstraintName("FK__SystemSet__Updat__0A9D95DB");
+        });
+
         modelBuilder.Entity<Task>(entity =>
         {
             entity.HasKey(e => e.TaskId).HasName("PK__Tasks__7C6949B188536639");
@@ -286,6 +411,17 @@ public partial class TmdContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.UserTasks)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__UserTasks__UserI__4CA06362");
+        });
+
+        modelBuilder.Entity<VwPendingRequestsSummary>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("vw_PendingRequestsSummary");
+
+            entity.Property(e => e.RequestType)
+                .HasMaxLength(15)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<VwTaskPerformance>(entity =>

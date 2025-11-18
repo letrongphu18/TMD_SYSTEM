@@ -354,26 +354,30 @@
 </div>
 
 <style>
+    /* ===== OVERRIDE STYLES FOR MYTASK - RED THEME ===== */
+
     .task-card {
         cursor: pointer;
         transition: all 0.3s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
+        border: 1px solid var(--tm-gray-200);
     }
 
         .task-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+            border-color: var(--tm-primary);
         }
 
     .tm-task-overdue {
-        border-left: 4px solid #f5365c;
+        border-left: 4px solid var(--tm-danger);
     }
 
     .task-card-header {
         padding: 1rem 1.5rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
         color: white;
     }
 
@@ -390,7 +394,7 @@
     }
 
     .task-overdue-badge {
-        background: #f5365c;
+        background: var(--tm-danger);
         color: white;
         padding: 0.35rem 0.75rem;
         border-radius: 50px;
@@ -410,9 +414,13 @@
         align-items: center;
     }
 
+        .task-card-title i {
+            color: var(--tm-primary);
+        }
+
     .task-card-description {
         font-size: 0.9rem;
-        color: var(--tm-secondary);
+        color: var(--tm-gray-600);
         margin-bottom: 1rem;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -454,6 +462,7 @@
 
         .task-report-link a:hover {
             text-decoration: underline;
+            color: #2874A6;
         }
 
     .task-card-footer {
@@ -463,7 +472,7 @@
         margin-top: auto;
     }
 
-    /* Status Buttons */
+    /* ===== STATUS BUTTONS ===== */
     .status-buttons {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -472,7 +481,7 @@
 
     .status-btn {
         padding: 1rem;
-        border: 2px solid #e2e8f0;
+        border: 2px solid var(--tm-gray-300);
         background: white;
         border-radius: var(--tm-border-radius-sm);
         cursor: pointer;
@@ -485,7 +494,7 @@
 
         .status-btn i {
             font-size: 1.5rem;
-            color: var(--tm-secondary);
+            color: var(--tm-gray-600);
         }
 
         .status-btn span {
@@ -496,14 +505,14 @@
 
         .status-btn:hover {
             border-color: var(--tm-primary);
-            background: rgba(102, 126, 234, 0.05);
+            background: rgba(231, 76, 60, 0.05);
         }
 
         .status-btn.active {
             border-color: var(--tm-primary);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--tm-primary);
             color: white;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
         }
 
             .status-btn.active i,
@@ -511,7 +520,7 @@
                 color: white;
             }
 
-    /* Task Detail Grid */
+    /* ===== TASK DETAIL GRID ===== */
     .detail-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -523,6 +532,7 @@
         padding: 1rem;
         background: var(--tm-light);
         border-radius: var(--tm-border-radius-sm);
+        border: 1px solid var(--tm-gray-200);
     }
 
         .detail-item label {
@@ -531,15 +541,68 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--tm-secondary);
+            color: var(--tm-gray-600);
             margin-bottom: 0.5rem;
         }
+
+            .detail-item label i {
+                color: var(--tm-primary);
+            }
 
         .detail-item .value {
             font-size: 1rem;
             color: var(--tm-dark);
             font-weight: 500;
         }
+
+    /* ===== LOADING STATE ===== */
+    .tm-loading {
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+
+        .tm-loading .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.3rem;
+            color: var(--tm-primary);
+        }
+
+    /* ===== SWEETALERT2 OVERRIDES ===== */
+    .swal2-styled.swal2-confirm {
+        background-color: var(--tm-primary) !important;
+    }
+
+        .swal2-styled.swal2-confirm:hover {
+            background-color: #C0392B !important;
+        }
+
+    .swal2-styled.swal2-cancel {
+        background-color: var(--tm-secondary) !important;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    media (max-width: 768px) {
+        .task-card-header
+
+    {
+        padding: 1rem;
+    }
+
+    .task-card-title {
+        font-size: 1rem;
+    }
+
+    .status-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    }
 </style>
 
 @section Scripts {

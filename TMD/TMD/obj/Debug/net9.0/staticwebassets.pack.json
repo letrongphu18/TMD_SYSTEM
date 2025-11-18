@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\attendance-management.css"
     },
     {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\attendance-modal.css",
+      "PackagePath": "staticwebassets\\css\\attendance-modal.css"
+    },
+    {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\audit-logs.css",
       "PackagePath": "staticwebassets\\css\\audit-logs.css"
     },
@@ -17,8 +21,16 @@
       "PackagePath": "staticwebassets\\css\\dashboard-management.css"
     },
     {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\departmen-list.css",
+      "PackagePath": "staticwebassets\\css\\departmen-list.css"
+    },
+    {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
       "PackagePath": "staticwebassets\\css\\edittask-ad.css"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\loginhistory.css",
@@ -27,6 +39,10 @@
     {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\passwordresethistory.css",
       "PackagePath": "staticwebassets\\css\\passwordresethistory.css"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\register-reset.css",
+      "PackagePath": "staticwebassets\\css\\register-reset.css"
     },
     {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\css\\site.css",
@@ -297,6 +313,10 @@
       "PackagePath": "staticwebassets\\uploads\\attendance\\12_20251117_121108_checkin.jpg"
     },
     {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\uploads\\attendance\\12_20251118_142904_checkin.jpg",
+      "PackagePath": "staticwebassets\\uploads\\attendance\\12_20251118_142904_checkin.jpg"
+    },
+    {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251116_015000_checkin.jpg",
       "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251116_015000_checkin.jpg"
     },
@@ -311,6 +331,14 @@
     {
       "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251117_233836_checkout.jpg",
       "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251117_233836_checkout.jpg"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251118_003358_checkin.jpg",
+      "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251118_003358_checkin.jpg"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_DASHBOARD\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251118_110612_checkout.jpg",
+      "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251118_110612_checkout.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.TMD.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

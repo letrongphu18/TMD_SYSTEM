@@ -1,33 +1,41 @@
 ﻿/* ==========================================
    ATTENDANCE MANAGEMENT SYSTEM - MODERN CSS
    Prefix: .att- (Attendance)
+   Colors: Red #E74C3C, Orange #F39C12
    ========================================== */
 
 /* ===== ROOT VARIABLES ===== */
 .att-container {
-    --att-primary: #5e72e4;
-    --att-success: #2dce89;
-    --att-danger: #f5365c;
-    --att-warning: #fb6340;
-    --att-info: #11cdef;
-    --att-secondary: #8898aa;
-    --att-dark: #32325d;
-    --att-light: #f7fafc;
+    --att-primary: #E74C3C;
+    --att-success: #27AE60;
+    --att-danger: #E74C3C;
+    --att-warning: #F39C12;
+    --att-info: #3498DB;
+    --att-secondary: #6C757D;
+    --att-dark: #2C3E50;
+    --att-light: #F8F9FA;
     --att-white: #ffffff;
+    --att-gray-100: #F8F9FA;
+    --att-gray-200: #E9ECEF;
+    --att-gray-300: #DEE2E6;
+    --att-gray-600: #6C757D;
     --att-border-radius: 12px;
     --att-border-radius-sm: 8px;
-    --att-box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
-    --att-box-shadow-hover: 0 0 3rem 0 rgba(136, 152, 170, 0.25);
+    --att-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --att-box-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
     --att-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--att-gray-100);
 }
 
 /* ===== PAGE HEADER ===== */
 .att-page-header {
     background: var(--att-white);
-    padding: 1.5rem;
+    color: var(--att-dark);
+    padding: 2rem;
     border-radius: var(--att-border-radius);
     box-shadow: var(--att-box-shadow);
     margin-bottom: 1.5rem;
+    border-left: 5px solid var(--att-primary);
 }
 
 .att-page-title {
@@ -39,20 +47,25 @@
     margin-bottom: 0;
 }
 
+    .att-page-title i {
+        color: var(--att-primary);
+    }
+
 .att-btn-export {
     padding: 0.75rem 1.5rem;
     border-radius: var(--att-border-radius-sm);
     font-weight: 600;
-    background: linear-gradient(135deg, #1cc88a 0%, #17a673 100%);
+    background: var(--att-primary);
     border: none;
     color: var(--att-white);
-    box-shadow: 0 4px 6px rgba(28, 200, 138, 0.3);
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
     transition: var(--att-transition);
 }
 
     .att-btn-export:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(28, 200, 138, 0.4);
+        box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+        background: #C0392B;
         color: var(--att-white);
     }
 
@@ -75,53 +88,58 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    border-top: 4px solid;
 }
 
     .att-stat-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: linear-gradient(180deg, var(--att-accent-color) 0%, transparent 100%);
+        content: none;
     }
 
     .att-stat-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
         box-shadow: var(--att-box-shadow-hover);
     }
 
 .att-stat-primary {
     --att-accent-color: var(--att-primary);
+    border-top-color: var(--att-primary);
 }
 
 .att-stat-success {
     --att-accent-color: var(--att-success);
+    border-top-color: var(--att-success);
 }
 
 .att-stat-danger {
     --att-accent-color: var(--att-danger);
+    border-top-color: var(--att-danger);
 }
 
 .att-stat-warning {
     --att-accent-color: var(--att-warning);
+    border-top-color: var(--att-warning);
 }
 
 .att-stat-info {
     --att-accent-color: var(--att-info);
+    border-top-color: var(--att-info);
+}
+
+.att-stat-secondary {
+    --att-accent-color: var(--att-secondary);
+    border-top-color: var(--att-secondary);
 }
 
 .att-stat-icon {
     width: 60px;
     height: 60px;
     border-radius: var(--att-border-radius-sm);
-    background: linear-gradient(135deg, var(--att-accent-color), transparent);
+    background: var(--att-accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.75rem;
-    color: var(--att-accent-color);
+    color: white;
     flex-shrink: 0;
 }
 
@@ -174,7 +192,7 @@
     .att-form-control:focus,
     .att-form-select:focus {
         border-color: var(--att-primary);
-        box-shadow: 0 0 0 0.2rem rgba(94, 114, 228, 0.15);
+        box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
         outline: none;
     }
 
@@ -182,7 +200,7 @@
     padding: 0.75rem 1.5rem;
     border-radius: var(--att-border-radius-sm);
     font-weight: 600;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--att-primary);
     border: none;
     color: var(--att-white);
     transition: var(--att-transition);
@@ -191,7 +209,8 @@
 
     .att-btn-filter:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+        background: #C0392B;
     }
 
 /* ===== TABLE CARD ===== */
@@ -212,7 +231,7 @@
 }
 
     .att-table thead tr {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: var(--att-light);
     }
 
     .att-table thead th {
@@ -221,7 +240,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        color: var(--att-white);
+        color: var(--att-gray-600);
         border: none;
         white-space: nowrap;
     }
@@ -288,37 +307,37 @@
 }
 
 .att-badge-completed {
-    background: linear-gradient(135deg, #2dce89 0%, #2dcecc 100%);
+    background: var(--att-success);
     color: var(--att-white);
 }
 
 .att-badge-partial {
-    background: linear-gradient(135deg, #fb6340 0%, #fbb140 100%);
+    background: var(--att-warning);
     color: var(--att-white);
 }
 
 .att-badge-late {
-    background: linear-gradient(135deg, #f5365c 0%, #f56036 100%);
+    background: var(--att-danger);
     color: var(--att-white);
 }
 
 .att-badge-ontime {
-    background: linear-gradient(135deg, #11cdef 0%, #1171ef 100%);
+    background: var(--att-info);
     color: var(--att-white);
 }
 
 .att-badge-outside {
-    background: linear-gradient(135deg, #f5365c 0%, #f56036 100%);
+    background: var(--att-danger);
     color: var(--att-white);
 }
 
 .att-badge-inside {
-    background: linear-gradient(135deg, #2dce89 0%, #2dcecc 100%);
+    background: var(--att-success);
     color: var(--att-white);
 }
 
 .att-badge-department {
-    background: linear-gradient(135deg, #11cdef 0%, #1171ef 100%);
+    background: var(--att-info);
     color: var(--att-white);
 }
 
@@ -389,10 +408,10 @@
 }
 
     .att-btn-action:hover {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: var(--att-primary);
         color: var(--att-white);
         transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
     }
 
 /* ===== EMPTY STATE ===== */
@@ -430,8 +449,8 @@
 .att-modal-header {
     padding: 1.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--att-white);
+    background: var(--att-white);
+    color: var(--att-dark);
     border-radius: var(--att-border-radius) var(--att-border-radius) 0 0;
 }
 
@@ -440,7 +459,12 @@
     display: flex;
     align-items: center;
     margin: 0;
+    color: var(--att-dark);
 }
+
+    .att-modal-title i {
+        color: var(--att-primary);
+    }
 
 .att-modal-body {
     padding: 2rem;
@@ -561,32 +585,32 @@
 }
 
     .att-status-badge.completed {
-        background: linear-gradient(135deg, #2dce89 0%, #2dcecc 100%);
+        background: var(--att-success);
         color: var(--att-white);
     }
 
     .att-status-badge.partial {
-        background: linear-gradient(135deg, #fb6340 0%, #fbb140 100%);
+        background: var(--att-warning);
         color: var(--att-white);
     }
 
     .att-status-badge.late {
-        background: linear-gradient(135deg, #f5365c 0%, #f56036 100%);
+        background: var(--att-danger);
         color: var(--att-white);
     }
 
     .att-status-badge.ontime {
-        background: linear-gradient(135deg, #11cdef 0%, #1171ef 100%);
+        background: var(--att-info);
         color: var(--att-white);
     }
 
     .att-status-badge.outside {
-        background: linear-gradient(135deg, #f5365c 0%, #f56036 100%);
+        background: var(--att-danger);
         color: var(--att-white);
     }
 
     .att-status-badge.inside {
-        background: linear-gradient(135deg, #2dce89 0%, #2dcecc 100%);
+        background: var(--att-success);
         color: var(--att-white);
     }
 
@@ -668,13 +692,14 @@
 }
 
 .att-btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--att-primary);
     color: var(--att-white);
 }
 
     .att-btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        background: #C0392B;
     }
 
 .att-btn-secondary {
@@ -683,18 +708,19 @@
 }
 
     .att-btn-secondary:hover {
-        background: #6c757d;
+        background: #5a6268;
         transform: translateY(-2px);
     }
 
 .att-btn-success {
-    background: linear-gradient(135deg, #1cc88a 0%, #17a673 100%);
+    background: var(--att-success);
     color: var(--att-white);
 }
 
     .att-btn-success:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(28, 200, 138, 0.4);
+        box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        background: #229954;
     }
 
 /* ===== ANIMATIONS ===== */
@@ -782,6 +808,10 @@
     .att-status-container {
         justify-content: center;
     }
+
+    .att-page-header {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -817,6 +847,10 @@
     color: var(--att-danger) !important;
 }
 
+.att-text-info {
+    color: var(--att-info) !important;
+}
+
 .att-text-white {
     color: var(--att-white) !important;
 }
@@ -835,4 +869,28 @@
 
 .att-fw-semibold {
     font-weight: 600 !important;
+}
+
+/* ===== BOOTSTRAP OVERRIDES ===== */
+.btn-primary {
+    background: var(--att-primary);
+    border-color: var(--att-primary);
+    color: white;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        background: #C0392B;
+        border-color: #C0392B;
+        color: white;
+    }
+
+/* ===== LEAFLET MAP OVERRIDES ===== */
+.leaflet-interactive[stroke="#5e72e4"] {
+    stroke: #E74C3C !important;
+}
+
+.leaflet-interactive[fill="#5e72e4"] {
+    fill: #E74C3C !important;
 }

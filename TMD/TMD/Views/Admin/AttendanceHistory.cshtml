@@ -6,6 +6,7 @@
 
 <link href="~/css/attendance-management.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link href="~/css/attendance-modal.css" rel="stylesheet" />
 
 <div class="container-fluid px-4 py-4 att-container">
     <!-- HEADER -->
@@ -554,12 +555,12 @@
 @section Scripts {
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        /* Avatar Styles */
+        /* Override Avatar Styles với màu đỏ */
         .att-user-avatar {
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--att-primary, #E74C3C);
             color: #fff;
             display: flex;
             align-items: center;
@@ -595,7 +596,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--att-primary, #E74C3C);
             color: #fff;
             display: flex;
             align-items: center;
@@ -625,6 +626,16 @@
                 height: 100%;
                 text-transform: uppercase;
             }
+
+        /* Override Leaflet circle color */
+        .leaflet-interactive[fill="#5e72e4"] {
+            fill: #E74C3C !important;
+        }
+
+        /* Override các màu còn sót trong modal */
+        .att-user-avatar-large {
+            border-color: var(--att-primary) !important;
+        }
     </style>
     <script>
         let currentMap = null;
