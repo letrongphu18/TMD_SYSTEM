@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\TMD.sylsvlrxnc.bundle.scp.css"
     },
     {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\admin-request.css",
+      "PackagePath": "staticwebassets\\css\\admin-request.css"
+    },
+    {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-management.css",
       "PackagePath": "staticwebassets\\css\\attendance-management.css"
     },
@@ -27,6 +31,14 @@
     {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
       "PackagePath": "staticwebassets\\css\\edittask-ad.css"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layout.css",
+      "PackagePath": "staticwebassets\\css\\layout.css"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layoutstaff.css",
+      "PackagePath": "staticwebassets\\css\\layoutstaff.css"
     },
     {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\login.css",
@@ -63,6 +75,10 @@
     {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\admin-request.js",
+      "PackagePath": "staticwebassets\\js\\admin-request.js"
     },
     {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\site.js",
@@ -347,6 +363,14 @@
     {
       "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251119_121212_checkout.jpg",
       "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251119_121212_checkout.jpg"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251120_134508_checkin.jpg",
+      "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251120_134508_checkin.jpg"
+    },
+    {
+      "Id": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\uploads\\attendance\\9_20251121_003641_checkin.jpg",
+      "PackagePath": "staticwebassets\\uploads\\attendance\\9_20251121_003641_checkin.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.TMD.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

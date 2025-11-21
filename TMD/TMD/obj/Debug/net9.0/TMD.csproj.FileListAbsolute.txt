@@ -499,3 +499,7 @@ E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\refint\TMD.dll
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\TMD.pdb
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\TMD.genruntimeconfig.cache
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\ref\TMD.dll
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\6fgpefhmu5-e4w56dvxfl.gz
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\wguw1yzvyf-or4f0i1msd.gz
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\7vw9o18mkw-5jjb95nd8p.gz
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\decznbjriz-o7jr9lpkve.gz

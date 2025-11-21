@@ -1,0 +1,217 @@
+﻿@model TMD.Models.OvertimeRequest
+<link href="~/css/admin-request.css" rel="stylesheet" />
+<div class="tm-request-card tm-request-overtime">
+    <div class="tm-request-header">
+        <div class="tm-request-type">
+            <i class="fas fa-clock"></i>
+            <span>Tăng ca</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            @if (Model.IsExpired == true)
+            {
+                <span class="tm-status-badge tm-status-expired">
+                    <i class="fas fa-exclamation-triangle me-1"></i>Hết hạn
+                </span>
+            }
+            <span class="tm-status-badge tm-status-@(Model.Status?.ToLower() ?? "unknown")">
+                @if (Model.Status == "Pending")
+                {
+                    <i class="fas fa-clock me-1"></i>
+
+                    @:Chờ duyệt
+                }
+                else if (Model.Status == "Approved")
+                {
+                    <i class="fas fa-check me-1"></i>
+
+                    @:Đã duyệt
+                }
+                else if (Model.Status == "Rejected")
+                {
+                    <i class="fas fa-times me-1"></i>
+
+                    @:Từ chối
+                }
+                else
+                {
+                    @Model.Status
+                }
+            </span>
+        </div>
+    </div>
+
+    <div class="tm-request-user">
+        <img src="@(Model?.User?.Avatar ?? "/images/default-avatar.png")"
+             alt="Avatar"
+             class="tm-request-avatar" />
+        <div class="tm-request-user-info">
+            <strong>@Model?.User?.FullName</strong>
+            <small class="text-muted">@Model?.User?.Email</small>
+        </div>
+    </div>
+
+    <div class="tm-request-body">
+        <div class="tm-request-info-row">
+            <div class="tm-request-info-item">
+                <i class="fas fa-calendar text-warning"></i>
+                <div>
+                    <small class="text-muted">Ngày làm việc</small>
+                    <strong>@Model.WorkDate.ToString("dd/MM/yyyy")</strong>
+                </div>
+            </div>
+            <div class="tm-request-info-item">
+                <i class="fas fa-sign-out-alt text-warning"></i>
+                <div>
+                    <small class="text-muted">Check-out</small>
+                    <strong>@Model.ActualCheckOutTime.ToString("HH:mm")</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-request-stats">
+            <div class="tm-stat-box tm-stat-box-warning">
+                <i class="fas fa-clock"></i>
+                <span><strong>@Model.OvertimeHours</strong> giờ tăng ca</span>
+            </div>
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Reason))
+        {
+            <div class="tm-request-reason">
+                <i class="fas fa-comment-dots"></i>
+                <p>@Model.Reason</p>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.TaskDescription))
+        {
+            <div class="tm-request-task">
+                <i class="fas fa-tasks"></i>
+                <div>
+                    <small class="text-muted d-block mb-1">Công việc thực hiện:</small>
+                    <p>@Model.TaskDescription</p>
+                </div>
+            </div>
+        }
+
+        <div class="tm-request-expiry">
+            <i class="far fa-calendar-times"></i>
+            <small class="@(Model.IsExpired == true ? "text-danger fw-bold" : "")">
+                Hết hạn: @Model.ExpiryDate.ToString("dd/MM/yyyy HH:mm")
+                @if (Model.IsExpired == true)
+                {
+                    <span class="ms-1">(Đã hết hạn)</span>
+                }
+            </small>
+        </div>
+
+        <div class="tm-request-meta">
+            <i class="far fa-clock"></i>
+            <small>
+                Tạo: @(Model.CreatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "N/A")
+            </small>
+        </div>
+    </div>
+
+    <div class="tm-request-actions">
+        @if (Model.Status == "Pending" && Model.IsExpired != true)
+        {
+            <button type="button" class="tm-btn-action tm-btn-approve"
+                    onclick="openReviewModal(@Model.OvertimeRequestId, 'Overtime', '@Model.User?.FullName', 'Tăng ca', '@Model.WorkDate.ToString("dd/MM/yyyy")', '@Model.OvertimeHours', '@Model.ActualCheckOutTime.ToString("HH:mm")', '@(Model.Reason?.Replace("'", "\\'").Replace("\n", " ") ?? "")', '@(Model.TaskDescription?.Replace("'", "\\'").Replace("\n", " ") ?? "")')">
+                <i class="fas fa-check"></i>
+                <span>Duyệt</span>
+            </button>
+            <button type="button" class="tm-btn-action tm-btn-reject"
+                    onclick="openRejectModal(@Model.OvertimeRequestId, 'Overtime')">
+                <i class="fas fa-times"></i>
+                <span>Từ chối</span>
+            </button>
+        }
+        else
+        {
+            <button type="button" class="tm-btn-action tm-btn-view"
+                    onclick="viewRequestDetail(@Model.OvertimeRequestId, 'Overtime')">
+                <i class="fas fa-eye"></i>
+                <span>Chi tiết</span>
+            </button>
+        }
+    </div>
+
+    @if (Model.Status != "Pending" && Model.ReviewedAt.HasValue)
+    {
+        <div class="tm-request-review-info">
+            <i class="fas fa-user-check"></i>
+            <small>
+                @if (Model.ReviewedByNavigation != null)
+                {
+                    <text>Duyệt bởi: <strong>@Model.ReviewedByNavigation.FullName</strong></text>
+                }
+                else if (Model.ReviewedBy.HasValue)
+                {
+                    <text>Duyệt bởi Admin (ID: @Model.ReviewedBy.Value)</text>
+                }
+                else
+                {
+                    <text>Đã duyệt</text>
+                }
+                <text> lúc @Model.ReviewedAt.Value.ToString("dd/MM/yyyy HH:mm")</text>
+            </small>
+            @if (!string.IsNullOrWhiteSpace(Model.ReviewNote))
+            {
+                <div class="tm-review-note">
+                    <i class="fas fa-sticky-note"></i>
+                    <span>@Model.ReviewNote</span>
+                </div>
+            }
+        </div>
+    }
+</div><script src="~/js/admin-request.js"></script>
+<script>
+        function openReviewModal(requestId, requestType, userName, type, date1, date2, extra, reason, taskDesc) {
+        currentRequestId = requestId;
+        currentRequestType = requestType;
+
+        let detailsHTML = `
+            <div class="tm-modal-review-details">
+                <div class="tm-review-user-section">
+                    <h6><i class="fas fa-user me-2"></i>Thông tin nhân viên</h6>
+                    <p class="mb-0"><strong>${userName}</strong></p>
+                </div>
+                <div class="tm-review-request-section">
+                    <h6><i class="fas fa-file-alt me-2"></i>Chi tiết đề xuất</h6>
+        `;
+
+        if (requestType === 'Leave') {
+            detailsHTML += `
+                <p><strong>Loại:</strong> ${type}</p>
+                <p><strong>Từ ngày:</strong> ${date1}</p>
+                <p><strong>Đến ngày:</strong> ${date2}</p>
+                <p><strong>Số ngày:</strong> ${extra}</p>
+            `;
+        } else if (requestType === 'Late') {
+            detailsHTML += `
+                <p><strong>Loại:</strong> ${type}</p>
+                <p><strong>Ngày:</strong> ${date1}</p>
+                <p><strong>Dự kiến đến:</strong> ${date2}</p>
+            `;
+        } else if (requestType === 'Overtime') {
+            detailsHTML += `
+                <p><strong>Ngày làm việc:</strong> ${date1}</p>
+                <p><strong>Giờ tăng ca:</strong> ${date2}h</p>
+                <p><strong>Check-out:</strong> ${extra}</p>
+                ${taskDesc ? `<p><strong>Công việc:</strong> ${taskDesc}</p>` : ''}
+            `;
+        }
+
+        if (reason) {
+            detailsHTML += `<p><strong>Lý do:</strong> ${reason}</p>`;
+        }
+
+        detailsHTML += `</div></div>`;
+
+        document.getElementById('reviewDetails').innerHTML = detailsHTML;
+        document.getElementById('reviewNote').value = '';
+
+        new bootstrap.Modal(document.getElementById('reviewModal')).show();
+    }
+</script>

@@ -7,459 +7,8 @@
     <title>@ViewData["Title"] - TMD Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        :root {
-            --primary: #E74C3C;
-            --primary-dark: #C0392B;
-            --secondary: #F39C12;
-            --success: #27AE60;
-            --info: #3498DB;
-            --warning: #F39C12;
-            --danger: #E74C3C;
-            --dark: #2C3E50;
-            --sidebar-bg: #2C3E50;
-            --sidebar-hover: #34495E;
-            --light-bg: #F8F9FA;
-            --white: #ffffff;
-            --text-muted: #6C757D;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--light-bg);
-            overflow-x: hidden;
-        }
-
-        /* ===== SIDEBAR ===== */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 260px;
-            background: var(--sidebar-bg);
-            z-index: 1000;
-            overflow-y: auto;
-            transition: all 0.3s ease;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .sidebar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .sidebar .logo {
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        }
-
-        .sidebar .logo-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .sidebar .logo-icon i {
-            font-size: 30px;
-            color: white;
-        }
-
-        .sidebar .logo-text {
-            color: white;
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .sidebar nav {
-            padding: 20px 0;
-        }
-
-        .sidebar .nav-link {
-            color: rgba(255, 255, 255, 0.7);
-            padding: 14px 20px;
-            margin: 4px 12px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .sidebar .nav-link i {
-            width: 24px;
-            margin-right: 12px;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        .sidebar .nav-link:hover {
-            background: var(--sidebar-hover);
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .sidebar .nav-link.active {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
-        }
-
-        .sidebar .nav-link.active i {
-            color: white;
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        .main-content {
-            margin-left: 260px;
-            min-height: 100vh;
-            transition: all 0.3s ease;
-        }
-
-        /* ===== TOPBAR ===== */
-        .topbar {
-            background: white;
-            padding: 18px 35px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        .topbar h5 {
-            margin: 0;
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topbar h5 i {
-            color: var(--primary);
-        }
-
-        /* ===== USER INFO ===== */
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .user-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .user-avatar:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-        }
-
-        .user-info .dropdown-toggle {
-            cursor: pointer;
-            padding: 8px 15px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--dark);
-        }
-
-        .user-info .dropdown-toggle:hover {
-            background: var(--light-bg);
-        }
-
-        .user-info .dropdown-toggle::after {
-            margin-left: 10px;
-            color: var(--primary);
-        }
-
-        .user-info .fw-bold {
-            font-size: 0.95rem;
-            color: var(--dark);
-        }
-
-        .user-info .text-muted {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .topbar .dropdown-menu {
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border: none;
-            min-width: 220px;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        .topbar .dropdown-item {
-            padding: 12px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-        }
-
-        .topbar .dropdown-item i {
-            width: 20px;
-            text-align: center;
-        }
-
-        .topbar .dropdown-item:hover {
-            background: rgba(231, 76, 60, 0.1);
-            color: var(--primary);
-        }
-
-        .topbar .dropdown-item.text-danger {
-            color: var(--danger);
-        }
-
-        .topbar .dropdown-item.text-danger:hover {
-            background: rgba(231, 76, 60, 0.15);
-            color: var(--primary-dark);
-        }
-
-        .topbar .dropdown-divider {
-            margin: 8px 0;
-            border-color: rgba(0, 0, 0, 0.08);
-        }
-
-        /* ===== CONTENT WRAPPER ===== */
-        .content-wrapper {
-            padding: 35px;
-            min-height: calc(100vh - 80px);
-        }
-
-        /* ===== ALERTS ===== */
-        .alert {
-            border-radius: 12px;
-            border: none;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .alert i {
-            font-size: 1.25rem;
-        }
-
-        .alert-success {
-            background: rgba(39, 174, 96, 0.1);
-            color: #229954;
-            border-left: 4px solid var(--success);
-        }
-
-        .alert-success i {
-            color: var(--success);
-        }
-
-        .alert-danger {
-            background: rgba(231, 76, 60, 0.1);
-            color: var(--primary-dark);
-            border-left: 4px solid var(--danger);
-        }
-
-        .alert-danger i {
-            color: var(--danger);
-        }
-
-        .alert-warning {
-            background: rgba(243, 156, 18, 0.1);
-            color: #D68910;
-            border-left: 4px solid var(--warning);
-        }
-
-        .alert-warning i {
-            color: var(--warning);
-        }
-
-        .alert-info {
-            background: rgba(52, 152, 219, 0.1);
-            color: #2874A6;
-            border-left: 4px solid var(--info);
-        }
-
-        .alert-info i {
-            color: var(--info);
-        }
-
-        .btn-close {
-            filter: brightness(0) invert(0.4);
-        }
-
-        /* ===== STAT CARDS ===== */
-        .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-        }
-
-        .stat-card.success {
-            border-top-color: var(--success);
-        }
-
-        .stat-card.warning {
-            border-top-color: var(--warning);
-        }
-
-        .stat-card.danger {
-            border-top-color: var(--danger);
-        }
-
-        .stat-card.info {
-            border-top-color: var(--info);
-        }
-
-        /* ===== MOBILE MENU TOGGLE ===== */
-        .menu-toggle {
-            display: none;
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: var(--light-bg);
-            border-radius: 8px;
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* ===== OVERLAY FOR MOBILE ===== */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        .sidebar-overlay.show {
-            display: block;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        media (max-width: 992px) {
-            .sidebar {
-                transform: translateX(-260px);
-            }
-
-            .sidebar.show {
-                transform: translateX(0);
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .topbar {
-                padding: 15px 20px;
-            }
-
-            .content-wrapper {
-                padding: 20px;
-            }
-
-            .menu-toggle {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
-        media (max-width: 576px) {
-            .topbar h5 {
-                font-size: 1.25rem;
-            }
-
-            .user-avatar {
-                width: 38px;
-                height: 38px;
-            }
-
-            .content-wrapper {
-                padding: 15px;
-            }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .content-wrapper > * {
-            animation: fadeIn 0.5s ease-out;
-        }
-    </style>
-
+	<link href="~/css/layout.css" rel="stylesheet" />
     <!-- ✅ CUSTOM CSS FROM DATABASE - Inject AFTER Bootstrap -->
     @{
         var customStyles = "";
@@ -511,6 +60,23 @@
                 <i class="fas fa-clock"></i>
                 <span>Check-in/Check-out</span>
             </a>
+            <a class="nav-link" href="/Admin/PendingRequests">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Duyệt Đề Xuất</span>
+                @{
+                    try
+                    {
+                        var pendingCount = _dbContext.OvertimeRequests.Count(r => r.Status == "Pending") +
+                        _dbContext.LeaveRequests.Count(r => r.Status == "Pending") +
+                        _dbContext.LateRequests.Count(r => r.Status == "Pending");
+                        if (pendingCount > 0)
+                        {
+                            <span class="badge">@pendingCount</span>
+                        }
+                    }
+                    catch { }
+                }
+            </a>
             <a class="nav-link" href="/Admin/AuditLogs">
                 <i class="fas fa-history"></i>
                 <span>Audit Logs</span>
@@ -524,10 +90,12 @@
                 <span>Lịch sử đổi mật khẩu</span>
             </a>
             <a href="/Settings/Index" class="nav-link">
-                <i class="fas fa-cog"></i> Cấu Hình
+                <i class="fas fa-cog"></i>
+                <span>Cấu Hình</span>
             </a>
             <a href="/Salary/Index" class="nav-link">
-                <i class="fas fa-money-bill"></i> Bảng Lương
+                <i class="fas fa-money-bill"></i>
+                <span>Bảng Lương</span>
             </a>
         </nav>
     </div>
@@ -545,13 +113,13 @@
             <div class="user-info">
                 <img src="@Context.Session.GetString("Avatar")" alt="Avatar" class="user-avatar" />
                 <div class="dropdown">
-                    <a class="dropdown-toggle d-flex align-items-center" href="#" id="adminDropdown" data-bs-toggle="dropdown">
+                    <a class="dropdown-toggle d-flex align-items-center" href="#" id="adminDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         <div>
                             <div class="fw-bold">@Context.Session.GetString("FullName")</div>
                             <small class="text-muted">@Context.Session.GetString("RoleName")</small>
                         </div>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
                         <li>
                             <a class="dropdown-item" href="/Staff/Profile">
                                 <i class="fas fa-user"></i>
@@ -654,6 +222,31 @@
                 }
             });
         });
+
+        // Auto refresh pending count every 30 seconds
+        setInterval(function() {
+            const pendingLink = document.querySelector('a[href="/Admin/PendingRequests"]');
+            if (pendingLink && window.location.pathname !== '/Admin/PendingRequests') {
+                fetch('/Admin/GetPendingCount')
+                    .then(response => response.json())
+                    .then(data => {
+                        const badge = pendingLink.querySelector('.badge');
+                        if (data.count > 0) {
+                            if (badge) {
+                                badge.textContent = data.count;
+                            } else {
+                                const newBadge = document.createElement('span');
+                                newBadge.className = 'badge';
+                                newBadge.textContent = data.count;
+                                pendingLink.appendChild(newBadge);
+                            }
+                        } else if (badge) {
+                            badge.remove();
+                        }
+                    })
+                    .catch(err => console.error('Error fetching pending count:', err));
+            }
+        }, 30000);
     </script>
 </body>
 </html>

@@ -3,6 +3,118 @@
   "WorkspaceRootPath": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\requestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\requestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\reviewrequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\reviewrequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\laterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\laterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\pendingrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\pendingrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\myrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\myrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\pendingrequestsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\pendingrequestsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\layoutstaff.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\layoutstaff.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\_overtimerequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\_overtimerequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\_leaverequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\_leaverequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\_laterequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\_laterequestcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\js\\admin-request.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\js\\admin-request.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\admin-request.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\admin-request.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\tasklist-ad.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\tasklist-ad.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\passwordresethistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\passwordresethistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\mytasks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\mytasks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\createlaterequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\createlaterequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\createleaverequestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\createleaverequestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\createovertimerequestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\createovertimerequestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\auditlogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\auditlogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\settings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\settings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -15,36 +127,12 @@
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\settingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\auditlogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\auditlogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\attendancehistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\mytasks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\mytasks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\salary\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -65,10 +153,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,22 +189,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\viewmodels\\requestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\viewmodels\\requestviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\usertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -165,10 +233,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\register-reset.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\register-reset.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\tasklist-ad.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\tasklist-ad.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\wwwroot\\css\\user-management.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -217,10 +281,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\loginhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\loginhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\views\\admin\\passwordresethistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\admin\\passwordresethistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|e:\\aihub task\\tmd_system\\tmd_system\\tmd\\tmd\\models\\passwordresethistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -330,7 +390,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -354,637 +414,244 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Salary\\Index.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Salary\\Index.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Salary\\Index.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Salary\\Index.cshtml",
-              "ViewState": "AgIAAMsBAAAAAAAAAAAUwPUBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T07:11:25.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\Index.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Settings\\Index.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\Index.cshtml*",
-              "RelativeToolTip": "TMD\\Views\\Settings\\Index.cshtml*",
-              "ViewState": "AgIAADMFAAAAAAAAAAAAwGcFAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T07:11:02.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AttendanceHistory.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AttendanceHistory.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\AttendanceHistory.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AttendanceHistory.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\AttendanceHistory.cshtml",
-              "ViewState": "AgIAADQDAAAAAAAAAAAQwGgDAAABAAAAAAAAAA==",
+              "Title": "MyRequests.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyRequests.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\MyRequests.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyRequests.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Staff\\MyRequests.cshtml",
+              "ViewState": "AgIAAAACAAAAAAAAAADwvzQCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-16T07:56:05.974Z"
+              "WhenOpened": "2025-11-19T18:37:08.829Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "StaffController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\StaffController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\StaffController.cs",
-              "ViewState": "AgIAAOcCAAAAAAAAAAAQwBsDAAADAAAAAAAAAA==",
+              "Title": "PendingRequestsViewModel.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\PendingRequestsViewModel.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\PendingRequestsViewModel.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\PendingRequestsViewModel.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\PendingRequestsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T04:28:56.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_LayoutStaff.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
-              "ViewState": "AgIAAGsBAAAAAAAAAAAIwIABAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T10:45:42.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SettingsController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SettingsController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\SettingsController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SettingsController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\SettingsController.cs",
-              "ViewState": "AgIAAFcFAAAAAAAAAAAYwHcFAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:08:49.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuditLogs.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AuditLogs.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\AuditLogs.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AuditLogs.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\AuditLogs.cshtml",
-              "ViewState": "AgIAALEBAAAAAAAAAAAYwMUBAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:47:26.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T18:25:47.126Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGgCAAAAAAAAAAAYwJICAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T10:45:31.528Z",
+              "Title": "LateRequest.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\LateRequest.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\LateRequest.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\LateRequest.cs",
+              "RelativeToolTip": "TMD\\Models\\LateRequest.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T19:08:16.999Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T08:22:33.793Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_SettingCard.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\_SettingCard.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Settings\\_SettingCard.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\_SettingCard.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Settings\\_SettingCard.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAcwGwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T08:03:29.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SalaryController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SalaryController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\SalaryController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SalaryController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\SalaryController.cs",
-              "ViewState": "AgIAALYBAAAAAAAAAAAswNgBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:08:12.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Task.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Task.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\Task.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Task.cs",
-              "RelativeToolTip": "TMD\\Models\\Task.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T05:49:48.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AttendanceHistory.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\AttendanceHistory.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\AttendanceHistory.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\AttendanceHistory.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Staff\\AttendanceHistory.cshtml",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAlwEoBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T16:12:08.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MyTasks.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyTasks.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\MyTasks.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyTasks.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Staff\\MyTasks.cshtml",
-              "ViewState": "AgIAAEECAAAAAAAAAAAkwFwCAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T18:23:57.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DepartmentDetail.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentDetail.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\DepartmentDetail.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentDetail.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\DepartmentDetail.cshtml",
-              "ViewState": "AgIAAPoCAAAAAAAAAADwvwoDAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-16T17:19:21.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Profile.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\Profile.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Profile.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Staff\\Profile.cshtml",
-              "ViewState": "AgIAAHcBAAAAAAAAAAAQwKsBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T04:29:30.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserSalaryController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\UserSalaryController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\UserSalaryController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\UserSalaryController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\UserSalaryController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T02:14:27.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\AdminController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAADcHAAAAAAAAAAAywFsHAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T10:44:28.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "WorkScheduleController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\WorkScheduleController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\WorkScheduleController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\WorkScheduleController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\WorkScheduleController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T02:14:50.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SalaryAdjustment.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\SalaryAdjustment.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\SalaryAdjustment.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\SalaryAdjustment.cs",
-              "RelativeToolTip": "TMD\\Models\\SalaryAdjustment.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T02:33:36.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\WorkSchedule\\Index.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\WorkSchedule\\Index.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\WorkSchedule\\Index.cshtml",
-              "RelativeToolTip": "TMD\\Views\\WorkSchedule\\Index.cshtml",
-              "ViewState": "AgIAAGUBAAAAAAAAAAAcwI8BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T02:49:11.449Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\UserSalary\\Index.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\UserSalary\\Index.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\UserSalary\\Index.cshtml",
-              "RelativeToolTip": "TMD\\Views\\UserSalary\\Index.cshtml",
-              "ViewState": "AgIAADcBAAAAAAAAAAAAwGsBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T02:48:40.432Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Attendance.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Attendance.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\Attendance.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Attendance.cs",
-              "RelativeToolTip": "TMD\\Models\\Attendance.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwEUAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T10:51:14.017Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TmdContext.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\TmdContext.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
-              "RelativeToolTip": "TMD\\Models\\TmdContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T10:31:46.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\AccountController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAGgBAAAAAAAAAAAgwJoBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T10:43:43.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "TMD\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "TMD\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T10:52:07.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\Dashboard.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\Dashboard.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\Dashboard.cshtml",
-              "ViewState": "AgIAAIIBAAAAAAAAAADwv7YBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T04:58:33.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Staff\\Dashboard.cshtml",
               "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Dashboard.cshtml",
               "RelativeToolTip": "TMD\\Views\\Staff\\Dashboard.cshtml",
-              "ViewState": "AgIAAMIDAAAAAAAAAAAIwPYDAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFUEAAAAAAAAAAAQwGYEAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:13:03.35Z"
+              "WhenOpened": "2025-11-15T05:13:03.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "RequestViewModels.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\RequestViewModels.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\RequestViewModels.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\RequestViewModels.cs",
-              "RelativeToolTip": "TMD\\Models\\ViewModels\\RequestViewModels.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwDsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T16:39:30.53Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 6,
               "Title": "LeaveRequest.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\LeaveRequest.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\LeaveRequest.cs",
               "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\LeaveRequest.cs",
               "RelativeToolTip": "TMD\\Models\\LeaveRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T16:45:21.823Z"
+              "WhenOpened": "2025-11-18T16:45:21.823Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UserTask.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\UserTask.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\UserTask.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\UserTask.cs",
-              "RelativeToolTip": "TMD\\Models\\UserTask.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "RequestViewModels.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\RequestViewModels.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\RequestViewModels.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\RequestViewModels.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\RequestViewModels.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwv1IAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T04:15:21.092Z"
+              "WhenOpened": "2025-11-18T16:39:30.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "DepartmentList.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentList.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\DepartmentList.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentList.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\DepartmentList.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:46:11.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "departmen-list.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\departmen-list.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\departmen-list.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\departmen-list.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\departmen-list.css",
-              "ViewState": "AgIAADgCAAAAAAAAAAAiwGICAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T03:50:37.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "passwordresethistory.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\passwordresethistory.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\passwordresethistory.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\passwordresethistory.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\passwordresethistory.css",
-              "ViewState": "AgIAAGMCAAAAAAAAAAAYwJcCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T18:45:51.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Account\\Register.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T10:49:14.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Department.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\Department.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Department.cs",
-              "RelativeToolTip": "TMD\\Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\StaffController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs*",
+              "RelativeToolTip": "TMD\\Controllers\\StaffController.cs*",
+              "ViewState": "AgIAAMIEAAAAAAAAAAAQwO0EAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T05:00:56.484Z"
+              "WhenOpened": "2025-11-15T04:28:56.236Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "attendance-modal.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-modal.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\attendance-modal.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-modal.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\attendance-modal.css",
-              "ViewState": "AgIAAEICAAAAAAAAAAAgwHYCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T04:37:04.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "attendance-management.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-management.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\attendance-management.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-management.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\attendance-management.css",
-              "ViewState": "AgIAAEwDAAAAAAAAAAAYwIADAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T17:43:43.328Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "audit-logs.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\audit-logs.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\audit-logs.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\audit-logs.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\audit-logs.css",
-              "ViewState": "AgIAANICAAAAAAAAAAAYwAYDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T18:14:00.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "loginhistory.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\loginhistory.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\loginhistory.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\loginhistory.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\loginhistory.css",
-              "ViewState": "AgIAALUCAAAAAAAAAAAYwOkCAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T18:51:19.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "register-reset.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\register-reset.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\register-reset.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\register-reset.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\register-reset.css",
-              "ViewState": "AgIAAIwBAAAAAAAAAAAgwMABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T03:54:13.733Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Account\\Login.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAALEAAAAAAAAAAAAwwNoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T10:48:36.038Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "login.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\login.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\login.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\login.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\login.css",
-              "ViewState": "AgIAAI4BAAAAAAAAAAAiwLgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T04:21:50.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "ResetUserPassword.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\ResetUserPassword.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\ResetUserPassword.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\ResetUserPassword.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\ResetUserPassword.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:45:44.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "tasklist-ad.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\tasklist-ad.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\tasklist-ad.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\tasklist-ad.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\tasklist-ad.css",
-              "ViewState": "AgIAAHIFAAAAAAAAAAAYwIMFAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T17:01:27.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "UserList.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\UserList.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\UserList.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\UserList.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\UserList.cshtml",
-              "ViewState": "AgIAAH4DAAAAAAAAAAAYwKgDAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:38:01.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "dashboard-management.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\dashboard-management.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\dashboard-management.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\dashboard-management.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\dashboard-management.css",
-              "ViewState": "AgIAAEsDAAAAAAAAAAAYwH8DAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T17:50:10.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "edittask-ad.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\edittask-ad.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\edittask-ad.css",
-              "ViewState": "AgIAAMMCAAAAAAAAAAAYwPcCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T17:06:46.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "user-management.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\user-management.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\user-management.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\user-management.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\user-management.css",
-              "ViewState": "AgIAAM4CAAAAAAAAAAAYwAIDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-16T17:37:27.883Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "staff-dashboard.css",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
-              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\staff-dashboard.css",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
-              "RelativeToolTip": "TMD\\wwwroot\\css\\staff-dashboard.css",
-              "ViewState": "AgIAAKECAAAAAAAAAAAYwLECAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-17T06:26:19.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\User.cs",
-              "RelativeDocumentMoniker": "TMD\\Models\\User.cs",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\User.cs",
-              "RelativeToolTip": "TMD\\Models\\User.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAowDcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAJoIAAAAAAAAAAAcwLcIAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T18:02:43.213Z"
+              "WhenOpened": "2025-11-14T10:44:28.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "TaskList.cshtml",
-              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\TaskList.cshtml",
-              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\TaskList.cshtml",
-              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\TaskList.cshtml",
-              "RelativeToolTip": "TMD\\Views\\Admin\\TaskList.cshtml",
-              "ViewState": "AgIAAPwBAAAAAAAAAAAAwDACAAABAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-15T05:46:31.788Z"
+              "WhenOpened": "2025-11-14T10:45:31.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 4,
+              "Title": "ReviewRequestViewModel.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\ReviewRequestViewModel.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\ReviewRequestViewModel.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\ReviewRequestViewModel.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\ReviewRequestViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T18:17:53.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PendingRequests.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\PendingRequests.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\PendingRequests.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\PendingRequests.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\PendingRequests.cshtml",
+              "ViewState": "AgIAAKoCAAAAAAAAAAAQwNQCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T18:35:28.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "admin-request.js",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\admin-request.js",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\js\\admin-request.js",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\admin-request.js",
+              "RelativeToolTip": "TMD\\wwwroot\\js\\admin-request.js",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAIwCYBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-20T05:00:07.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_LayoutStaff.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T10:45:42.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_OvertimeRequestCard.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_OvertimeRequestCard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\_OvertimeRequestCard.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_OvertimeRequestCard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\_OvertimeRequestCard.cshtml",
+              "ViewState": "AgIAAI8AAAAAAAAAAAD4v6cAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T18:36:01.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_LateRequestCard.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_LateRequestCard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\_LateRequestCard.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_LateRequestCard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\_LateRequestCard.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T18:54:35.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "layout.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layout.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\layout.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layout.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\layout.css",
+              "ViewState": "AgIAAKUBAAAAAAAAAAAqwNsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T07:30:09.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_LeaveRequestCard.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_LeaveRequestCard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\_LeaveRequestCard.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\_LeaveRequestCard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\_LeaveRequestCard.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAAD4v5EAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T18:54:19.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "admin-request.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\admin-request.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\admin-request.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\admin-request.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\admin-request.css",
+              "ViewState": "AgIAAEoCAAAAAAAAAAAqwIACAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T04:59:14.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "layoutstaff.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layoutstaff.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\layoutstaff.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\layoutstaff.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\layoutstaff.css",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAqwFQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T07:26:00.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "PasswordResetHistory.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\PasswordResetHistory.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\PasswordResetHistory.cshtml",
@@ -996,7 +663,583 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MyTasks.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyTasks.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\MyTasks.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyTasks.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Staff\\MyTasks.cshtml",
+              "ViewState": "AgIAAIkDAAAAAAAAAAAYwLMDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T18:23:57.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "tasklist-ad.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\tasklist-ad.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\tasklist-ad.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\tasklist-ad.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\tasklist-ad.css",
+              "ViewState": "AgIAAHoFAAAAAAAAAAAuwKYFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T17:01:27.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CreateLeaveRequestViewModels.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateLeaveRequestViewModels.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\CreateLeaveRequestViewModels.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateLeaveRequestViewModels.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\CreateLeaveRequestViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T18:17:01.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CreateLateRequestViewModel.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateLateRequestViewModel.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\CreateLateRequestViewModel.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateLateRequestViewModel.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\CreateLateRequestViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T18:17:33.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateOvertimeRequestViewModels.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateOvertimeRequestViewModels.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\CreateOvertimeRequestViewModels.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\CreateOvertimeRequestViewModels.cs",
+              "RelativeToolTip": "TMD\\Models\\ViewModels\\CreateOvertimeRequestViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T18:16:34.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_SettingCard.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\_SettingCard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Settings\\_SettingCard.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\_SettingCard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Settings\\_SettingCard.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAcwGwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T08:03:29.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T08:22:33.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAIIBAAAAAAAAAADwv7YBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T04:58:33.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AttendanceHistory.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\AttendanceHistory.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\AttendanceHistory.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\AttendanceHistory.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Staff\\AttendanceHistory.cshtml",
+              "ViewState": "AgIAADQCAAAAAAAAAAAIwGgCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T16:12:08.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AuditLogs.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AuditLogs.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\AuditLogs.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AuditLogs.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\AuditLogs.cshtml",
+              "ViewState": "AgIAALEBAAAAAAAAAAAcwNsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T05:47:26.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "SettingsController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SettingsController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\SettingsController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SettingsController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\SettingsController.cs",
+              "ViewState": "AgIAAFcFAAAAAAAAAAAYwHcFAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T07:08:49.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\Index.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Settings\\Index.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Settings\\Index.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Settings\\Index.cshtml",
+              "ViewState": "AgIAAD0FAAAAAAAAAAAUwGcFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T07:11:02.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AttendanceHistory.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AttendanceHistory.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\AttendanceHistory.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AttendanceHistory.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\AttendanceHistory.cshtml",
+              "ViewState": "AgIAADQDAAAAAAAAAAAQwGgDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T07:56:05.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Salary\\Index.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Salary\\Index.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Salary\\Index.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Salary\\Index.cshtml",
+              "ViewState": "AgIAAMsBAAAAAAAAAAAUwPUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T07:11:25.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "SalaryController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SalaryController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\SalaryController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\SalaryController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\SalaryController.cs",
+              "ViewState": "AgIAALYBAAAAAAAAAAAswNgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T07:08:12.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Task.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\Task.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Task.cs",
+              "RelativeToolTip": "TMD\\Models\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T05:49:48.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "DepartmentDetail.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentDetail.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\DepartmentDetail.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentDetail.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\DepartmentDetail.cshtml",
+              "ViewState": "AgIAAPoCAAAAAAAAAADwvwoDAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T17:19:21.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Profile.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\Profile.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Profile.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Staff\\Profile.cshtml",
+              "ViewState": "AgIAAHcBAAAAAAAAAAAQwKsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T04:29:30.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UserSalaryController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\UserSalaryController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\UserSalaryController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\UserSalaryController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\UserSalaryController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:14:27.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "WorkScheduleController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\WorkScheduleController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\WorkScheduleController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\WorkScheduleController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\WorkScheduleController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:14:50.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "SalaryAdjustment.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\SalaryAdjustment.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\SalaryAdjustment.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\SalaryAdjustment.cs",
+              "RelativeToolTip": "TMD\\Models\\SalaryAdjustment.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:33:36.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\WorkSchedule\\Index.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\WorkSchedule\\Index.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\WorkSchedule\\Index.cshtml",
+              "RelativeToolTip": "TMD\\Views\\WorkSchedule\\Index.cshtml",
+              "ViewState": "AgIAAGUBAAAAAAAAAAAcwI8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T02:49:11.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\UserSalary\\Index.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\UserSalary\\Index.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\UserSalary\\Index.cshtml",
+              "RelativeToolTip": "TMD\\Views\\UserSalary\\Index.cshtml",
+              "ViewState": "AgIAADcBAAAAAAAAAAAAwGsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T02:48:40.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\Attendance.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Attendance.cs",
+              "RelativeToolTip": "TMD\\Models\\Attendance.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwEUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:51:14.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "TmdContext.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\TmdContext.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
+              "RelativeToolTip": "TMD\\Models\\TmdContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:31:46.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAgwJoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:43:43.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:52:07.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UserTask.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\UserTask.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\UserTask.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\UserTask.cs",
+              "RelativeToolTip": "TMD\\Models\\UserTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T04:15:21.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "DepartmentList.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentList.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\DepartmentList.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DepartmentList.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\DepartmentList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T05:46:11.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "departmen-list.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\departmen-list.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\departmen-list.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\departmen-list.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\departmen-list.css",
+              "ViewState": "AgIAADgCAAAAAAAAAAAiwGICAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T03:50:37.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "passwordresethistory.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\passwordresethistory.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\passwordresethistory.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\passwordresethistory.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\passwordresethistory.css",
+              "ViewState": "AgIAAGMCAAAAAAAAAAAYwJcCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T18:45:51.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Account\\Register.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T10:49:14.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Department.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\Department.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\Department.cs",
+              "RelativeToolTip": "TMD\\Models\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T05:00:56.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "attendance-modal.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-modal.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\attendance-modal.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-modal.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\attendance-modal.css",
+              "ViewState": "AgIAAEICAAAAAAAAAAAgwHYCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T04:37:04.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "attendance-management.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-management.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\attendance-management.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\attendance-management.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\attendance-management.css",
+              "ViewState": "AgIAAEwDAAAAAAAAAAAYwIADAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T17:43:43.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "audit-logs.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\audit-logs.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\audit-logs.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\audit-logs.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\audit-logs.css",
+              "ViewState": "AgIAANICAAAAAAAAAAAYwAYDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T18:14:00.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "loginhistory.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\loginhistory.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\loginhistory.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\loginhistory.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\loginhistory.css",
+              "ViewState": "AgIAALUCAAAAAAAAAAAYwOkCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T18:51:19.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "register-reset.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\register-reset.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\register-reset.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\register-reset.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\register-reset.css",
+              "ViewState": "AgIAAIwBAAAAAAAAAAAgwMABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T03:54:13.733Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 53,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAALEAAAAAAAAAAAAwwNoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T10:48:36.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "login.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\login.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\login.css",
+              "ViewState": "AgIAAI4BAAAAAAAAAAAiwLgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T04:21:50.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ResetUserPassword.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\ResetUserPassword.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\ResetUserPassword.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\ResetUserPassword.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\ResetUserPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T05:45:44.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\UserList.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\UserList.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\UserList.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\UserList.cshtml",
+              "ViewState": "AgIAAH4DAAAAAAAAAAAYwKgDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T05:38:01.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "dashboard-management.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\dashboard-management.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\dashboard-management.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\dashboard-management.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\dashboard-management.css",
+              "ViewState": "AgIAAEsDAAAAAAAAAAAYwH8DAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T17:50:10.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "edittask-ad.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\edittask-ad.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\edittask-ad.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\edittask-ad.css",
+              "ViewState": "AgIAAMMCAAAAAAAAAAAYwPcCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T17:06:46.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "user-management.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\user-management.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\user-management.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\user-management.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\user-management.css",
+              "ViewState": "AgIAAM4CAAAAAAAAAAAYwAIDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-16T17:37:27.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "staff-dashboard.css",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\staff-dashboard.css",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\staff-dashboard.css",
+              "ViewState": "AgIAAKECAAAAAAAAAAAYwLECAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-17T06:26:19.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\User.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\User.cs",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\User.cs",
+              "RelativeToolTip": "TMD\\Models\\User.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T18:02:43.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "TaskList.cshtml",
+              "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\TaskList.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Admin\\TaskList.cshtml",
+              "ToolTip": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\TaskList.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Admin\\TaskList.cshtml",
+              "ViewState": "AgIAAPwBAAAAAAAAAAAAwDACAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T05:46:31.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
               "Title": "LoginHistory.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\LoginHistory.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\LoginHistory.cshtml",
@@ -1008,7 +1251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 68,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\AuditLog.cs",
@@ -1020,7 +1263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 70,
               "Title": "PasswordResetHistory.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\PasswordResetHistory.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\PasswordResetHistory.cs",
@@ -1032,7 +1275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 71,
               "Title": "AuditHelper.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Helpers\\AuditHelper.cs",
               "RelativeDocumentMoniker": "TMD\\Helpers\\AuditHelper.cs",
@@ -1044,7 +1287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 72,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\LoginViewModel.cs",
@@ -1056,7 +1299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 73,
               "Title": "AttendanceList.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\AttendanceList.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\AttendanceList.cshtml",
@@ -1068,7 +1311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 75,
               "Title": "CreateTask.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\CreateTask.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\CreateTask.cshtml",
@@ -1080,7 +1323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 74,
               "Title": "EditTask.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\EditTask.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\EditTask.cshtml",
@@ -1092,7 +1335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 78,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\appsettings.json",
               "RelativeDocumentMoniker": "TMD\\appsettings.json",
@@ -1104,7 +1347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 76,
               "Title": "DeletedTasks.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Admin\\DeletedTasks.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Admin\\DeletedTasks.cshtml",
@@ -1116,7 +1359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 77,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Program.cs",
               "RelativeDocumentMoniker": "TMD\\Program.cs",
@@ -1128,7 +1371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 79,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Account\\ForgotPassword.cshtml",
@@ -1140,7 +1383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 80,
               "Title": "MyDepartment.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyDepartment.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Staff\\MyDepartment.cshtml",
@@ -1152,7 +1395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 82,
               "Title": "MyLoginHistory.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\MyLoginHistory.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Staff\\MyLoginHistory.cshtml",
@@ -1164,7 +1407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 81,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\_ViewStart.cshtml",
@@ -1176,7 +1419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 83,
               "Title": "VwUserDetail.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\VwUserDetail.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\VwUserDetail.cs",
@@ -1188,7 +1431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 84,
               "Title": "VwTodayAttendance.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\VwTodayAttendance.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\VwTodayAttendance.cs",
@@ -1200,7 +1443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 85,
               "Title": "VwTaskPerformance.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\VwTaskPerformance.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\VwTaskPerformance.cs",
@@ -1212,7 +1455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 86,
               "Title": "PasswordResetToken.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\PasswordResetToken.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\PasswordResetToken.cs",
@@ -1224,7 +1467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 87,
               "Title": "PasswordResetOtp.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\PasswordResetOtp.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\PasswordResetOtp.cs",
@@ -1236,7 +1479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 88,
               "Title": "LoginHistory.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\LoginHistory.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\LoginHistory.cs",
@@ -1248,7 +1491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 89,
               "Title": "UpdateProfileViewModel.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\UpdateProfileViewModel.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\UpdateProfileViewModel.cs",
@@ -1260,7 +1503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 91,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\RegisterViewModel.cs",
@@ -1272,7 +1515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 90,
               "Title": "ChangePasswordViewModel.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\ChangePasswordViewModel.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\ChangePasswordViewModel.cs",
@@ -1284,7 +1527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 93,
               "Title": "VerifyOtp.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\VerifyOtp.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Account\\VerifyOtp.cshtml",
@@ -1296,7 +1539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 92,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "TMD\\Views\\Account\\ResetPassword.cshtml",
@@ -1308,7 +1551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 94,
               "Title": "ForgotPasswordViewModel.cs",
               "DocumentMoniker": "E:\\AIHUB TASK\\TMD_SYSTEM\\TMD_SYSTEM\\TMD\\TMD\\Models\\ViewModels\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\ViewModels\\ForgotPasswordViewModel.cs",

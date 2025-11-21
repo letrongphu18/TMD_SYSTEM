@@ -1,0 +1,564 @@
+﻿@{
+    ViewData["Title"] = "Đề xuất của tôi";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+
+<link href="~/css/staff-requests.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <!-- PAGE HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2><i class="fas fa-file-alt me-2"></i>Đề xuất của tôi</h2>
+            <p class="text-muted">Quản lý các đề xuất tăng ca, nghỉ phép, đi trễ</p>
+        </div>
+        <div>
+            <div class="btn-group" role="group">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#overtimeModal">
+                    <i class="fas fa-clock me-1"></i> Tăng ca
+                </button>
+                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#leaveModal">
+                    <i class="fas fa-umbrella-beach me-1"></i> Nghỉ phép
+                </button>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#lateModal">
+                    <i class="fas fa-user-clock me-1"></i> Đi trễ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                    <div class="btn-group" role="group" aria-label="quick-filters">
+                        <button class="btn btn-outline-primary quick-filter active" data-status="">Tất cả</button>
+                        <button class="btn btn-outline-warning quick-filter" data-status="Pending">Chờ duyệt</button>
+                        <button class="btn btn-outline-success quick-filter" data-status="Approved">Đã duyệt</button>
+                        <button class="btn btn-outline-danger quick-filter" data-status="Rejected">Từ chối</button>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <select id="filterType" class="form-select">
+                        <option value="">Tất cả loại</option>
+                        <option value="Overtime">Tăng ca</option>
+                        <option value="Leave">Nghỉ phép</option>
+                        <option value="Late">Đi trễ</option>
+                    </select>
+                </div>
+
+                <div class="col-auto">
+                    <select id="filterStatus" class="form-select">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="Pending">Chờ duyệt</option>
+                        <option value="Approved">Đã duyệt</option>
+                        <option value="Rejected">Từ chối</option>
+                        <option value="Cancelled">Đã hủy</option>
+                    </select>
+                </div>
+
+                <div class="col-auto">
+                    <input type="date" id="filterFrom" class="form-control" placeholder="Từ ngày">
+                </div>
+                <div class="col-auto">
+                    <input type="date" id="filterTo" class="form-control" placeholder="Đến ngày">
+                </div>
+
+                <div class="col-auto">
+                    <input type="text" id="filterKeyword" class="form-control" placeholder="Tìm lý do, mô tả...">
+                </div>
+
+                <div class="col-auto">
+                    <button class="btn btn-primary" id="applyFiltersBtn"><i class="fas fa-filter me-1"></i> Lọc</button>
+                    <button class="btn btn-secondary" id="clearFiltersBtn"><i class="fas fa-eraser me-1"></i> Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATISTICS -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="stat-card stat-pending">
+                <i class="fas fa-hourglass-half"></i>
+                <div>
+                    <h3 id="totalPending">0</h3>
+                    <p>Chờ duyệt</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card stat-approved">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3 id="totalApproved">0</h3>
+                    <p>Đã duyệt</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card stat-rejected">
+                <i class="fas fa-times-circle"></i>
+                <div>
+                    <h3 id="totalRejected">0</h3>
+                    <p>Từ chối</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card stat-cancelled">
+                <i class="fas fa-ban"></i>
+                <div>
+                    <h3 id="totalCancelled">0</h3>
+                    <p>Đã hủy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REQUEST TABS -->
+    <ul class="nav nav-tabs mb-4" id="myRequestTabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="overtime-tab" data-bs-toggle="tab" data-bs-target="#overtime">
+                <i class="fas fa-clock me-1"></i> Tăng ca <span class="badge bg-warning ms-1" id="overtimeCount">0</span>
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="leave-tab" data-bs-toggle="tab" data-bs-target="#leave">
+                <i class="fas fa-umbrella-beach me-1"></i> Nghỉ phép <span class="badge bg-info ms-1" id="leaveCount">0</span>
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="late-tab" data-bs-toggle="tab" data-bs-target="#late">
+                <i class="fas fa-user-clock me-1"></i> Đi trễ <span class="badge bg-danger ms-1" id="lateCount">0</span>
+            </button>
+        </li>
+    </ul>
+
+    <!-- TAB CONTENT -->
+    <div class="tab-content" id="myRequestTabContent">
+        <div class="tab-pane fade show active" id="overtime">
+            <div id="overtimeList" class="row"></div>
+        </div>
+        <div class="tab-pane fade" id="leave">
+            <div id="leaveList" class="row"></div>
+        </div>
+        <div class="tab-pane fade" id="late">
+            <div id="lateList" class="row"></div>
+        </div>
+    </div>
+</div>
+
+<!-- OVERTIME / LEAVE / LATE MODALS (unchanged) -->
+<!-- ... reuse your existing modals from previous file ... -->
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* reuse existing styles */
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+            .stat-card i {
+                font-size: 2.5rem;
+            }
+
+            .stat-card h3 {
+                margin: 0;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .stat-card p {
+                margin: 0;
+                color: #6c757d;
+            }
+
+        .stat-pending {
+            border-left: 4px solid #ffc107
+        }
+
+        .stat-approved {
+            border-left: 4px solid #28a745
+        }
+
+        .stat-rejected {
+            border-left: 4px solid #dc3545
+        }
+
+        .stat-cancelled {
+            border-left: 4px solid #6c757d
+        }
+
+        .request-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+        .request-detail-grid .detail-row {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+        }
+    </style>
+
+    <script>
+        let allRequests = { overtime: [], leave: [], late: [] };
+        let currentFilters = { type: '', status: '', from: '', to: '', keyword: '' };
+
+        // Build query string for API
+        function buildQuery() {
+            const q = new URLSearchParams();
+            if (currentFilters.type) q.append('type', currentFilters.type);
+            if (currentFilters.status) q.append('status', currentFilters.status);
+            if (currentFilters.from) q.append('from', currentFilters.from);
+            if (currentFilters.to) q.append('to', currentFilters.to);
+            if (currentFilters.keyword) q.append('keyword', currentFilters.keyword);
+            return q.toString() ? '?' + q.toString() : '';
+        }
+
+        async function loadMyRequests() {
+            try {
+                const qs = buildQuery();
+                const response = await fetch('/Staff/GetMyRequests' + qs);
+                const data = await response.json();
+
+                if (data.success) {
+                    // API returns arrays grouped by type
+                    allRequests.overtime = data.overtime || [];
+                    allRequests.leave = data.leave || [];
+                    allRequests.late = data.late || [];
+
+                    updateStatistics();
+                    renderRequests();
+                } else {
+                    Swal.fire('Lỗi', data.message || 'Lỗi khi tải dữ liệu', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire('Lỗi', 'Không thể tải danh sách đề xuất', 'error');
+            }
+        }
+
+        function updateStatistics() {
+            const all = [...allRequests.overtime, ...allRequests.leave, ...allRequests.late];
+
+            document.getElementById('totalPending').textContent = all.filter(r => r.status === 'Pending').length;
+            document.getElementById('totalApproved').textContent = all.filter(r => r.status === 'Approved').length;
+            document.getElementById('totalRejected').textContent = all.filter(r => r.status === 'Rejected').length;
+            document.getElementById('totalCancelled').textContent = all.filter(r => r.status === 'Cancelled').length;
+
+            document.getElementById('overtimeCount').textContent = allRequests.overtime.length;
+            document.getElementById('leaveCount').textContent = allRequests.leave.length;
+            document.getElementById('lateCount').textContent = allRequests.late.length;
+        }
+
+        function renderRequests() {
+            renderOvertimeRequests();
+            renderLeaveRequests();
+            renderLateRequests();
+        }
+
+        function renderOvertimeRequests() {
+            const container = document.getElementById('overtimeList');
+            if (allRequests.overtime.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center py-5 text-muted">Chưa có đề xuất tăng ca nào</div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.overtime.forEach(req => {
+                const statusClass = getStatusClass(req.status);
+                const statusText = getStatusText(req.status);
+                const canCancel = req.status === 'Pending';
+
+                html += `
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="request-card border-start border-warning border-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-warning">Tăng ca</span>
+                                <span class="badge ${statusClass}">${statusText}</span>
+                            </div>
+                            <p><strong>Ngày:</strong> ${formatDate(req.workDate)}</p>
+                            <p><strong>Giờ:</strong> ${req.overtimeHours}h</p>
+                            <p><strong>Lý do:</strong> ${req.reason || 'N/A'}</p>
+                            <small class="text-muted">Tạo: ${formatDateTime(req.createdAt)}</small>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-info" onclick="viewRequestDetail('Overtime', ${req.overtimeRequestId})">
+                                    <i class="fas fa-eye me-1"></i> Chi tiết
+                                </button>
+                                ${canCancel ? `<button class="btn btn-sm btn-danger ms-2" onclick="cancelRequest('Overtime', ${req.overtimeRequestId})"><i class="fas fa-times me-1"></i> Hủy</button>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderLeaveRequests() {
+            const container = document.getElementById('leaveList');
+            if (allRequests.leave.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center py-5 text-muted">Chưa có đề xuất nghỉ phép nào</div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.leave.forEach(req => {
+                const statusClass = getStatusClass(req.status);
+                const statusText = getStatusText(req.status);
+                const canCancel = req.status === 'Pending';
+
+                html += `
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="request-card border-start border-info border-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-info">${req.leaveType}</span>
+                                <span class="badge ${statusClass}">${statusText}</span>
+                            </div>
+                            <p><strong>Từ:</strong> ${formatDate(req.startDate)}</p>
+                            <p><strong>Đến:</strong> ${formatDate(req.endDate)}</p>
+                            <p><strong>Số ngày:</strong> ${req.totalDays}</p>
+                            <small class="text-muted">Tạo: ${formatDateTime(req.createdAt)}</small>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-info" onclick="viewRequestDetail('Leave', ${req.leaveRequestId})">
+                                    <i class="fas fa-eye me-1"></i> Chi tiết
+                                </button>
+                                ${canCancel ? `<button class="btn btn-sm btn-danger ms-2" onclick="cancelRequest('Leave', ${req.leaveRequestId})"><i class="fas fa-times me-1"></i> Hủy</button>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderLateRequests() {
+            const container = document.getElementById('lateList');
+            if (allRequests.late.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center py-5 text-muted">Chưa có đề xuất đi trễ nào</div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.late.forEach(req => {
+                const statusClass = getStatusClass(req.status);
+                const statusText = getStatusText(req.status);
+                const canCancel = req.status === 'Pending';
+
+                html += `
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="request-card border-start border-danger border-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-danger">Đi trễ</span>
+                                <span class="badge ${statusClass}">${statusText}</span>
+                            </div>
+                            <p><strong>Ngày:</strong> ${formatDate(req.requestDate)}</p>
+                            <p><strong>Dự kiến đến:</strong> ${req.expectedArrivalTime}</p>
+                            <p><strong>Lý do:</strong> ${req.reason || 'N/A'}</p>
+                            <small class="text-muted">Tạo: ${formatDateTime(req.createdAt)}</small>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-info" onclick="viewRequestDetail('Late', ${req.lateRequestId})">
+                                    <i class="fas fa-eye me-1"></i> Chi tiết
+                                </button>
+                                ${canCancel ? `<button class="btn btn-sm btn-danger ms-2" onclick="cancelRequest('Late', ${req.lateRequestId})"><i class="fas fa-times me-1"></i> Hủy</button>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Submit functions (unchanged)...
+        // cancelRequest, viewRequestDetail, submitOvertimeRequest, submitLeaveRequest, submitLateRequest
+        // (reuse implementations from your existing file)
+
+        async function cancelRequest(type, id) {
+            const result = await Swal.fire({
+                title: 'Xác nhận hủy?',
+                text: 'Bạn có chắc muốn hủy đề xuất này?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Hủy đề xuất',
+                cancelButtonText: 'Không'
+            });
+
+            if (!result.isConfirmed) return;
+
+            try {
+                const response = await fetch('/Staff/CancelRequest', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ RequestId: id, RequestType: type })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    Swal.fire('Thành công!', data.message, 'success');
+                    loadMyRequests();
+                } else {
+                    Swal.fire('Lỗi', data.message, 'error');
+                }
+            } catch (error) {
+                Swal.fire('Lỗi', error.message, 'error');
+            }
+        }
+
+        async function viewRequestDetail(type, id) {
+            try {
+                const response = await fetch(`/Staff/GetRequestDetail?type=${type}&id=${id}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    const req = data.request;
+                    let html = '<div class="request-detail-grid">';
+
+                    html += `
+                        <div class="detail-row">
+                            <strong>Trạng thái:</strong>
+                            <span class="badge ${getStatusClass(req.status)}">${getStatusText(req.status)}</span>
+                        </div>
+                    `;
+
+                    if (type === 'Overtime') {
+                        html += `
+                            <div class="detail-row"><strong>Ngày làm việc:</strong> ${req.workDate}</div>
+                            <div class="detail-row"><strong>Giờ check-out:</strong> ${req.actualCheckOutTime}</div>
+                            <div class="detail-row"><strong>Số giờ tăng ca:</strong> ${req.overtimeHours}h</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason}</div>
+                            ${req.taskDescription ? `<div class="detail-row"><strong>Mô tả công việc:</strong> ${req.taskDescription}</div>` : ''}
+                        `;
+                    } else if (type === 'Leave') {
+                        html += `
+                            <div class="detail-row"><strong>Loại nghỉ:</strong> ${req.leaveType}</div>
+                            <div class="detail-row"><strong>Từ ngày:</strong> ${req.startDate}</div>
+                            <div class="detail-row"><strong>Đến ngày:</strong> ${req.endDate}</div>
+                            <div class="detail-row"><strong>Số ngày:</strong> ${req.totalDays}</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason}</div>
+                            ${req.proofDocument ? `<div class="detail-row"><strong>Tài liệu:</strong> <a href="${req.proofDocument}" target="_blank">Xem</a></div>` : ''}
+                        `;
+                    } else if (type === 'Late') {
+                        html += `
+                            <div class="detail-row"><strong>Ngày:</strong> ${req.requestDate}</div>
+                            <div class="detail-row"><strong>Dự kiến đến:</strong> ${req.expectedArrivalTime}</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason}</div>
+                            ${req.proofDocument ? `<div class="detail-row"><strong>Tài liệu:</strong> <a href="${req.proofDocument}" target="_blank">Xem</a></div>` : ''}
+                        `;
+                    }
+
+                    if (req.reviewedAt) {
+                        html += `
+                            <hr>
+                            <div class="detail-row"><strong>Người duyệt:</strong> ${req.reviewedBy || 'N/A'}</div>
+                            <div class="detail-row"><strong>Thời gian duyệt:</strong> ${req.reviewedAt}</div>
+                            ${req.reviewNote ? `<div class="detail-row"><strong>Ghi chú:</strong> ${req.reviewNote}</div>` : ''}
+                        `;
+                    }
+
+                    html += `
+                        <hr>
+                        <div class="detail-row"><strong>Tạo lúc:</strong> ${req.createdAt}</div>
+                        ${req.updatedAt ? `<div class="detail-row"><strong>Cập nhật:</strong> ${req.updatedAt}</div>` : ''}
+                    `;
+
+                    html += '</div>';
+
+                    Swal.fire({
+                        title: `Chi tiết ${type === 'Overtime' ? 'Tăng ca' : type === 'Leave' ? 'Nghỉ phép' : 'Đi trễ'}`,
+                        html: html,
+                        width: 700,
+                        confirmButtonText: 'Đóng'
+                    });
+                } else {
+                    Swal.fire('Lỗi', data.message, 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire('Lỗi', 'Không thể tải chi tiết: ' + error.message, 'error');
+            }
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'Pending': return 'bg-warning';
+                case 'Approved': return 'bg-success';
+                case 'Rejected': return 'bg-danger';
+                case 'Cancelled': return 'bg-secondary';
+                default: return 'bg-secondary';
+            }
+        }
+
+        function getStatusText(status) {
+            switch(status) {
+                case 'Pending': return 'Chờ duyệt';
+                case 'Approved': return 'Đã duyệt';
+                case 'Rejected': return 'Từ chối';
+                case 'Cancelled': return 'Đã hủy';
+                default: return status;
+            }
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'N/A';
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('vi-VN');
+        }
+
+        function formatDateTime(dateStr) {
+            if (!dateStr) return 'N/A';
+            const d = new Date(dateStr);
+            return d.toLocaleString('vi-VN');
+        }
+
+        // Filter UI handlers
+        document.getElementById('applyFiltersBtn').addEventListener('click', () => {
+            currentFilters.type = document.getElementById('filterType').value;
+            currentFilters.status = document.getElementById('filterStatus').value;
+            currentFilters.from = document.getElementById('filterFrom').value;
+            currentFilters.to = document.getElementById('filterTo').value;
+            currentFilters.keyword = document.getElementById('filterKeyword').value.trim();
+            loadMyRequests();
+        });
+
+        document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+            document.getElementById('filterType').value = '';
+            document.getElementById('filterStatus').value = '';
+            document.getElementById('filterFrom').value = '';
+            document.getElementById('filterTo').value = '';
+            document.getElementById('filterKeyword').value = '';
+            currentFilters = { type: '', status: '', from: '', to: '', keyword: '' };
+            document.querySelectorAll('.quick-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('.quick-filter[data-status=""]').classList.add('active');
+            loadMyRequests();
+        });
+
+        document.querySelectorAll('.quick-filter').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.quick-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilters.status = btn.dataset.status || '';
+                document.getElementById('filterStatus').value = currentFilters.status;
+                loadMyRequests();
+            });
+        });
+
+        // Init
+        window.onload = function() {
+            loadMyRequests();
+        };
+    </script>
+}

@@ -10,10 +10,12 @@ E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\boots
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery\dist\jquery.min.map
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery\dist\jquery.min.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\admin-request.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\dashboard-management.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\layoutstaff.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery\dist\jquery.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\js\bootstrap.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -26,6 +28,7 @@ E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\passwordresethistory.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\layout.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\favicon.ico
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
@@ -67,18 +70,22 @@ E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\boots
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\user-management.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\js\admin-request.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\css\site.css
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery\dist\jquery.slim.min.js
 E:\AIHUB TASK\TMD_SYSTEM\TMD_SYSTEM\TMD\TMD\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\css\admin-request.css
 wwwroot\css\attendance-management.css
 wwwroot\css\attendance-modal.css
 wwwroot\css\audit-logs.css
 wwwroot\css\dashboard-management.css
 wwwroot\css\departmen-list.css
 wwwroot\css\edittask-ad.css
+wwwroot\css\layout.css
+wwwroot\css\layoutstaff.css
 wwwroot\css\login.css
 wwwroot\css\loginhistory.css
 wwwroot\css\passwordresethistory.css
@@ -88,6 +95,7 @@ wwwroot\css\staff-dashboard.css
 wwwroot\css\tasklist-ad.css
 wwwroot\css\user-management.css
 wwwroot\favicon.ico
+wwwroot\js\admin-request.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
@@ -159,3 +167,5 @@ wwwroot\uploads\attendance\9_20251118_003358_checkin.jpg
 wwwroot\uploads\attendance\9_20251118_110612_checkout.jpg
 wwwroot\uploads\attendance\9_20251119_103323_checkin.jpg
 wwwroot\uploads\attendance\9_20251119_121212_checkout.jpg
+wwwroot\uploads\attendance\9_20251120_134508_checkin.jpg
+wwwroot\uploads\attendance\9_20251121_003641_checkin.jpg

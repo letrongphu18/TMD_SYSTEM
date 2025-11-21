@@ -1,0 +1,725 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Duyệt Đề Xuất";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/admin-requests.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <!-- PAGE HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2><i class="fas fa-clipboard-check me-2"></i>Duyệt Đề Xuất</h2>
+            <p class="text-muted">Xem và phê duyệt các đề xuất từ nhân viên</p>
+        </div>
+        <div>
+            <button class="btn btn-outline-primary" onclick="refreshData()">
+                <i class="fas fa-sync-alt me-1"></i> Làm mới
+            </button>
+        </div>
+    </div>
+
+    <!-- FILTERS CARD -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-3 align-items-center">
+                <!-- Quick Filters -->
+                <div class="col-12">
+                    <div class="btn-group" role="group" aria-label="quick-filters">
+                        <button class="btn btn-outline-primary quick-filter active" data-status="">
+                            Tất cả
+                        </button>
+                        <button class="btn btn-outline-warning quick-filter" data-status="Pending">
+                            Chờ duyệt
+                        </button>
+                        <button class="btn btn-outline-success quick-filter" data-status="Approved">
+                            Đã duyệt
+                        </button>
+                        <button class="btn btn-outline-danger quick-filter" data-status="Rejected">
+                            Từ chối
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detailed Filters -->
+                <div class="col-md-2">
+                    <select id="filterType" class="form-select">
+                        <option value="">Tất cả loại</option>
+                        <option value="Overtime">Tăng ca</option>
+                        <option value="Leave">Nghỉ phép</option>
+                        <option value="Late">Đi trễ</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <select id="filterStatus" class="form-select">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="Pending">Chờ duyệt</option>
+                        <option value="Approved">Đã duyệt</option>
+                        <option value="Rejected">Từ chối</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="date" id="filterFrom" class="form-control" placeholder="Từ ngày">
+                </div>
+
+                <div class="col-md-2">
+                    <input type="date" id="filterTo" class="form-control" placeholder="Đến ngày">
+                </div>
+
+                <div class="col-md-2">
+                    <input type="text" id="filterKeyword" class="form-control" placeholder="Tìm nhân viên, lý do...">
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100" id="applyFiltersBtn">
+                        <i class="fas fa-filter me-1"></i> Lọc
+                    </button>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-secondary w-100" id="clearFiltersBtn">
+                        <i class="fas fa-eraser me-1"></i> Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATISTICS -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="stat-card stat-pending">
+                <i class="fas fa-hourglass-half"></i>
+                <div>
+                    <h3 id="totalPending">0</h3>
+                    <p>Chờ duyệt</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card stat-approved">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3 id="totalApproved">0</h3>
+                    <p>Đã duyệt</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card stat-rejected">
+                <i class="fas fa-times-circle"></i>
+                <div>
+                    <h3 id="totalRejected">0</h3>
+                    <p>Từ chối</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <ul class="nav nav-tabs mb-4" id="requestTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">
+                <i class="fas fa-list me-1"></i> Tất cả
+                <span class="badge bg-primary ms-1" id="allCount">0</span>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="overtime-tab" data-bs-toggle="tab" data-bs-target="#overtime" type="button">
+                <i class="fas fa-clock me-1"></i> Tăng ca
+                <span class="badge bg-warning ms-1" id="overtimeCount">0</span>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="leave-tab" data-bs-toggle="tab" data-bs-target="#leave" type="button">
+                <i class="fas fa-umbrella-beach me-1"></i> Nghỉ phép
+                <span class="badge bg-info ms-1" id="leaveCount">0</span>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="late-tab" data-bs-toggle="tab" data-bs-target="#late" type="button">
+                <i class="fas fa-user-clock me-1"></i> Đi trễ
+                <span class="badge bg-danger ms-1" id="lateCount">0</span>
+            </button>
+        </li>
+    </ul>
+
+    <!-- TAB CONTENT -->
+    <div class="tab-content" id="requestTabContent">
+        <div class="tab-pane fade show active" id="all">
+            <div id="allList" class="row"></div>
+        </div>
+        <div class="tab-pane fade" id="overtime">
+            <div id="overtimeList" class="row"></div>
+        </div>
+        <div class="tab-pane fade" id="leave">
+            <div id="leaveList" class="row"></div>
+        </div>
+        <div class="tab-pane fade" id="late">
+            <div id="lateList" class="row"></div>
+        </div>
+    </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="modal fade" id="reviewModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalTitle">Duyệt đề xuất</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="reviewDetails"></div>
+                <div class="mb-3">
+                    <label class="form-label">Ghi chú (tùy chọn)</label>
+                    <textarea id="reviewNote" class="form-control" rows="3" placeholder="Nhập lý do hoặc ghi chú..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" onclick="reviewRequest('Reject')">
+                    <i class="fas fa-times me-1"></i> Từ chối
+                </button>
+                <button type="button" class="btn btn-success" onclick="reviewRequest('Approve')">
+                    <i class="fas fa-check me-1"></i> Phê duyệt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .request-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            background: white;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+            .request-card:hover {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transform: translateY(-2px);
+            }
+
+        .request-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .request-type-badge {
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .request-type-overtime {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .request-type-leave {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .request-type-late {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6c757d;
+        }
+
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+            .stat-card i {
+                font-size: 2.5rem;
+            }
+
+            .stat-card h3 {
+                margin: 0;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .stat-card p {
+                margin: 0;
+                color: #6c757d;
+            }
+
+        .stat-pending {
+            border-left: 4px solid #ffc107;
+        }
+
+            .stat-pending i {
+                color: #ffc107;
+            }
+
+        .stat-approved {
+            border-left: 4px solid #28a745;
+        }
+
+            .stat-approved i {
+                color: #28a745;
+            }
+
+        .stat-rejected {
+            border-left: 4px solid #dc3545;
+        }
+
+            .stat-rejected i {
+                color: #dc3545;
+            }
+
+        .quick-filter {
+            transition: all 0.2s;
+        }
+
+            .quick-filter.active {
+                font-weight: 600;
+            }
+
+        .detail-row {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+    </style>
+
+    <script>
+        let allRequests = { overtime: [], leave: [], late: [] };
+        let currentFilters = { type: '', status: '', from: '', to: '', keyword: '' };
+        let currentRequestId = null;
+        let currentRequestType = null;
+
+        function buildQuery() {
+            const q = new URLSearchParams();
+            if (currentFilters.type) q.append('type', currentFilters.type);
+            if (currentFilters.status) q.append('status', currentFilters.status);
+            if (currentFilters.from) q.append('from', currentFilters.from);
+            if (currentFilters.to) q.append('to', currentFilters.to);
+            if (currentFilters.keyword) q.append('keyword', currentFilters.keyword);
+            return q.toString() ? '?' + q.toString() : '';
+        }
+
+        async function loadPendingRequests() {
+            try {
+                const qs = buildQuery();
+                const response = await fetch('/Admin/GetPendingRequests' + qs);
+                const data = await response.json();
+
+                if (data.success) {
+                    allRequests.overtime = data.overtime || [];
+                    allRequests.leave = data.leave || [];
+                    allRequests.late = data.late || [];
+
+                    updateStatistics();
+                    renderRequests();
+                } else {
+                    Swal.fire('Lỗi', data.message || 'Lỗi khi tải dữ liệu', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire('Lỗi', 'Không thể tải danh sách đề xuất', 'error');
+            }
+        }
+
+        function updateStatistics() {
+            const all = [...allRequests.overtime, ...allRequests.leave, ...allRequests.late];
+
+            document.getElementById('totalPending').textContent = all.filter(r => r.status === 'Pending').length;
+            document.getElementById('totalApproved').textContent = all.filter(r => r.status === 'Approved').length;
+            document.getElementById('totalRejected').textContent = all.filter(r => r.status === 'Rejected').length;
+
+            document.getElementById('allCount').textContent = all.length;
+            document.getElementById('overtimeCount').textContent = allRequests.overtime.length;
+            document.getElementById('leaveCount').textContent = allRequests.leave.length;
+            document.getElementById('lateCount').textContent = allRequests.late.length;
+        }
+
+        function renderRequests() {
+            renderAllRequests();
+            renderOvertimeRequests();
+            renderLeaveRequests();
+            renderLateRequests();
+        }
+
+        function renderAllRequests() {
+            const container = document.getElementById('allList');
+            const all = [...allRequests.overtime, ...allRequests.leave, ...allRequests.late];
+
+            if (all.length === 0) {
+                container.innerHTML = '<div class="col-12"><div class="empty-state"><i class="fas fa-inbox fa-4x text-muted mb-3"></i><h5>Không có đề xuất nào phù hợp</h5></div></div>';
+                return;
+            }
+
+            let html = '';
+            all.forEach(req => {
+                const card = generateRequestCard(req);
+                html += `<div class="col-md-6 col-lg-4 mb-3">${card}</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderOvertimeRequests() {
+            const container = document.getElementById('overtimeList');
+            if (allRequests.overtime.length === 0) {
+                container.innerHTML = '<div class="col-12"><div class="empty-state"><i class="fas fa-clock fa-4x text-muted mb-3"></i><h5>Không có đề xuất tăng ca</h5></div></div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.overtime.forEach(req => {
+                const card = generateRequestCard(req);
+                html += `<div class="col-md-6 col-lg-4 mb-3">${card}</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderLeaveRequests() {
+            const container = document.getElementById('leaveList');
+            if (allRequests.leave.length === 0) {
+                container.innerHTML = '<div class="col-12"><div class="empty-state"><i class="fas fa-umbrella-beach fa-4x text-muted mb-3"></i><h5>Không có đề xuất nghỉ phép</h5></div></div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.leave.forEach(req => {
+                const card = generateRequestCard(req);
+                html += `<div class="col-md-6 col-lg-4 mb-3">${card}</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderLateRequests() {
+            const container = document.getElementById('lateList');
+            if (allRequests.late.length === 0) {
+                container.innerHTML = '<div class="col-12"><div class="empty-state"><i class="fas fa-user-clock fa-4x text-muted mb-3"></i><h5>Không có đề xuất đi trễ</h5></div></div>';
+                return;
+            }
+
+            let html = '';
+            allRequests.late.forEach(req => {
+                const card = generateRequestCard(req);
+                html += `<div class="col-md-6 col-lg-4 mb-3">${card}</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function generateRequestCard(req) {
+            let typeLabel = '';
+            let typeClass = '';
+            let requestId = '';
+            let details = '';
+            let requestType = '';
+
+            if (req.overtimeRequestId) {
+                typeLabel = 'Tăng ca';
+                typeClass = 'request-type-overtime';
+                requestId = req.overtimeRequestId;
+                requestType = 'Overtime';
+                details = `
+                    <p><strong>Ngày:</strong> ${formatDate(req.workDate)}</p>
+                    <p><strong>Giờ:</strong> ${req.overtimeHours}h</p>
+                    <p><strong>Lý do:</strong> ${req.reason || 'N/A'}</p>
+                `;
+            } else if (req.leaveRequestId) {
+                typeLabel = req.leaveType || 'Nghỉ phép';
+                typeClass = 'request-type-leave';
+                requestId = req.leaveRequestId;
+                requestType = 'Leave';
+                details = `
+                    <p><strong>Từ:</strong> ${formatDate(req.startDate)}</p>
+                    <p><strong>Đến:</strong> ${formatDate(req.endDate)}</p>
+                    <p><strong>Số ngày:</strong> ${req.totalDays}</p>
+                `;
+            } else if (req.lateRequestId) {
+                typeLabel = 'Đi trễ';
+                typeClass = 'request-type-late';
+                requestId = req.lateRequestId;
+                requestType = 'Late';
+                details = `
+                    <p><strong>Ngày:</strong> ${formatDate(req.requestDate)}</p>
+                    <p><strong>Dự kiến đến:</strong> ${req.expectedArrivalTime}</p>
+                    <p><strong>Lý do:</strong> ${req.reason || 'N/A'}</p>
+                `;
+            }
+
+            const statusClass = getStatusClass(req.status);
+            const statusText = getStatusText(req.status);
+
+            return `
+                <div class="request-card">
+                    <div class="request-card-header">
+                        <span class="request-type-badge ${typeClass}">${typeLabel}</span>
+                        <span class="badge ${statusClass}">${statusText}</span>
+                    </div>
+                    <div class="user-info">
+                        <div>
+                            <strong>${req.employeeName || 'N/A'}</strong>
+                            <br>
+                            <small class="text-muted">${req.employeeId || ''}</small>
+                        </div>
+                    </div>
+                    ${details}
+                    <small class="text-muted">Tạo: ${formatDateTime(req.createdAt)}</small>
+                    <div class="request-actions mt-3 gap-2">
+                        <button class="btn btn-sm btn-info" onclick="viewRequestDetail('${requestType}', ${requestId})">
+                            <i class="fas fa-eye me-1"></i> Chi tiết
+                        </button>
+                        <button class="btn btn-sm btn-primary" onclick="openReviewModal(${requestId}, '${requestType}')">
+                            <i class="fas fa-edit me-1"></i> Duyệt
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openReviewModal(requestId, requestType) {
+            currentRequestId = requestId;
+            currentRequestType = requestType;
+
+            document.getElementById('reviewModalTitle').textContent =
+                `Duyệt đề xuất ${requestType === 'Overtime' ? 'tăng ca' : requestType === 'Leave' ? 'nghỉ phép' : 'đi trễ'}`;
+            document.getElementById('reviewNote').value = '';
+
+            // Load details into modal
+            viewRequestDetail(requestType, requestId, true);
+
+            new bootstrap.Modal(document.getElementById('reviewModal')).show();
+        }
+
+        async function viewRequestDetail(type, id, inModal = false) {
+            try {
+                const response = await fetch(`/Admin/GetRequestDetail?type=${type}&id=${id}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    const req = data.request;
+                    let html = '<div class="request-detail-grid">';
+
+                    html += `<p><strong>Trạng thái:</strong> <span class="badge ${getStatusClass(req.status)}">${getStatusText(req.status)}</span></p>`;
+                    html += `<p><strong>Nhân viên:</strong> ${req.employeeName || 'N/A'}</p>`;
+
+                    if (type === 'Overtime') {
+                        html += `
+                            <div class="detail-row"><strong>Ngày:</strong> ${req.workDate || 'N/A'}</div>
+                            <div class="detail-row"><strong>Giờ check-out:</strong> ${req.actualCheckOutTime || 'N/A'}</div>
+                            <div class="detail-row"><strong>Số giờ:</strong> ${req.overtimeHours}h</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason || 'N/A'}</div>
+                        `;
+                    } else if (type === 'Leave') {
+                        html += `
+                            <div class="detail-row"><strong>Loại:</strong> ${req.leaveType}</div>
+                            <div class="detail-row"><strong>Từ:</strong> ${req.startDate || 'N/A'}</div>
+                            <div class="detail-row"><strong>Đến:</strong> ${req.endDate || 'N/A'}</div>
+                            <div class="detail-row"><strong>Số ngày:</strong> ${req.totalDays}</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason || 'N/A'}</div>
+                        `;
+                    } else if (type === 'Late') {
+                        html += `
+                            <div class="detail-row"><strong>Ngày:</strong> ${req.requestDate || 'N/A'}</div>
+                            <div class="detail-row"><strong>Dự kiến đến:</strong> ${req.expectedArrivalTime}</div>
+                            <div class="detail-row"><strong>Lý do:</strong> ${req.reason || 'N/A'}</div>
+                        `;
+                    }
+
+                    if (req.reviewedAt && req.reviewedAt !== '') {
+                        html += `<hr><p><strong>Người duyệt:</strong> ${req.reviewedBy || 'N/A'}</p>`;
+                        html += `<p><strong>Thời gian duyệt:</strong> ${req.reviewedAt}</p>`;
+                        if (req.reviewNote) html += `<p><strong>Ghi chú:</strong> ${req.reviewNote}</p>`;
+                    }
+
+                    html += `<p class="text-muted small"><strong>Tạo:</strong> ${req.createdAt}</p>`;
+                    html += '</div>';
+
+                    if (inModal) {
+                        document.getElementById('reviewDetails').innerHTML = html;
+                    } else {
+                        Swal.fire({
+                            title: `Chi tiết ${type === 'Overtime' ? 'Tăng ca' : type === 'Leave' ? 'Nghỉ phép' : 'Đi trễ'}`,
+                            html: html,
+                            width: 700
+                        });
+                    }
+                } else {
+                    if (!inModal) {
+                        Swal.fire('Lỗi', data.message || 'Không tìm thấy request', 'error');
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                if (!inModal) {
+                    Swal.fire('Lỗi', 'Không thể tải chi tiết: ' + error.message, 'error');
+                }
+            }
+        }
+
+        async function reviewRequest(action) {
+            const note = document.getElementById('reviewNote').value;
+
+            Swal.fire({
+                title: 'Đang xử lý...',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
+
+            try {
+                const response = await fetch('/Admin/ReviewRequest', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        RequestId: currentRequestId,
+                        RequestType: currentRequestType,
+                        Action: action,
+                        Note: note
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thành công!',
+                        text: data.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        bootstrap.Modal.getInstance(document.getElementById('reviewModal')).hide();
+                        loadPendingRequests();
+                    });
+                } else {
+                    Swal.fire('Lỗi', data.message, 'error');
+                }
+            } catch (error) {
+                Swal.fire('Lỗi', 'Có lỗi xảy ra: ' + error.message, 'error');
+            }
+        }
+
+        function refreshData() {
+            loadPendingRequests();
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'Pending': return 'bg-warning';
+                case 'Approved': return 'bg-success';
+                case 'Rejected': return 'bg-danger';
+                default: return 'bg-secondary';
+            }
+        }
+
+        function getStatusText(status) {
+            switch(status) {
+                case 'Pending': return 'Chờ duyệt';
+                case 'Approved': return 'Đã duyệt';
+                case 'Rejected': return 'Từ chối';
+                default: return status;
+            }
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'N/A';
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('vi-VN');
+        }
+
+        function formatDateTime(dateStr) {
+            if (!dateStr) return 'N/A';
+            const d = new Date(dateStr);
+            return d.toLocaleString('vi-VN');
+        }
+
+        // Filter handlers
+        document.getElementById('applyFiltersBtn').addEventListener('click', () => {
+            currentFilters.type = document.getElementById('filterType').value;
+            currentFilters.status = document.getElementById('filterStatus').value;
+            currentFilters.from = document.getElementById('filterFrom').value;
+            currentFilters.to = document.getElementById('filterTo').value;
+            currentFilters.keyword = document.getElementById('filterKeyword').value.trim();
+            loadPendingRequests();
+        });
+
+        document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+            document.getElementById('filterType').value = '';
+            document.getElementById('filterStatus').value = '';
+            document.getElementById('filterFrom').value = '';
+            document.getElementById('filterTo').value = '';
+            document.getElementById('filterKeyword').value = '';
+            currentFilters = { type: '', status: '', from: '', to: '', keyword: '' };
+            document.querySelectorAll('.quick-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('.quick-filter[data-status=""]').classList.add('active');
+            loadPendingRequests();
+        });
+
+        document.querySelectorAll('.quick-filter').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.quick-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilters.status = btn.dataset.status || '';
+                currentFilters.type = '';
+                currentFilters.from = '';
+                currentFilters.to = '';
+                currentFilters.keyword = '';
+                document.getElementById('filterStatus').value = currentFilters.status;
+                document.getElementById('filterType').value = '';
+                document.getElementById('filterFrom').value = '';
+                document.getElementById('filterTo').value = '';
+                document.getElementById('filterKeyword').value = '';
+                loadPendingRequests();
+            });
+        });
+
+        document.getElementById('filterKeyword').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('applyFiltersBtn').click();
+            }
+        });
+
+        // Init on page load
+        window.onload = function() {
+            loadPendingRequests();
+        };
+    </script>
+}

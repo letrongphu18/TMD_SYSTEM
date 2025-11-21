@@ -104,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFzc3dvcmRSZXNldEhpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/PendingRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGVuZGluZ1JlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/ResetUserPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXRVc2VyUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -114,6 +118,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/_LateRequestCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0xhdGVSZXF1ZXN0Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/_LeaveRequestCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0xlYXZlUmVxdWVzdENhcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Admin/_OvertimeRequestCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX092ZXJ0aW1lUmVxdWVzdENhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Home/Index.cshtml]
@@ -162,6 +178,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Staff/MyLoginHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcTXlMb2dpbkhpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Staff/MyRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcTXlSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AIHUB TASK/TMD_SYSTEM/TMD_SYSTEM/TMD/TMD/Views/Staff/MyTasks.cshtml]

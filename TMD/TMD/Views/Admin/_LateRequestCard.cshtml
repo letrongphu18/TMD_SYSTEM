@@ -1,0 +1,139 @@
+﻿@model TMD.Models.LateRequest
+<link href="~/css/admin-request.css" rel="stylesheet" />
+<div class="tm-request-card tm-request-late">
+    <div class="tm-request-header">
+        <div class="tm-request-type">
+            <i class="fas fa-user-clock"></i>
+            <span>Đi trễ</span>
+        </div>
+        <span class="tm-status-badge tm-status-@(Model.Status?.ToLower() ?? "unknown")">
+            @if (Model.Status == "Pending")
+            {
+                <i class="fas fa-clock me-1"></i>
+
+                @:Chờ duyệt
+            }
+            else if (Model.Status == "Approved")
+            {
+                <i class="fas fa-check me-1"></i>
+
+                @:Đã duyệt
+            }
+            else if (Model.Status == "Rejected")
+            {
+                <i class="fas fa-times me-1"></i>
+
+                @:Từ chối
+            }
+            else
+            {
+                @Model.Status
+            }
+        </span>
+    </div>
+
+    <div class="tm-request-user">
+        <img src="@(Model?.User?.Avatar ?? "/images/default-avatar.png")"
+             alt="Avatar"
+             class="tm-request-avatar" />
+        <div class="tm-request-user-info">
+            <strong>@Model?.User?.FullName</strong>
+            <small class="text-muted">@Model?.User?.Email</small>
+        </div>
+    </div>
+
+    <div class="tm-request-body">
+        <div class="tm-request-info-row">
+            <div class="tm-request-info-item">
+                <i class="fas fa-calendar text-danger"></i>
+                <div>
+                    <small class="text-muted">Ngày</small>
+                    <strong>@Model.RequestDate.ToString("dd/MM/yyyy")</strong>
+                </div>
+            </div>
+            <div class="tm-request-info-item">
+                <i class="fas fa-clock text-danger"></i>
+                <div>
+                    <small class="text-muted">Dự kiến đến</small>
+                    <strong>@Model.ExpectedArrivalTime.ToString("HH:mm")</strong>
+                </div>
+            </div>
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Reason))
+        {
+            <div class="tm-request-reason">
+                <i class="fas fa-comment-dots"></i>
+                <p>@Model.Reason</p>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ProofDocument))
+        {
+            <div class="tm-request-document">
+                <i class="fas fa-file-alt"></i>
+                <a href="@Model.ProofDocument" target="_blank">Xem tài liệu đính kèm</a>
+            </div>
+        }
+
+        <div class="tm-request-meta">
+            <i class="far fa-clock"></i>
+            <small>
+                Tạo: @(Model.CreatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "N/A")
+            </small>
+        </div>
+    </div>
+
+    <div class="tm-request-actions">
+        @if (Model.Status == "Pending")
+        {
+            <button type="button" class="tm-btn-action tm-btn-approve"
+                    onclick="openReviewModal(@Model.LateRequestId, 'Late', '@Model.User?.FullName', 'Đi trễ', '@Model.RequestDate.ToString("dd/MM/yyyy")', '@Model.ExpectedArrivalTime.ToString("HH:mm")', '', '@(Model.Reason?.Replace("'", "\\'").Replace("\n", " ") ?? "")')">
+                <i class="fas fa-check"></i>
+                <span>Duyệt</span>
+            </button>
+            <button type="button" class="tm-btn-action tm-btn-reject"
+                    onclick="openRejectModal(@Model.LateRequestId, 'Late')">
+                <i class="fas fa-times"></i>
+                <span>Từ chối</span>
+            </button>
+        }
+        else
+        {
+            <button type="button" class="tm-btn-action tm-btn-view"
+                    onclick="viewRequestDetail(@Model.LateRequestId, 'Late')">
+                <i class="fas fa-eye"></i>
+                <span>Chi tiết</span>
+            </button>
+        }
+    </div>
+
+    @if (Model.Status != "Pending" && Model.ReviewedAt.HasValue)
+    {
+        <div class="tm-request-review-info">
+            <i class="fas fa-user-check"></i>
+            <small>
+                @if (Model.ReviewedByNavigation != null)
+                {
+                    <text>Duyệt bởi: <strong>@Model.ReviewedByNavigation.FullName</strong></text>
+                }
+                else if (Model.ReviewedBy.HasValue)
+                {
+                    <text>Duyệt bởi Admin (ID: @Model.ReviewedBy.Value)</text>
+                }
+                else
+                {
+                    <text>Đã duyệt</text>
+                }
+                <text> lúc @Model.ReviewedAt.Value.ToString("dd/MM/yyyy HH:mm")</text>
+            </small>
+            @if (!string.IsNullOrWhiteSpace(Model.ReviewNote))
+            {
+                <div class="tm-review-note">
+                    <i class="fas fa-sticky-note"></i>
+                    <span>@Model.ReviewNote</span>
+                </div>
+            }
+        </div>
+    }
+</div><script src="~/js/admin-request.js"></script>

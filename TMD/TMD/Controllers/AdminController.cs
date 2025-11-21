@@ -169,7 +169,6 @@ namespace TMDSystem.Controllers
 		// ============================================
 		// USER MANAGEMENT
 		// ============================================
-
 		public async Task<IActionResult> UserList()
 		{
 			if (!IsAdmin())
@@ -189,7 +188,6 @@ namespace TMDSystem.Controllers
 		{
 			if (!IsAdmin())
 			{
-				// ✅ LOG: Unauthorized
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"UPDATE",
@@ -204,7 +202,6 @@ namespace TMDSystem.Controllers
 			var user = await _context.Users.FindAsync(request.UserId);
 			if (user == null)
 			{
-				// ✅ LOG: Not found
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"UPDATE",
@@ -242,7 +239,6 @@ namespace TMDSystem.Controllers
 			}
 			catch (Exception ex)
 			{
-				// ✅ LOG: Exception
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"UPDATE",
@@ -258,7 +254,6 @@ namespace TMDSystem.Controllers
 		// ============================================
 		// RESET PASSWORD
 		// ============================================
-
 		[HttpGet]
 		public async Task<IActionResult> ResetUserPassword(int id)
 		{
@@ -278,7 +273,6 @@ namespace TMDSystem.Controllers
 		{
 			if (!IsAdmin())
 			{
-				// ✅ LOG: Unauthorized
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"PASSWORD_RESET",
@@ -292,7 +286,6 @@ namespace TMDSystem.Controllers
 
 			if (string.IsNullOrEmpty(request.NewPassword) || request.NewPassword.Length < 6)
 			{
-				// ✅ LOG: Invalid password
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"PASSWORD_RESET",
@@ -306,7 +299,6 @@ namespace TMDSystem.Controllers
 
 			if (string.IsNullOrEmpty(request.Reason))
 			{
-				// ✅ LOG: Missing reason
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"PASSWORD_RESET",
@@ -321,7 +313,6 @@ namespace TMDSystem.Controllers
 			var user = await _context.Users.FindAsync(request.UserId);
 			if (user == null)
 			{
-				// ✅ LOG: User not found
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"PASSWORD_RESET",
@@ -372,7 +363,6 @@ namespace TMDSystem.Controllers
 			}
 			catch (Exception ex)
 			{
-				// ✅ LOG: Exception
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"PASSWORD_RESET",
@@ -384,155 +374,284 @@ namespace TMDSystem.Controllers
 				return Json(new { success = false, message = $"Có lỗi xảy ra: {ex.Message}" });
 			}
 		}
-		[HttpGet]
-		public async Task<IActionResult> GetUserTasks(int userId)
-		{
-			if (!IsAdmin())
-				return Json(new { success = false, message = "Không có quyền truy cập!" });
 
+		[HttpGet]
+		public async Task<IActionResult> GetAllUsers()
+		{
 			try
 			{
-				// ✅ LOG: View user tasks
-				await _auditHelper.LogViewAsync(
-					HttpContext.Session.GetInt32("UserId").Value,
-					"UserTask",
-					userId,
-					$"Xem danh sách task của user ID: {userId}"
-				);
-
-				var user = await _context.Users
+				var users = await _context.Users
 					.Include(u => u.Department)
-					.FirstOrDefaultAsync(u => u.UserId == userId);
-
-				if (user == null)
-					return Json(new { success = false, message = "Không tìm thấy người dùng!" });
-
-				var userTasks = await _context.UserTasks
-					.Include(ut => ut.Task)
-					.Where(ut => ut.UserId == userId && ut.Task.IsActive == true)
+					.Where(u => u.IsActive == true)
+					.OrderBy(u => u.FullName)
+					.Select(u => new
+					{
+						userId = u.UserId,
+						fullName = u.FullName,
+						email = u.Email,
+						departmentName = u.Department != null ? u.Department.DepartmentName : "N/A"
+					})
 					.ToListAsync();
 
-				var tasks = userTasks.Select(ut => new
-				{
-					taskId = ut.TaskId,
-					taskName = ut.Task.TaskName,
-					description = ut.Task.Description ?? "",
-					platform = ut.Task.Platform ?? "",
-					targetPerWeek = ut.Task.TargetPerWeek ?? 0,
-					completedThisWeek = ut.CompletedThisWeek ?? 0,
-					reportLink = ut.ReportLink ?? "",
-					startDate = ut.Task.CreatedAt?.ToString("yyyy-MM-dd") ?? DateTime.Now.ToString("yyyy-MM-dd"),
-					deadline = ut.Task.Deadline?.ToString("yyyy-MM-dd") ?? DateTime.Now.AddDays(30).ToString("yyyy-MM-dd"),
-					priority = ut.Task.Priority ?? "Medium",
-					status = (ut.CompletedThisWeek ?? 0) >= (ut.Task.TargetPerWeek ?? 0) ? "Completed" : "InProgress",
-					isOverdue = ut.Task.Deadline.HasValue && ut.Task.Deadline.Value < DateTime.Now
-				}).ToList();
-
-				return Json(new
-				{
-					success = true,
-					tasks = tasks,
-					user = new
-					{
-						userId = user.UserId,
-						fullName = user.FullName,
-						username = user.Username,
-						departmentName = user.Department?.DepartmentName ?? "N/A"
-					}
-				});
+				return Json(new { success = true, users = users });
 			}
 			catch (Exception ex)
 			{
-				// ✅ LOG: Exception
-				await _auditHelper.LogFailedAttemptAsync(
-					HttpContext.Session.GetInt32("UserId"),
-					"VIEW",
-					"UserTask",
-					$"Exception: {ex.Message}",
-					new { UserId = userId, Error = ex.ToString() }
-				);
-
-				return Json(new { success = false, message = $"Có lỗi xảy ra: {ex.Message}" });
+				return Json(new { success = false, message = ex.Message });
 			}
 		}
 
 		// ============================================
-		// GET USER DETAILS
+		// PASSWORD RESET HISTORY
 		// ============================================
-
-		[HttpGet]
-		public async Task<IActionResult> GetUserDetails(int id)
+		public async Task<IActionResult> PasswordResetHistory()
 		{
 			if (!IsAdmin())
-				return Json(new { success = false, message = "Không có quyền truy cập!" });
+				return RedirectToAction("Login", "Account");
 
-			// ✅ LOG: View user details
 			await _auditHelper.LogViewAsync(
 				HttpContext.Session.GetInt32("UserId").Value,
-				"User",
-				id,
-				"Xem chi tiết thông tin người dùng"
+				"PasswordResetHistory",
+				0,
+				"Xem lịch sử reset mật khẩu"
 			);
 
-			var user = await _context.Users
-				.Include(u => u.Role)
-				.Include(u => u.Department)
-				.Include(u => u.UserTasks)
-					.ThenInclude(ut => ut.Task)
-				.FirstOrDefaultAsync(u => u.UserId == id);
-
-			if (user == null)
-				return Json(new { success = false, message = "Không tìm thấy người dùng!" });
-
-			var totalLogins = await _context.LoginHistories
-				.CountAsync(l => l.UserId == id && l.IsSuccess == true);
-
-			var activeTasks = user.UserTasks?.Count(ut => ut.Task.IsActive == true) ?? 0;
-			var completedTasks = user.UserTasks?.Sum(ut => ut.CompletedThisWeek) ?? 0;
-
-			var recentActivities = await _context.AuditLogs
-				.Where(a => a.UserId == id)
-				.OrderByDescending(a => a.Timestamp)
-				.Take(5)
-				.Select(a => new
-				{
-					action = a.Action,
-					timestamp = a.Timestamp,
-					description = a.Description
-				})
+			var history = await _context.PasswordResetHistories
+				.Include(p => p.User)
+				.Include(p => p.ResetByUser)
+				.OrderByDescending(p => p.ResetTime)
 				.ToListAsync();
 
-			var result = new
-			{
-				success = true,
-				user = new
-				{
-					user.UserId,
-					user.Username,
-					user.FullName,
-					user.Email,
-					user.PhoneNumber,
-					user.Avatar,
-					departmentName = user.Department?.DepartmentName,
-					roleName = user.Role?.RoleName,
-					user.IsActive,
-					user.CreatedAt,
-					user.UpdatedAt,
-					user.LastLoginAt,
-					totalLogins = totalLogins,
-					activeTasks = activeTasks,
-					completedTasks = completedTasks,
-					recentActivities = recentActivities
-				}
-			};
+			return View(history);
+		}
 
-			return Json(result);
+		// ============================================
+		// ATTENDANCE MANAGEMENT
+		// ============================================
+		public async Task<IActionResult> AttendanceList(DateTime? date)
+		{
+			if (!IsAdmin())
+				return RedirectToAction("Login", "Account");
+
+			var selectedDate = date ?? DateTime.Today;
+
+			await _auditHelper.LogViewAsync(
+				HttpContext.Session.GetInt32("UserId").Value,
+				"Attendance",
+				0,
+				$"Xem danh sách chấm công ngày {selectedDate:dd/MM/yyyy}"
+			);
+
+			var attendances = await _context.Attendances
+				.Include(a => a.User)
+					.ThenInclude(u => u.Department)
+				.Where(a => a.WorkDate == DateOnly.FromDateTime(selectedDate))
+				.OrderByDescending(a => a.CheckInTime)
+				.ToListAsync();
+
+			ViewBag.SelectedDate = selectedDate;
+			return View(attendances);
+		}
+
+		public async Task<IActionResult> AttendanceHistory(int? userId, DateTime? fromDate, DateTime? toDate, int? departmentId)
+		{
+			if (!IsAdmin())
+				return RedirectToAction("Login", "Account");
+
+			var from = fromDate ?? DateTime.Today.AddDays(-30);
+			var to = toDate ?? DateTime.Today;
+
+			await _auditHelper.LogDetailedAsync(
+				HttpContext.Session.GetInt32("UserId").Value,
+				"VIEW",
+				"Attendance",
+				null,
+				null,
+				null,
+				"Xem lịch sử chấm công tổng hợp",
+				new Dictionary<string, object>
+				{
+					{ "FilterUserId", userId ?? 0 },
+					{ "FilterDepartment", departmentId ?? 0 },
+					{ "FromDate", from.ToString("yyyy-MM-dd") },
+					{ "ToDate", to.ToString("yyyy-MM-dd") }
+				}
+			);
+
+			var query = _context.Attendances
+				.Include(a => a.User)
+					.ThenInclude(u => u.Department)
+				.AsQueryable();
+
+			if (userId.HasValue && userId.Value > 0)
+			{
+				query = query.Where(a => a.UserId == userId.Value);
+			}
+
+			if (departmentId.HasValue && departmentId.Value > 0)
+			{
+				query = query.Where(a => a.User.DepartmentId == departmentId.Value);
+			}
+
+			query = query.Where(a =>
+				a.WorkDate >= DateOnly.FromDateTime(from) &&
+				a.WorkDate <= DateOnly.FromDateTime(to)
+			);
+
+			var attendances = await query
+				.OrderByDescending(a => a.WorkDate)
+				.ThenByDescending(a => a.CheckInTime)
+				.ToListAsync();
+
+			ViewBag.TotalRecords = attendances.Count;
+			ViewBag.TotalCheckIns = attendances.Count(a => a.CheckInTime != null);
+			ViewBag.TotalCheckOuts = attendances.Count(a => a.CheckOutTime != null);
+			ViewBag.CompletedDays = attendances.Count(a => a.CheckInTime != null && a.CheckOutTime != null);
+			ViewBag.OnTimeCount = attendances.Count(a => a.IsLate == false);
+			ViewBag.LateCount = attendances.Count(a => a.IsLate == true);
+			ViewBag.TotalWorkHours = attendances.Sum(a => a.TotalHours ?? 0);
+			ViewBag.WithinGeofence = attendances.Count(a => a.IsWithinGeofence == true);
+			ViewBag.OutsideGeofence = attendances.Count(a => a.IsWithinGeofence == false);
+
+			ViewBag.Users = await _context.Users
+				.Where(u => u.IsActive == true)
+				.OrderBy(u => u.FullName)
+				.ToListAsync();
+
+			ViewBag.Departments = await _context.Departments
+				.OrderBy(d => d.DepartmentName)
+				.ToListAsync();
+
+			ViewBag.SelectedUserId = userId;
+			ViewBag.SelectedDepartmentId = departmentId;
+			ViewBag.FromDate = from;
+			ViewBag.ToDate = to;
+
+			return View(attendances);
+		}
+
+		// ============================================
+		// AUDIT LOGS (FIXED: no StringComparison)
+		// ============================================
+		public async Task<IActionResult> AuditLogs(string? action, DateTime? fromDate, DateTime? toDate)
+		{
+			if (!IsAdmin())
+				return RedirectToAction("Login", "Account");
+
+			await _auditHelper.LogViewAsync(
+				HttpContext.Session.GetInt32("UserId").Value,
+				"AuditLog",
+				0,
+				$"Xem nhật ký hoạt động - Filter: {action ?? "All"}"
+			);
+
+			var query = _context.AuditLogs
+				.Include(a => a.User)
+				.AsQueryable();
+
+			// Case-insensitive filter without StringComparison (EF-friendly)
+			if (!string.IsNullOrWhiteSpace(action))
+			{
+				var act = action.Trim().ToLower();
+				query = query.Where(a => a.Action != null && a.Action.ToLower() == act);
+			}
+
+			// Normalize date range (swap if inverted)
+			if (fromDate.HasValue && toDate.HasValue && fromDate > toDate)
+			{
+				var t = fromDate; fromDate = toDate; toDate = t;
+			}
+
+			// Inclusive end date (to midnight next day)
+			if (fromDate.HasValue)
+				query = query.Where(a => a.Timestamp.HasValue && a.Timestamp.Value >= fromDate.Value);
+
+			if (toDate.HasValue)
+				query = query.Where(a => a.Timestamp.HasValue && a.Timestamp.Value < toDate.Value.Date.AddDays(1));
+
+			var logs = await query
+				.OrderByDescending(a => a.Timestamp)
+				.Take(1000)
+				.ToListAsync();
+
+			// Fallback to recent when filters yield none
+			if (!logs.Any())
+			{
+				logs = await _context.AuditLogs
+					.Include(a => a.User)
+					.OrderByDescending(a => a.Timestamp)
+					.Take(20)
+					.ToListAsync();
+
+				TempData["Info"] = "Không có log theo bộ lọc. Đang hiển thị gần đây.";
+			}
+
+			ViewBag.Actions = await _context.AuditLogs
+				.Where(a => a.Action != null)
+				.Select(a => a.Action)
+				.Distinct()
+				.OrderBy(a => a)
+				.ToListAsync();
+
+			ViewBag.SelectedAction = action;
+			ViewBag.FromDate = fromDate;
+			ViewBag.ToDate = toDate;
+
+			return View(logs);
+		}
+
+		// ============================================
+		// LOGIN HISTORY
+		// ============================================
+		public async Task<IActionResult> LoginHistory(DateTime? fromDate, DateTime? toDate, bool? isSuccess)
+		{
+			if (!IsAdmin())
+				return RedirectToAction("Login", "Account");
+
+			await _auditHelper.LogDetailedAsync(
+				HttpContext.Session.GetInt32("UserId").Value,
+				"VIEW",
+				"LoginHistory",
+				null,
+				null,
+				null,
+				"Xem lịch sử đăng nhập hệ thống",
+				new Dictionary<string, object>
+				{
+					{ "FromDate", fromDate?.ToString("yyyy-MM-dd") ?? "All" },
+					{ "ToDate", toDate?.ToString("yyyy-MM-dd") ?? "All" },
+					{ "FilterSuccess", isSuccess?.ToString() ?? "All" }
+				}
+			);
+
+			var query = _context.LoginHistories
+				.Include(l => l.User)
+				.AsQueryable();
+
+			if (fromDate.HasValue)
+				query = query.Where(l => l.LoginTime.HasValue && l.LoginTime.Value >= fromDate.Value);
+
+			if (toDate.HasValue)
+				query = query.Where(l => l.LoginTime.HasValue && l.LoginTime.Value <= toDate.Value.AddDays(1));
+
+			if (isSuccess.HasValue)
+				query = query.Where(l => l.IsSuccess == isSuccess.Value);
+
+			var history = await query
+				.OrderByDescending(l => l.LoginTime)
+				.Take(1000)
+				.ToListAsync();
+
+			ViewBag.FromDate = fromDate;
+			ViewBag.ToDate = toDate;
+			ViewBag.IsSuccess = isSuccess;
+
+			return View(history);
 		}
 
 		// ============================================
 		// DEPARTMENT MANAGEMENT
 		// ============================================
-
 		public async Task<IActionResult> DepartmentList()
 		{
 			if (!IsAdmin())
@@ -552,7 +671,6 @@ namespace TMDSystem.Controllers
 			if (!IsAdmin())
 				return RedirectToAction("Login", "Account");
 
-			// ✅ LOG: View department details
 			await _auditHelper.LogViewAsync(
 				HttpContext.Session.GetInt32("UserId").Value,
 				"Department",
@@ -576,7 +694,6 @@ namespace TMDSystem.Controllers
 		{
 			if (!IsAdmin())
 			{
-				// ✅ LOG: Unauthorized
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"CREATE",
@@ -590,7 +707,6 @@ namespace TMDSystem.Controllers
 
 			if (string.IsNullOrWhiteSpace(request.DepartmentName))
 			{
-				// ✅ LOG: Invalid data
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"CREATE",
@@ -607,7 +723,6 @@ namespace TMDSystem.Controllers
 
 			if (existingDept != null)
 			{
-				// ✅ LOG: Duplicate
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"CREATE",
@@ -654,7 +769,6 @@ namespace TMDSystem.Controllers
 			}
 			catch (Exception ex)
 			{
-				// ✅ LOG: Exception
 				await _auditHelper.LogFailedAttemptAsync(
 					HttpContext.Session.GetInt32("UserId"),
 					"CREATE",
@@ -665,9 +779,7 @@ namespace TMDSystem.Controllers
 
 				return Json(new { success = false, message = $"Có lỗi xảy ra: {ex.Message}" });
 			}
-		}// ============================================
-		 // DEPARTMENT MANAGEMENT - CONTINUED
-		 // ============================================
+		}
 
 		[HttpPost]
 		public async Task<IActionResult> UpdateDepartment([FromBody] UpdateDepartmentRequest request)
@@ -974,7 +1086,6 @@ namespace TMDSystem.Controllers
 			if (!IsAdmin())
 				return Json(new { success = false, message = "Không có quyền truy cập!" });
 
-			// ✅ LOG: View department details
 			await _auditHelper.LogViewAsync(
 				HttpContext.Session.GetInt32("UserId").Value,
 				"Department",
@@ -1023,7 +1134,6 @@ namespace TMDSystem.Controllers
 		// ============================================
 		// TASK MANAGEMENT - CRUD
 		// ============================================
-
 		public async Task<IActionResult> TaskList()
 		{
 			if (!IsAdmin())
@@ -1503,7 +1613,6 @@ namespace TMDSystem.Controllers
 			if (!IsAdmin())
 				return Json(new { success = false, message = "Không có quyền truy cập!" });
 
-			// ✅ LOG: View task details
 			await _auditHelper.LogViewAsync(
 				HttpContext.Session.GetInt32("UserId").Value,
 				"Task",
@@ -1549,268 +1658,506 @@ namespace TMDSystem.Controllers
 
 			return Json(result);
 		}
+		// Thêm method này vào AdminController.cs
+		// Thay thế cả 2 method này
 
-		// ============================================
-		// ATTENDANCE MANAGEMENT
-		// ============================================
-
-		public async Task<IActionResult> AttendanceList(DateTime? date)
-		{
-			if (!IsAdmin())
-				return RedirectToAction("Login", "Account");
-
-			var selectedDate = date ?? DateTime.Today;
-
-			// ✅ LOG: View attendance list
-			await _auditHelper.LogViewAsync(
-				HttpContext.Session.GetInt32("UserId").Value,
-				"Attendance",
-				0,
-				$"Xem danh sách chấm công ngày {selectedDate:dd/MM/yyyy}"
-			);
-
-			var attendances = await _context.Attendances
-				.Include(a => a.User)
-					.ThenInclude(u => u.Department)
-				.Where(a => a.WorkDate == DateOnly.FromDateTime(selectedDate))
-				.OrderByDescending(a => a.CheckInTime)
-				.ToListAsync();
-
-			ViewBag.SelectedDate = selectedDate;
-			return View(attendances);
-		}
-
-		public async Task<IActionResult> AttendanceHistory(int? userId, DateTime? fromDate, DateTime? toDate, int? departmentId)
-		{
-			if (!IsAdmin())
-				return RedirectToAction("Login", "Account");
-
-			var from = fromDate ?? DateTime.Today.AddDays(-30);
-			var to = toDate ?? DateTime.Today;
-
-			// ✅ LOG: View attendance history
-			await _auditHelper.LogDetailedAsync(
-				HttpContext.Session.GetInt32("UserId").Value,
-				"VIEW",
-				"Attendance",
-				null,
-				null,
-				null,
-				"Xem lịch sử chấm công tổng hợp",
-				new Dictionary<string, object>
-				{
-					{ "FilterUserId", userId ?? 0 },
-					{ "FilterDepartment", departmentId ?? 0 },
-					{ "FromDate", from.ToString("yyyy-MM-dd") },
-					{ "ToDate", to.ToString("yyyy-MM-dd") }
-				}
-			);
-
-			var query = _context.Attendances
-				.Include(a => a.User)
-					.ThenInclude(u => u.Department)
-				.AsQueryable();
-
-			if (userId.HasValue && userId.Value > 0)
-			{
-				query = query.Where(a => a.UserId == userId.Value);
-			}
-
-			if (departmentId.HasValue && departmentId.Value > 0)
-			{
-				query = query.Where(a => a.User.DepartmentId == departmentId.Value);
-			}
-
-			query = query.Where(a =>
-				a.WorkDate >= DateOnly.FromDateTime(from) &&
-				a.WorkDate <= DateOnly.FromDateTime(to)
-			);
-
-			var attendances = await query
-				.OrderByDescending(a => a.WorkDate)
-				.ThenByDescending(a => a.CheckInTime)
-				.ToListAsync();
-
-			ViewBag.TotalRecords = attendances.Count;
-			ViewBag.TotalCheckIns = attendances.Count(a => a.CheckInTime != null);
-			ViewBag.TotalCheckOuts = attendances.Count(a => a.CheckOutTime != null);
-			ViewBag.CompletedDays = attendances.Count(a => a.CheckInTime != null && a.CheckOutTime != null);
-			ViewBag.OnTimeCount = attendances.Count(a => a.IsLate == false);
-			ViewBag.LateCount = attendances.Count(a => a.IsLate == true);
-			ViewBag.TotalWorkHours = attendances.Sum(a => a.TotalHours ?? 0);
-			ViewBag.WithinGeofence = attendances.Count(a => a.IsWithinGeofence == true);
-			ViewBag.OutsideGeofence = attendances.Count(a => a.IsWithinGeofence == false);
-
-			ViewBag.Users = await _context.Users
-				.Where(u => u.IsActive == true)
-				.OrderBy(u => u.FullName)
-				.ToListAsync();
-
-			ViewBag.Departments = await _context.Departments
-				.OrderBy(d => d.DepartmentName)
-				.ToListAsync();
-
-			ViewBag.SelectedUserId = userId;
-			ViewBag.SelectedDepartmentId = departmentId;
-			ViewBag.FromDate = from;
-			ViewBag.ToDate = to;
-
-			return View(attendances);
-		}
-
-		// ============================================
-		// AUDIT LOGS
-		// ============================================
-
-		public async Task<IActionResult> AuditLogs(string? action, DateTime? fromDate, DateTime? toDate)
-		{
-			if (!IsAdmin())
-				return RedirectToAction("Login", "Account");
-
-			// ✅ LOG: View audit logs (meta!)
-			await _auditHelper.LogViewAsync(
-				HttpContext.Session.GetInt32("UserId").Value,
-				"AuditLog",
-				0,
-				$"Xem nhật ký hoạt động - Filter: {action ?? "All"}"
-			);
-
-			var query = _context.AuditLogs
-				.Include(a => a.User)
-				.AsQueryable();
-
-			if (!string.IsNullOrEmpty(action))
-				query = query.Where(a => a.Action == action);
-
-			if (fromDate.HasValue)
-				query = query.Where(a => a.Timestamp.HasValue && a.Timestamp.Value >= fromDate.Value);
-
-			if (toDate.HasValue)
-				query = query.Where(a => a.Timestamp.HasValue && a.Timestamp.Value <= toDate.Value.AddDays(1));
-
-			var logs = await query
-				.OrderByDescending(a => a.Timestamp)
-				.Take(1000)
-				.ToListAsync();
-
-			ViewBag.Actions = await _context.AuditLogs
-				.Select(a => a.Action)
-				.Distinct()
-				.ToListAsync();
-
-			ViewBag.SelectedAction = action;
-			ViewBag.FromDate = fromDate;
-			ViewBag.ToDate = toDate;
-
-			return View(logs);
-		}
-
-		// ============================================
-		// LOGIN HISTORY
-		// ============================================
-
-		public async Task<IActionResult> LoginHistory(DateTime? fromDate, DateTime? toDate, bool? isSuccess)
-		{
-			if (!IsAdmin())
-				return RedirectToAction("Login", "Account");
-
-			// ✅ LOG: View login history
-			await _auditHelper.LogDetailedAsync(
-				HttpContext.Session.GetInt32("UserId").Value,
-				"VIEW",
-				"LoginHistory",
-				null,
-				null,
-				null,
-				"Xem lịch sử đăng nhập hệ thống",
-				new Dictionary<string, object>
-				{
-					{ "FromDate", fromDate?.ToString("yyyy-MM-dd") ?? "All" },
-					{ "ToDate", toDate?.ToString("yyyy-MM-dd") ?? "All" },
-					{ "FilterSuccess", isSuccess?.ToString() ?? "All" }
-				}
-			);
-
-			var query = _context.LoginHistories
-				.Include(l => l.User)
-				.AsQueryable();
-
-			if (fromDate.HasValue)
-				query = query.Where(l => l.LoginTime.HasValue && l.LoginTime.Value >= fromDate.Value);
-
-			if (toDate.HasValue)
-				query = query.Where(l => l.LoginTime.HasValue && l.LoginTime.Value <= toDate.Value.AddDays(1));
-
-			if (isSuccess.HasValue)
-				query = query.Where(l => l.IsSuccess == isSuccess.Value);
-
-			var history = await query
-				.OrderByDescending(l => l.LoginTime)
-				.Take(1000)
-				.ToListAsync();
-
-			ViewBag.FromDate = fromDate;
-			ViewBag.ToDate = toDate;
-			ViewBag.IsSuccess = isSuccess;
-
-			return View(history);
-		}
-		// Thêm vào AdminController.cs
 		[HttpGet]
-		public async Task<IActionResult> GetAllUsers()
+		public async Task<JsonResult> GetPendingRequests(string? type, string? status, string? from, string? to, string? keyword)
 		{
+			if (!IsAdmin())
+				return Json(new { success = false, message = "Không có quyền truy cập" });
+
 			try
 			{
-				var users = await _context.Users
-					.Include(u => u.Department)
-					.Where(u => u.IsActive == true)
-					.OrderBy(u => u.FullName)
-					.Select(u => new
-					{
-						userId = u.UserId,
-						fullName = u.FullName,
-						email = u.Email,
-						departmentName = u.Department != null ? u.Department.DepartmentName : "N/A"
-					})
-					.ToListAsync();
+				// Parse dates
+				DateTime? fromDate = string.IsNullOrEmpty(from) ? null : DateTime.Parse(from);
+				DateTime? toDate = string.IsNullOrEmpty(to) ? null : DateTime.Parse(to);
 
-				return Json(new { success = true, users = users });
+				var overtime = new List<object>();
+				var leave = new List<object>();
+				var late = new List<object>();
+
+				// Overtime Requests
+				if (string.IsNullOrEmpty(type) || type == "Overtime")
+				{
+					var otQuery = _context.OvertimeRequests
+						.Include(x => x.User)
+						.AsQueryable();
+
+					if (!string.IsNullOrEmpty(status))
+						otQuery = otQuery.Where(x => x.Status == status);
+
+					if (fromDate.HasValue)
+						otQuery = otQuery.Where(x => x.CreatedAt >= fromDate.Value);
+
+					if (toDate.HasValue)
+						otQuery = otQuery.Where(x => x.CreatedAt <= toDate.Value.AddDays(1));
+
+					if (!string.IsNullOrEmpty(keyword))
+					{
+						var kw = keyword.Trim().ToLower();
+						otQuery = otQuery.Where(x =>
+							(x.Reason ?? "").ToLower().Contains(kw) ||
+							(x.TaskDescription ?? "").ToLower().Contains(kw) ||
+							(x.User.FullName ?? "").ToLower().Contains(kw)
+						);
+					}
+
+					overtime = await otQuery
+						.OrderByDescending(x => x.CreatedAt)
+						.Select(x => new
+						{
+							x.OvertimeRequestId,
+							x.UserId,
+							employeeId = x.User.Username,
+							employeeName = x.User.FullName,
+							workDate = x.WorkDate.ToString("yyyy-MM-dd"),
+							actualCheckOutTime = x.ActualCheckOutTime != null ? ((DateTime)x.ActualCheckOutTime).ToString("HH:mm:ss") : "N/A",
+							overtimeHours = x.OvertimeHours,
+							reason = x.Reason ?? "",
+							taskDescription = x.TaskDescription ?? "",
+							status = x.Status ?? "",
+							createdAt = x.CreatedAt.HasValue ? x.CreatedAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : ""
+						})
+						.ToListAsync<object>();
+				}
+
+				// Leave Requests
+				if (string.IsNullOrEmpty(type) || type == "Leave")
+				{
+					var leaveQuery = _context.LeaveRequests
+						.Include(x => x.User)
+						.AsQueryable();
+
+					if (!string.IsNullOrEmpty(status))
+						leaveQuery = leaveQuery.Where(x => x.Status == status);
+
+					if (fromDate.HasValue)
+						leaveQuery = leaveQuery.Where(x => x.CreatedAt >= fromDate.Value);
+
+					if (toDate.HasValue)
+						leaveQuery = leaveQuery.Where(x => x.CreatedAt <= toDate.Value.AddDays(1));
+
+					if (!string.IsNullOrEmpty(keyword))
+					{
+						var kw = keyword.Trim().ToLower();
+						leaveQuery = leaveQuery.Where(x =>
+							(x.Reason ?? "").ToLower().Contains(kw) ||
+							(x.ProofDocument ?? "").ToLower().Contains(kw) ||
+							(x.User.FullName ?? "").ToLower().Contains(kw)
+						);
+					}
+
+					leave = await leaveQuery
+						.OrderByDescending(x => x.CreatedAt)
+						.Select(x => new
+						{
+							x.LeaveRequestId,
+							x.UserId,
+							employeeId = x.User.Username,
+							employeeName = x.User.FullName,
+							leaveType = x.LeaveType ?? "",
+							startDate = x.StartDate.ToString("yyyy-MM-dd"),
+							endDate = x.EndDate.ToString("yyyy-MM-dd"),
+							totalDays = x.TotalDays,
+							reason = x.Reason ?? "",
+							proofDocument = x.ProofDocument ?? "",
+							status = x.Status ?? "",
+							createdAt = x.CreatedAt.HasValue ? x.CreatedAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : ""
+						})
+						.ToListAsync<object>();
+				}
+
+				// Late Requests
+				if (string.IsNullOrEmpty(type) || type == "Late")
+				{
+					var lateQuery = _context.LateRequests
+						.Include(x => x.User)
+						.AsQueryable();
+
+					if (!string.IsNullOrEmpty(status))
+						lateQuery = lateQuery.Where(x => x.Status == status);
+
+					if (fromDate.HasValue)
+						lateQuery = lateQuery.Where(x => x.CreatedAt >= fromDate.Value);
+
+					if (toDate.HasValue)
+						lateQuery = lateQuery.Where(x => x.CreatedAt <= toDate.Value.AddDays(1));
+
+					if (!string.IsNullOrEmpty(keyword))
+					{
+						var kw = keyword.Trim().ToLower();
+						lateQuery = lateQuery.Where(x =>
+							(x.Reason ?? "").ToLower().Contains(kw) ||
+							(x.ProofDocument ?? "").ToLower().Contains(kw) ||
+							(x.User.FullName ?? "").ToLower().Contains(kw)
+						);
+					}
+
+					late = await lateQuery
+						.OrderByDescending(x => x.CreatedAt)
+						.Select(x => new
+						{
+							x.LateRequestId,
+							x.UserId,
+							employeeId = x.User.Username,
+							employeeName = x.User.FullName,
+							requestDate = x.RequestDate.ToString("yyyy-MM-dd"),
+							expectedArrivalTime = x.ExpectedArrivalTime.ToString("HH:mm"),
+							reason = x.Reason ?? "",
+							proofDocument = x.ProofDocument ?? "",
+							status = x.Status ?? "",
+							createdAt = x.CreatedAt.HasValue ? x.CreatedAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : ""
+						})
+						.ToListAsync<object>();
+				}
+
+				return Json(new { success = true, overtime, leave, late });
 			}
 			catch (Exception ex)
 			{
-				return Json(new { success = false, message = ex.Message });
+				System.Diagnostics.Debug.WriteLine($"GetPendingRequests Error: {ex.Message}\n{ex.StackTrace}");
+				return Json(new { success = false, message = $"Lỗi: {ex.Message}" });
 			}
 		}
-		// ============================================
-		// PASSWORD RESET HISTORY
-		// ============================================
 
-		public async Task<IActionResult> PasswordResetHistory()
+		[HttpGet]
+		public async Task<JsonResult> GetRequestDetail(string type, int id)
 		{
 			if (!IsAdmin())
-				return RedirectToAction("Login", "Account");
+				return Json(new { success = false, message = "Không có quyền" });
 
-			// ✅ LOG: View password reset history
-			await _auditHelper.LogViewAsync(
-				HttpContext.Session.GetInt32("UserId").Value,
-				"PasswordResetHistory",
-				0,
-				"Xem lịch sử reset mật khẩu"
-			);
+			try
+			{
+				if (type == "Overtime")
+				{
+					var r = await _context.OvertimeRequests
+						.Include(x => x.User)
+						.FirstOrDefaultAsync(x => x.OvertimeRequestId == id);
 
-			var history = await _context.PasswordResetHistories
-				.Include(p => p.User)
-				.Include(p => p.ResetByUser)
-				.OrderByDescending(p => p.ResetTime)
-				.ToListAsync();
+					if (r == null)
+						return Json(new { success = false, message = "Không tìm thấy request" });
 
-			return View(history);
+					// Xử lý ActualCheckOutTime an toàn
+					string checkOutTimeStr = "N/A";
+					if (r.ActualCheckOutTime != null && r.ActualCheckOutTime != default(DateTime))
+					{
+						checkOutTimeStr = ((DateTime)r.ActualCheckOutTime).ToString("HH:mm:ss");
+					}
+
+					return Json(new
+					{
+						success = true,
+						request = new
+						{
+							overtimeRequestId = r.OvertimeRequestId,
+							userId = r.UserId,
+							employeeName = r.User?.FullName ?? "N/A",
+							workDate = r.WorkDate.ToString("dd/MM/yyyy"),
+							actualCheckOutTime = checkOutTimeStr,
+							overtimeHours = r.OvertimeHours,
+							reason = r.Reason ?? "",
+							taskDescription = r.TaskDescription ?? "",
+							status = r.Status ?? "Pending",
+							reviewedBy = r.ReviewedBy ?? 0,
+							reviewedAt = r.ReviewedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							reviewNote = r.ReviewNote ?? "",
+							createdAt = r.CreatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							updatedAt = r.UpdatedAt?.ToString("dd/MM/yyyy HH:mm") ?? ""
+						}
+					});
+				}
+
+				if (type == "Leave")
+				{
+					var r = await _context.LeaveRequests
+						.Include(x => x.User)
+						.FirstOrDefaultAsync(x => x.LeaveRequestId == id);
+
+					if (r == null)
+						return Json(new { success = false, message = "Không tìm thấy request" });
+
+					return Json(new
+					{
+						success = true,
+						request = new
+						{
+							leaveRequestId = r.LeaveRequestId,
+							userId = r.UserId,
+							employeeName = r.User?.FullName ?? "N/A",
+							leaveType = r.LeaveType ?? "",
+							startDate = r.StartDate.ToString("dd/MM/yyyy"),
+							endDate = r.EndDate.ToString("dd/MM/yyyy"),
+							totalDays = r.TotalDays,
+							reason = r.Reason ?? "",
+							proofDocument = r.ProofDocument ?? "",
+							status = r.Status ?? "Pending",
+							reviewedBy = r.ReviewedBy ?? 0,
+							reviewedAt = r.ReviewedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							reviewNote = r.ReviewNote ?? "",
+							createdAt = r.CreatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							updatedAt = r.UpdatedAt?.ToString("dd/MM/yyyy HH:mm") ?? ""
+						}
+					});
+				}
+
+				if (type == "Late")
+				{
+					var r = await _context.LateRequests
+						.Include(x => x.User)
+						.FirstOrDefaultAsync(x => x.LateRequestId == id);
+
+					if (r == null)
+						return Json(new { success = false, message = "Không tìm thấy request" });
+
+					return Json(new
+					{
+						success = true,
+						request = new
+						{
+							lateRequestId = r.LateRequestId,
+							userId = r.UserId,
+							employeeName = r.User?.FullName ?? "N/A",
+							requestDate = r.RequestDate.ToString("dd/MM/yyyy"),
+							expectedArrivalTime = r.ExpectedArrivalTime.ToString("HH:mm"),
+							reason = r.Reason ?? "",
+							proofDocument = r.ProofDocument ?? "",
+							status = r.Status ?? "Pending",
+							reviewedBy = r.ReviewedBy ?? 0,
+							reviewedAt = r.ReviewedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							reviewNote = r.ReviewNote ?? "",
+							createdAt = r.CreatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "",
+							updatedAt = r.UpdatedAt?.ToString("dd/MM/yyyy HH:mm") ?? ""
+						}
+					});
+				}
+
+				return Json(new { success = false, message = "Loại request không hợp lệ" });
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine($"GetRequestDetail Error: {ex.Message}\n{ex.StackTrace}");
+				return Json(new { success = false, message = $"Lỗi server: {ex.Message}" });
+			}
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> PendingRequests(string? type, string? status, DateTime? fromDate, DateTime? toDate, string? keyword)
+		{
+			if (!IsAdmin()) return RedirectToAction("Login", "Account");
+
+			var from = fromDate ?? DateTime.Today.AddMonths(-1);
+			var to = toDate ?? DateTime.Today.AddDays(1);
+
+			var vm = new TMDSystem.Models.ViewModels.PendingRequestsViewModel
+			{
+				SelectedType = type
+			};
+
+			// Prepare base queries
+			IQueryable<OvertimeRequest> otQuery = _context.OvertimeRequests.Include(r => r.User).AsQueryable();
+			IQueryable<LeaveRequest> leaveQuery = _context.LeaveRequests.Include(r => r.User).AsQueryable();
+			IQueryable<LateRequest> lateQuery = _context.LateRequests.Include(r => r.User).AsQueryable();
+
+			// Date range filter (CreatedAt)
+			otQuery = otQuery.Where(r => r.CreatedAt >= from && r.CreatedAt <= to);
+			leaveQuery = leaveQuery.Where(r => r.CreatedAt >= from && r.CreatedAt <= to);
+			lateQuery = lateQuery.Where(r => r.CreatedAt >= from && r.CreatedAt <= to);
+
+			// Status filter (if provided)
+			if (!string.IsNullOrWhiteSpace(status))
+			{
+				otQuery = otQuery.Where(r => r.Status == status);
+				leaveQuery = leaveQuery.Where(r => r.Status == status);
+				lateQuery = lateQuery.Where(r => r.Status == status);
+			}
+
+			// Keyword filter (if provided) - search in reason, task description, proof document
+			if (!string.IsNullOrWhiteSpace(keyword))
+			{
+				var kw = keyword.Trim().ToLower();
+				otQuery = otQuery.Where(r => (r.Reason ?? "").ToLower().Contains(kw) || (r.TaskDescription ?? "").ToLower().Contains(kw));
+				leaveQuery = leaveQuery.Where(r => (r.Reason ?? "").ToLower().Contains(kw) || (r.ProofDocument ?? "").ToLower().Contains(kw));
+				lateQuery = lateQuery.Where(r => (r.Reason ?? "").ToLower().Contains(kw) || (r.ProofDocument ?? "").ToLower().Contains(kw));
+			}
+
+			// Only fetch types requested (to save queries)
+			if (string.IsNullOrEmpty(type) || type == "Overtime")
+			{
+				vm.Overtime = await otQuery
+					.OrderByDescending(r => r.CreatedAt)
+					.ToListAsync();
+			}
+
+			if (string.IsNullOrEmpty(type) || type == "Leave")
+			{
+				vm.Leave = await leaveQuery
+					.OrderByDescending(r => r.CreatedAt)
+					.ToListAsync();
+			}
+
+			if (string.IsNullOrEmpty(type) || type == "Late")
+			{
+				vm.Late = await lateQuery
+					.OrderByDescending(r => r.CreatedAt)
+					.ToListAsync();
+			}
+
+			// Preserve view state for UI
+			ViewBag.Type = type;
+			ViewBag.FilterStatus = status;
+			ViewBag.FromDate = fromDate;
+			ViewBag.ToDate = toDate;
+			ViewBag.Keyword = keyword;
+
+			// Calculate statistics for display
+			var allOt = vm.Overtime ?? new List<OvertimeRequest>();
+			var allLeave = vm.Leave ?? new List<LeaveRequest>();
+			var allLate = vm.Late ?? new List<LateRequest>();
+
+			ViewBag.TotalPending = allOt.Count(r => r.Status == "Pending") +
+								   allLeave.Count(r => r.Status == "Pending") +
+								   allLate.Count(r => r.Status == "Pending");
+
+			ViewBag.TotalApproved = allOt.Count(r => r.Status == "Approved") +
+									allLeave.Count(r => r.Status == "Approved") +
+									allLate.Count(r => r.Status == "Approved");
+
+			ViewBag.TotalRejected = allOt.Count(r => r.Status == "Rejected") +
+									allLeave.Count(r => r.Status == "Rejected") +
+									allLate.Count(r => r.Status == "Rejected");
+
+			return View(vm);
+		}
+
+
+		[HttpPost]
+		public async Task<IActionResult> ReviewRequest([FromBody] ReviewRequestViewModel model)
+		{
+			if (!IsAdmin())
+				return Json(new { success = false, message = "Không có quyền" });
+
+			var adminId = HttpContext.Session.GetInt32("UserId");
+			try
+			{
+				if (model.RequestType == "Overtime")
+				{
+					var r = await _context.OvertimeRequests.FindAsync(model.RequestId);
+					if (r == null) return Json(new { success = false, message = "Không tìm thấy" });
+
+					var old = new { r.Status, r.ReviewedBy, r.ReviewedAt, r.ReviewNote };
+					if (model.Action == "Approve")
+					{
+						r.Status = "Approved";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+						// update attendance approved overtime
+						var att = await _context.Attendances.FirstOrDefaultAsync(a => a.UserId == r.UserId && a.WorkDate == r.WorkDate);
+						if (att != null)
+						{
+							att.IsOvertimeApproved = true;
+							att.ApprovedOvertimeHours = r.OvertimeHours;
+							await _context.SaveChangesAsync();
+						}
+					}
+					else if (model.Action == "Reject")
+					{
+						r.Status = "Rejected";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+					}
+
+					r.UpdatedAt = DateTime.Now;
+					await _context.SaveChangesAsync();
+
+					await _auditHelper.LogDetailedAsync(adminId, "REVIEW", "OvertimeRequest", r.OvertimeRequestId, old, r, $"Admin {model.Action} overtime request #{r.OvertimeRequestId}", new Dictionary<string, object> { { "Note", model.Note } });
+					return Json(new { success = true, message = "Đã xử lý request" });
+				}
+
+				if (model.RequestType == "Leave")
+				{
+					var r = await _context.LeaveRequests.FindAsync(model.RequestId);
+					if (r == null) return Json(new { success = false, message = "Không tìm thấy" });
+					var old = new { r.Status, r.ReviewedBy, r.ReviewedAt, r.ReviewNote };
+
+					if (model.Action == "Approve")
+					{
+						r.Status = "Approved";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+
+						// optionally apply to attendance: mark days as approved leave (business logic)
+						// not forcing DB changes here; admin can adjust attendance if required.
+					}
+					else if (model.Action == "Reject")
+					{
+						r.Status = "Rejected";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+					}
+
+					r.UpdatedAt = DateTime.Now;
+					await _context.SaveChangesAsync();
+
+					await _auditHelper.LogDetailedAsync(adminId, "REVIEW", "LeaveRequest", r.LeaveRequestId, old, r, $"Admin {model.Action} leave request #{r.LeaveRequestId}", new Dictionary<string, object> { { "Note", model.Note } });
+					return Json(new { success = true, message = "Đã xử lý request" });
+				}
+
+				if (model.RequestType == "Late")
+				{
+					var r = await _context.LateRequests.FindAsync(model.RequestId);
+					if (r == null) return Json(new { success = false, message = "Không tìm thấy" });
+					var old = new { r.Status, r.ReviewedBy, r.ReviewedAt, r.ReviewNote };
+
+					if (model.Action == "Approve")
+					{
+						r.Status = "Approved";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+
+						// update attendance if exists: clear late flag or mark reviewed
+						var att = await _context.Attendances.FirstOrDefaultAsync(a => a.UserId == r.UserId && a.WorkDate == r.RequestDate);
+						if (att != null)
+						{
+							att.HasLateRequest = true;
+							att.LateRequestId = r.LateRequestId;
+							// possibly set DeductionHours = 0 or adjust
+							await _context.SaveChangesAsync();
+						}
+					}
+					else if (model.Action == "Reject")
+					{
+						r.Status = "Rejected";
+						r.ReviewedBy = adminId;
+						r.ReviewedAt = DateTime.Now;
+						r.ReviewNote = model.Note;
+					}
+
+					r.UpdatedAt = DateTime.Now;
+					await _context.SaveChangesAsync();
+
+					await _auditHelper.LogDetailedAsync(adminId, "REVIEW", "LateRequest", r.LateRequestId, old, r, $"Admin {model.Action} late request #{r.LateRequestId}", new Dictionary<string, object> { { "Note", model.Note } });
+					return Json(new { success = true, message = "Đã xử lý request" });
+				}
+
+				return Json(new { success = false, message = "Loại request không hợp lệ" });
+			}
+			catch (Exception ex)
+			{
+				await _auditHelper.LogFailedAttemptAsync(adminId, "REVIEW", "Request", $"Exception: {ex.Message}", new { Error = ex.ToString(), model });
+				return Json(new { success = false, message = $"Có lỗi: {ex.Message}" });
+			}
+		}
+
 
 		// ============================================
 		// REQUEST MODELS
 		// ============================================
-
 		public class CreateDepartmentRequest
 		{
 			public string DepartmentName { get; set; } = string.Empty;
