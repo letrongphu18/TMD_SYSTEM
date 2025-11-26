@@ -83,6 +83,12 @@
                         <span class="badge bg-info ms-1">@Model.Count(s => s.Category == "Attendance")</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#layout-tab">
+                        <i class="fas fa-code"></i> Layout Editor
+                        <span class="badge bg-warning ms-1">2</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="tab-content tab-content-custom">
@@ -328,6 +334,53 @@
                                 </div>
                             }
                         }
+                    </div>
+                </div>
+
+                <!-- LAYOUT EDITOR TAB -->
+                <div class="tab-pane fade" id="layout-tab">
+                    <div class="settings-toolbar">
+                        <div>
+                            <button class="btn btn-custom btn-edit" onclick="loadLayout('admin')">
+                                <i class="fas fa-desktop"></i> Load Admin Layout
+                            </button>
+                            <button class="btn btn-custom btn-edit" onclick="loadLayout('staff')">
+                                <i class="fas fa-user"></i> Load Staff Layout
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-custom btn-add" onclick="saveLayout()">
+                                <i class="fas fa-save"></i> Lưu Layout
+                            </button>
+                            <button class="btn btn-custom btn-trash" onclick="openBackupModal()">
+                                <i class="fas fa-history"></i> Backup Files
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group-custom">
+                                <label class="form-label-custom">
+                                    <i class="fas fa-file-code"></i>
+                                    <span id="currentLayoutName">Chọn layout để chỉnh sửa</span>
+                                </label>
+                                <textarea id="layoutEditor" class="form-control-custom"
+                                          rows="25"
+                                          style="font-family: 'Courier New', monospace; font-size: 14px;"
+                                          placeholder="Nhấn Load Admin Layout hoặc Load Staff Layout để bắt đầu..."></textarea>
+                                <div class="form-help-text mt-2">
+                                    <i class="fas fa-info-circle"></i>
+                                    <strong>Lưu ý:</strong> Backup tự động được tạo trước khi lưu
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layoutInfo" class="alert alert-info mt-3" style="display: none;">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>File:</strong> <span id="fileName"></span> |
+                        <strong>Sửa lần cuối:</strong> <span id="lastModified"></span>
                     </div>
                 </div>
             </div>
@@ -628,6 +681,34 @@
             </div>
         </div>
     </div>
+    <!-- BACKUP FILES MODAL -->
+    <div class="modal fade modal-custom" id="backupModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="background: var(--info);">
+                    <h5 class="modal-title">
+                        <i class="fas fa-history"></i> Backup Files
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead style="background: #f9fafb;">
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th width="200">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="backupTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
@@ -635,6 +716,7 @@
     <script>
         let modifiedSettings = new Set();
         let originalValues = {};
+        let currentLayoutType = '';
 
         $(document).ready(function() {
             initializeInputs();
@@ -643,6 +725,231 @@
             initializeApplyMethodToggle();
         });
 
+        // ============================================
+        // 📝 LAYOUT EDITOR - ĐÃ SỬA
+        // ============================================
+        function loadLayout(type) {
+            fetch(`/Settings/GetLayoutContent?layoutType=${type}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        $('#layoutEditor').val(data.content);
+                        currentLayoutType = type;
+
+                        $('#currentLayoutName').html(`
+                            <i class="fas fa-file-code text-success"></i>
+                            ${data.fileName}
+                        `);
+
+                        $('#layoutInfo').html(`
+                            <i class="fas fa-info-circle"></i>
+                            <strong>File:</strong> <span id="fileName">${data.fileName}</span> |
+                            <strong>Sửa lần cuối:</strong> <span id="lastModified">${data.lastModified}</span>
+                        `).show();
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Đã load!',
+                            text: data.fileName,
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        Swal.fire('Lỗi', data.message, 'error');
+                    }
+                })
+                .catch(err => {
+                    Swal.fire('Lỗi', 'Không thể load layout: ' + err.message, 'error');
+                });
+        }
+
+        function saveLayout() {
+            if (!currentLayoutType) {
+                Swal.fire('Lỗi', 'Vui lòng load layout trước!', 'error');
+                return;
+            }
+
+            const content = $('#layoutEditor').val();
+
+            Swal.fire({
+                title: 'Xác nhận lưu?',
+                html: `Lưu <strong>${currentLayoutType === 'admin' ? '_Layout.cshtml' : '_LayoutStaff.cshtml'}</strong>?<br><small class="text-warning">⚠️ Backup sẽ được tạo tự động</small>`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: '<i class="fas fa-save"></i> Lưu',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: 'var(--success)'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Đang lưu...',
+                        allowOutsideClick: false,
+                        didOpen: () => Swal.showLoading()
+                    });
+
+                    fetch('/Settings/SaveLayoutFile', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            LayoutType: currentLayoutType,
+                            Content: content
+                        })
+                    })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Đã lưu!',
+                                text: data.message,
+                                timer: 2000
+                            });
+                            loadBackupFiles(); // Refresh backup list
+                        } else {
+                            Swal.fire('Lỗi', data.message, 'error');
+                        }
+                    })
+                    .catch(err => Swal.fire('Lỗi', 'Không thể lưu layout!', 'error'));
+                }
+            });
+        }
+
+        function openBackupModal() {
+            loadBackupFiles();
+            $('#backupModal').modal('show');
+        }
+
+        function loadBackupFiles() {
+            fetch('/Settings/GetBackupFiles')
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    const tbody = $('#backupTableBody');
+                    tbody.empty();
+
+                    if (!data.backups || data.backups.length === 0) {
+                        tbody.append(`
+                            <tr>
+                                <td colspan="4" class="text-center py-5">
+                                    <div class="empty-state">
+                                        <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                                        <p class="text-muted">Chưa có backup nào</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        `);
+                    } else {
+                        data.backups.forEach(item => {
+                            tbody.append(`
+                                <tr>
+                                    <td><code>${item.fileName}</code></td>
+                                    <td>${formatFileSize(item.size)}</td>
+                                    <td>${item.created}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-custom btn-edit"
+                                                onclick="restoreBackup('${item.fileName}')"
+                                                style="padding: 6px 12px;">
+                                            <i class="fas fa-undo"></i> Restore
+                                        </button>
+                                        <button class="btn btn-sm btn-custom btn-delete"
+                                                onclick="deleteBackup('${item.fileName}')"
+                                                style="padding: 6px 12px;">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </button>
+                                    </td>
+                                </tr>
+                            `);
+                        });
+                    }
+                }
+            })
+            .catch(err => console.error('Lỗi load backup:', err));
+        }
+
+        function formatFileSize(bytes) {
+            if (!bytes || bytes === 0) return '0 KB';
+            return (bytes / 1024).toFixed(2) + ' KB';
+        }
+
+        function restoreBackup(fileName) {
+            Swal.fire({
+                title: 'Khôi phục backup?',
+                html: `File: <code>${fileName}</code>`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Khôi phục',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (!result.isConfirmed) return;
+
+                Swal.fire({
+                    title: 'Đang khôi phục...',
+                    allowOutsideClick: false,
+                    didOpen: () => Swal.showLoading()
+                });
+
+                fetch('/Settings/RestoreFromBackup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ BackupFileName: fileName })
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Đã khôi phục!',
+                            timer: 1500
+                        }).then(() => {
+                            if (currentLayoutType) {
+                                loadLayout(currentLayoutType);
+                            }
+                            loadBackupFiles();
+                        });
+                    } else {
+                        Swal.fire('Lỗi', data.message, 'error');
+                    }
+                })
+                .catch(err => Swal.fire('Lỗi', 'Không thể khôi phục!', 'error'));
+            });
+        }
+
+        function deleteBackup(fileName) {
+            Swal.fire({
+                title: 'Xóa backup?',
+                html: `File: <code>${fileName}</code>`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: '#dc3545'
+            }).then((result) => {
+                if (!result.isConfirmed) return;
+
+                fetch('/Settings/DeleteBackup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ BackupFileName: fileName })
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Đã xóa!',
+                            timer: 1500
+                        }).then(() => loadBackupFiles());
+                    } else {
+                        Swal.fire('Lỗi', data.message, 'error');
+                    }
+                })
+                .catch(err => Swal.fire('Lỗi', 'Không thể xóa!', 'error'));
+            });
+        }
+
+        // ============================================
+        // CÁC FUNCTION CŨ CỦA BẠN (GIỮ NGUYÊN)
+        // ============================================
         function initializeInputs() {
             $('[data-key]').each(function() {
                 const key = $(this).data('key');
@@ -684,7 +991,7 @@
             $(container + ' .setting-card').each(function() {
                 const key = $(this).data('key').toLowerCase();
                 const text = $(this).text().toLowerCase();
-                
+
                 if (key.includes(query) || text.includes(query)) {
                     $(this).fadeIn();
                 } else {
@@ -697,7 +1004,7 @@
             $('input[name="applyMethod"]').on('change', function() {
                 $('.method-option').removeClass('selected');
                 $(this).closest('.method-option').addClass('selected');
-                
+
                 if ($(this).val() === 'CONDITIONAL') {
                     $('#conditionalDescGroup').slideDown();
                 } else {
@@ -719,7 +1026,7 @@
         function updateModifiedCount() {
             const count = modifiedSettings.size;
             $('#modifiedCount').text(count);
-            
+
             if (count > 0) {
                 $('#saveIndicator').fadeIn();
                 $('#btnSaveAll').removeClass('btn-save-all').addClass('btn-custom').css({
@@ -838,13 +1145,13 @@
             $('.method-option').removeClass('selected');
             $('input[name="applyMethod"]').prop('checked', false);
             $('#conditionalDescGroup').hide();
-            
+
             if (category === 'Salary') {
                 $('#applyMethodGroup').show();
             } else {
                 $('#applyMethodGroup').hide();
             }
-            
+
             $('#createModal').modal('show');
         }
 
@@ -1139,6 +1446,4 @@
             .catch(() => console.log('Error loading trash count'));
         }
     </script>
-
- 
 }

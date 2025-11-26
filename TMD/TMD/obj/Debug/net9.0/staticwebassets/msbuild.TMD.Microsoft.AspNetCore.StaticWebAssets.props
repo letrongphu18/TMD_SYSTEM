@@ -282,8 +282,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cqxmvwvmxy</Fingerprint>
-      <Integrity>vDz7wHqt2Ei53oZp3ajuEZkBtyurrgh8fwZh6miSsS4=</Integrity>
+      <Fingerprint>1x7rhmpw38</Fingerprint>
+      <Integrity>1bnUcyadvw8Pod96BPInOJakxJU3+zofjFRQV5SvQs0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\pending-requests.css'))</OriginalItemSpec>
