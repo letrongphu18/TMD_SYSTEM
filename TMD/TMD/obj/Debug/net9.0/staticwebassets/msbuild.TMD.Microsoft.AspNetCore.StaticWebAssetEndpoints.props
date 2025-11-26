@@ -1132,13 +1132,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\TMD.sylsvlrxnc.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 11:04:53 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 12:02:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TMD/TMD.sylsvlrxnc.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\TMD.sylsvlrxnc.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sylsvlrxnc"},{"Name":"integrity","Value":"sha256-NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0="},{"Name":"label","Value":"_content/TMD/TMD.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 11:04:53 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NEHiyym5VwpWDWoZlpnjU2BU98IYyBkVoGbkI/YW0g0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 12:02:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TMD/uploads/attendance/12_20251117_121108_checkin.db095isjhk.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\attendance\12_20251117_121108_checkin.jpg'))</AssetFile>
