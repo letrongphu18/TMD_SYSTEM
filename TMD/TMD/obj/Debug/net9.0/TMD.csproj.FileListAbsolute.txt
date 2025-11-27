@@ -708,7 +708,6 @@ D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\eqi6vk13ih-nasbcat9u9.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\8xeyt8gnb6-5xbhlmlf4a.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\l8sgagmh8j-ngic8tlq1f.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\xb0uwao5cp-b9sayid5wm.gz
-D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\igz64hli4r-p5wlhbetdt.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\tq5amn2i0m-pj9ptxu7cg.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\9yfxmmvtdl-vgjfsrgtuw.gz
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\ygm0pymvq1-itfa70hjj8.gz
@@ -795,4 +794,7 @@ D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\refint\TMD.dll
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\TMD.pdb
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\TMD.genruntimeconfig.cache
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\ref\TMD.dll
+D:\TMD_SYSTEM\TMD\TMD\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
 D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\igz64hli4r-qlf0cyh5ri.gz
+D:\TMD_SYSTEM\TMD\TMD\obj\Debug\net9.0\compressed\kgc5c6r0xv-otxebcghvo.gz

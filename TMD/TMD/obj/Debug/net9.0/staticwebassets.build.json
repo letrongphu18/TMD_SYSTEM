@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F4iTYuESCh9jnni4ddSuHFPtxyk6kjVSyudjNaUVUy4=",
+  "Hash": "5Vvz4kEH7fwdyITH0qaD9w/rXyMVLXK6gEcK1kK3HwI=",
   "Source": "TMD",
   "BasePath": "_content/TMD",
   "Mode": "Default",
@@ -1172,12 +1172,12 @@
       "OriginalItemSpec": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TMD.styles.css"
     },
     {
-      "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-p5wlhbetdt.gz",
+      "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-qlf0cyh5ri.gz",
       "SourceId": "TMD",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TMD",
-      "RelativePath": "css/staff-dashboard#[.{fingerprint=p5wlhbetdt}]?.css.gz",
+      "RelativePath": "css/staff-dashboard#[.{fingerprint=qlf0cyh5ri}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1186,8 +1186,8 @@
       "RelatedAsset": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rhyi46vja2",
-      "Integrity": "4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q=",
+      "Fingerprint": "798fe1rlax",
+      "Integrity": "iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css"
@@ -1254,6 +1254,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\attendance-history.js"
+    },
+    {
+      "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kgc5c6r0xv-otxebcghvo.gz",
+      "SourceId": "TMD",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/TMD",
+      "RelativePath": "js/signalr-client#[.{fingerprint=otxebcghvo}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "fsywhe7663",
+      "Integrity": "HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js"
     },
     {
       "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kj73vf8li6-gk0pw8i4co.gz",
@@ -2509,8 +2530,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p5wlhbetdt",
-      "Integrity": "84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA=",
+      "Fingerprint": "qlf0cyh5ri",
+      "Integrity": "Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\staff-dashboard.css"
@@ -2682,6 +2703,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\resetpass.js"
+    },
+    {
+      "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+      "SourceId": "TMD",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\",
+      "BasePath": "_content/TMD",
+      "RelativePath": "js/signalr-client#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "otxebcghvo",
+      "Integrity": "RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\signalr-client.js"
     },
     {
       "Identity": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\site.js",
@@ -11196,12 +11238,12 @@
     },
     {
       "Route": "css/staff-dashboard.css",
-      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-p5wlhbetdt.gz",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-qlf0cyh5ri.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000144508671"
+          "Quality": "0.000134408602"
         }
       ],
       "ResponseHeaders": [
@@ -11211,15 +11253,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6919"
+          "Value": "7439"
         },
         {
           "Name": "ETag",
-          "Value": "\"4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q=\""
+          "Value": "\"iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11239,13 +11281,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA=\""
+          "Value": "W/\"Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA="
+          "Value": "sha256-Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ="
         }
       ]
     },
@@ -11260,7 +11302,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44394"
+          "Value": "46502"
         },
         {
           "Name": "Content-Type",
@@ -11268,11 +11310,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA=\""
+          "Value": "\"Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11282,13 +11324,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA="
+          "Value": "sha256-Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ="
         }
       ]
     },
     {
       "Route": "css/staff-dashboard.css.gz",
-      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-p5wlhbetdt.gz",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-qlf0cyh5ri.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11297,7 +11339,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6919"
+          "Value": "7439"
         },
         {
           "Name": "Content-Type",
@@ -11305,11 +11347,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q=\""
+          "Value": "\"iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11327,18 +11369,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q="
+          "Value": "sha256-iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4="
         }
       ]
     },
     {
-      "Route": "css/staff-dashboard.p5wlhbetdt.css",
-      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-p5wlhbetdt.gz",
+      "Route": "css/staff-dashboard.qlf0cyh5ri.css",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-qlf0cyh5ri.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000144508671"
+          "Quality": "0.000134408602"
         }
       ],
       "ResponseHeaders": [
@@ -11348,15 +11390,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6919"
+          "Value": "7439"
         },
         {
           "Name": "ETag",
-          "Value": "\"4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q=\""
+          "Value": "\"iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11376,13 +11418,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA=\""
+          "Value": "W/\"Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "p5wlhbetdt"
+          "Value": "qlf0cyh5ri"
         },
         {
           "Name": "label",
@@ -11390,12 +11432,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA="
+          "Value": "sha256-Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ="
         }
       ]
     },
     {
-      "Route": "css/staff-dashboard.p5wlhbetdt.css",
+      "Route": "css/staff-dashboard.qlf0cyh5ri.css",
       "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -11405,7 +11447,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44394"
+          "Value": "46502"
         },
         {
           "Name": "Content-Type",
@@ -11413,11 +11455,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA=\""
+          "Value": "\"Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11427,7 +11469,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "p5wlhbetdt"
+          "Value": "qlf0cyh5ri"
         },
         {
           "Name": "label",
@@ -11435,13 +11477,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-84wmZoOIa+fDn3H43j74Yq/pn+PkdXa25JU71shU6GA="
+          "Value": "sha256-Ag0YsG4fCJrMBDwC/WVkVs3UCwB5syfsWDR/6uPwrbQ="
         }
       ]
     },
     {
-      "Route": "css/staff-dashboard.p5wlhbetdt.css.gz",
-      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-p5wlhbetdt.gz",
+      "Route": "css/staff-dashboard.qlf0cyh5ri.css.gz",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\igz64hli4r-qlf0cyh5ri.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11450,7 +11492,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6919"
+          "Value": "7439"
         },
         {
           "Name": "Content-Type",
@@ -11458,11 +11500,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q=\""
+          "Value": "\"iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 11:04:53 GMT"
+          "Value": "Thu, 27 Nov 2025 10:11:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11480,7 +11522,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "p5wlhbetdt"
+          "Value": "qlf0cyh5ri"
         },
         {
           "Name": "label",
@@ -11488,7 +11530,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4XToqz9YUQTC/sTA3THY/Dn/Jkc+lQY3JxjZa1G1r9Q="
+          "Value": "sha256-iznsNTAEt3l++KLAaLniwemTIQ5TxCzvDdQN0zvulU4="
         }
       ]
     },
@@ -13873,6 +13915,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-xq+8wGuJFhr4NTWjgIjxKcC0Ng4G1jrr3bFOnaC0yrA="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.js",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kgc5c6r0xv-otxebcghvo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.007352941176"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "135"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.js",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.js.gz",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kgc5c6r0xv-otxebcghvo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "135"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.otxebcghvo.js",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kgc5c6r0xv-otxebcghvo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.007352941176"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "135"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "otxebcghvo"
+        },
+        {
+          "Name": "label",
+          "Value": "js/signalr-client.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.otxebcghvo.js",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "otxebcghvo"
+        },
+        {
+          "Name": "label",
+          "Value": "js/signalr-client.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIKJ6cb4IYLbSYHbexHLqbCrb2JQAJO7wF6ISY+yLv0="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr-client.otxebcghvo.js.gz",
+      "AssetFile": "D:\\TMD_SYSTEM\\TMD\\TMD\\obj\\Debug\\net9.0\\compressed\\kgc5c6r0xv-otxebcghvo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "135"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 10:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "otxebcghvo"
+        },
+        {
+          "Name": "label",
+          "Value": "js/signalr-client.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HxHhctiJyExhuUQHp7DGSffbbopx5KPS35WRUHsPbeA="
         }
       ]
     },

@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_LayoutStaff.cshtml";
     var user = ViewBag.User as TMD.Models.User;
 }
-
+@using System.Security.Claims
 <link href="~/css/staff-dashboard.css" rel="stylesheet" />
 
 <div class="sd-container">
@@ -295,6 +295,37 @@
             </a>
         </div>
     </div>
+    <!-- NÚT CHAT NHỎ GÓC DƯỚI PHẢI -->
+    <div class="sd-chat-fab-container">
+        <button class="sd-chat-fab" id="btnOpenChat">
+            <i class="fas fa-comment-dots"></i>
+            <span class="sd-chat-badge" id="chatUnreadBadge" style="display:none;">0</span>
+        </button>
+    </div>
+
+    <!-- CỬA SỔ CHAT -->
+    <div class="sd-chat-window" id="chatWindow" style="display:none;">
+        <div class="sd-chat-header">
+            <h5><i class="fas fa-headset me-2"></i>Chat với Admin</h5>
+            <button type="button" class="btn-close btn-close-white" onclick="toggleChatWindow()"></button>
+        </div>
+        <div class="sd-chat-messages" id="chatMessages">
+            <div class="text-center py-5 text-muted">
+                <div class="spinner-border spinner-border-sm" role="status"></div>
+                <p class="mt-2">Đang kết nối tới Admin...</p>
+            </div>
+        </div>
+        <div class="sd-chat-input">
+            <input type="file" id="chatFileInput" style="display:none;" accept="image/*,.pdf,.doc,.docx">
+            <button class="btn btn-outline-secondary" onclick="document.getElementById('chatFileInput').click()">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <input type="text" class="form-control" id="chatInputText" placeholder="Nhập tin nhắn..." onkeyup="handleChatInput(event)">
+            <button class="btn btn-primary ms-2" id="btnSendChat" onclick="sendMessage()" disabled>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
 </div>
 
 <!-- ====== IMPROVED OVERTIME MODAL ====== -->
@@ -493,7 +524,6 @@
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
     <script>
         // ========== GLOBAL VARIABLES ==========
         let stream = null;
@@ -1186,7 +1216,117 @@
             await loadMyTasks();
             console.log('✅ Dashboard initialized');
         };
+        //==============Chat=================
+        // ============== CHAT REALTIME HOÀN CHỈNH =============
+        const CURRENT_USER_ID = '@User.Identity.Name';
+        const ADMIN_ID = '1';
+        let chatConnection = null;
+        let isChatOpen = false;
 
+        function toggleChatWindow() {
+            const win = document.getElementById('chatWindow');
+            isChatOpen = !isChatOpen;
+            win.style.display = isChatOpen ? 'flex' : 'none';
+            if (isChatOpen) {
+                document.getElementById('chatUnreadBadge').style.display = 'none';
+                loadChatHistory();
+                markAsRead();
+            }
+        }
+        document.getElementById('btnOpenChat').onclick = toggleChatWindow;
+
+        function renderMessage(msg) {
+            const isMine = msg.senderId === CURRENT_USER_ID;
+            const bubble = isMine ? 'sd-message-staff' : 'sd-message-admin';
+            const time = new Date(msg.timestamp).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+            let content = msg.messageText ? `<p class="mb-1">${msg.messageText.replace(/\n/g, '<br>')}</p>` : '';
+            if (msg.attachmentUrl) {
+                const ext = msg.attachmentUrl.split('.').pop().toLowerCase();
+                if (['jpg','jpeg','png','gif','webp'].includes(ext)) {
+                    content += `<img src="${msg.attachmentUrl}" class="chat-image" onclick="window.open(this.src,'_blank')">`;
+                } else {
+                    content += `<a href="${msg.attachmentUrl}" target="_blank" class="text-primary">File đính kèm (.${ext})</a>`;
+                }
+            }
+            const status = isMine ? (msg.isRead ? 'Đã xem' : 'Đã gửi') : '';
+            const html = `
+                <div class="sd-message-bubble ${bubble}">
+                    ${content}
+                    <div class="sd-message-meta">
+                        <small>${time}</small>
+                        ${isMine ? `<small class="ms-2">${status}</small>` : ''}
+                    </div>
+                </div>`;
+            document.getElementById('chatMessages').insertAdjacentHTML('beforeend', html);
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        }
+
+        async function startChat() {
+        chatConnection = new window.signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .withAutomaticReconnect()
+                .build();
+
+            chatConnection.on("ReceiveMessage", renderMessage);
+            chatConnection.on("MessagesMarkedAsRead", () => {
+                document.querySelectorAll('.sd-message-meta small:last-child').forEach(el => {
+                    if (el.textContent === 'Đã gửi') el.textContent = 'Đã xem';
+                });
+            });
+
+            try {
+                await chatConnection.start();
+                console.log("Chat Hub kết nối thành công!");
+                document.getElementById('chatMessages').innerHTML = '<div class="text-center text-muted mt-4">Đã kết nối! Nhập tin nhắn để bắt đầu</div>';
+            } catch (err) {
+                console.error("Chat lỗi:", err);
+                setTimeout(startChat, 3000);
+            }
+        }
+
+        async function loadChatHistory() {
+            try {
+                const res = await fetch(`/Staff/GetChatHistory?partnerId=${ADMIN_ID}`);
+                const data = await res.json();
+                document.getElementById('chatMessages').innerHTML = '';
+                if (data.success && data.history?.length > 0) {
+                    data.history.forEach(renderMessage);
+                } else {
+                    document.getElementById('chatMessages').innerHTML = '<div class="text-center text-muted mt-4">Chưa có tin nhắn nào. Hãy bắt đầu trò chuyện!</div>';
+                }
+            } catch (err) { console.error(err); }
+        }
+
+        async function markAsRead() {
+            if (chatConnection?.state === 'Connected') {
+                try { await chatConnection.invoke("MarkMessagesAsRead", ADMIN_ID); } catch (err) {}
+            }
+        }
+
+        async function sendMessage() {
+            const text = document.getElementById('chatInputText').value.trim();
+            if (!text) return;
+
+            renderMessage({ senderId: CURRENT_USER_ID, messageText: text, timestamp: new Date(), isRead: false });
+
+            try {
+                await chatConnection.invoke("SendMessage", ADMIN_ID, text, null);
+                document.getElementById('chatInputText').value = '';
+            } catch (err) {
+                Swal.fire('Lỗi', 'Không thể gửi tin nhắn', 'error');
+            }
+        }
+
+        document.getElementById('chatInputText').addEventListener('keyup', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+        // Khởi động chat ngay khi DOM ready
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(startChat, 500);
+                });
         // ========== CLEANUP ==========
         window.onbeforeunload = function() {
             if (stream) stream.getTracks().forEach(track => track.stop());

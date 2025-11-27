@@ -74,8 +74,8 @@ public partial class TmdContext : DbContext
     public virtual DbSet<VwUserDetail> VwUserDetails { get; set; }
 
     public virtual DbSet<WorkScheduleException> WorkScheduleExceptions { get; set; }
-
-   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public virtual DbSet<Chat> Chats { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 {
     optionsBuilder.UseSqlServer(
         "Server=tmd-server-system.database.windows.net;Database=TMD;User Id=tmd_admin;Password=MyP@ssword123!;Encrypt=True;TrustServerCertificate=False;MultipleActiveResultSets=True;");

@@ -3,16 +3,60 @@
   "WorkspaceRootPath": "D:\\TMD_SYSTEM\\TMD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\staff\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\views\\shared\\_layoutstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\wwwroot\\js\\signalr-client.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\js\\signalr-client.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\wwwroot\\css\\staff-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\wwwroot\\css\\staff-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\hubs\\claimbaseduseridprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\hubs\\claimbaseduseridprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\migrations\\20251127072335_createchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\migrations\\20251127072335_createchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\models\\tmdcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\models\\tmdcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|solutionrelative:tmd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{850C1418-9545-46EC-B535-4A4C523B78F6}|TMD\\TMD.csproj|d:\\tmd_system\\tmd\\tmd\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -30,11 +74,152 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Staff\\Dashboard.cshtml",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Views\\Staff\\Dashboard.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Staff\\Dashboard.cshtml",
+              "ViewState": "AgIAAOQEAAAAAAAAAIAwwO8EAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T07:15:42.888Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "TMD\\Hubs\\ChatHub.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "TMD\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:39:56.175Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "signalr-client.js",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\js\\signalr-client.js",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+              "RelativeToolTip": "TMD\\wwwroot\\js\\signalr-client.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-27T10:36:02.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutStaff.cshtml",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "RelativeDocumentMoniker": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "RelativeToolTip": "TMD\\Views\\Shared\\_LayoutStaff.cshtml",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAwwPgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T10:23:58.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClaimBasedUserIdProvider.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\ClaimBasedUserIdProvider.cs",
+              "RelativeDocumentMoniker": "TMD\\Hubs\\ClaimBasedUserIdProvider.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\ClaimBasedUserIdProvider.cs",
+              "RelativeToolTip": "TMD\\Hubs\\ClaimBasedUserIdProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T10:00:07.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "staff-dashboard.css",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
+              "RelativeDocumentMoniker": "TMD\\wwwroot\\css\\staff-dashboard.css",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\css\\staff-dashboard.css",
+              "RelativeToolTip": "TMD\\wwwroot\\css\\staff-dashboard.css",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAgwFQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-27T08:16:27.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Services\\ChatService.cs",
+              "RelativeDocumentMoniker": "TMD\\Services\\ChatService.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Services\\ChatService.cs",
+              "RelativeToolTip": "TMD\\Services\\ChatService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA2wCwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:40:16.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "TMD\\Hubs\\NotificationHub.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "TMD\\Hubs\\NotificationHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:32:44.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20251127072335_CreateChat.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Migrations\\20251127072335_CreateChat.cs",
+              "RelativeDocumentMoniker": "TMD\\Migrations\\20251127072335_CreateChat.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Migrations\\20251127072335_CreateChat.cs",
+              "RelativeToolTip": "TMD\\Migrations\\20251127072335_CreateChat.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwBsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:25:29.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Models\\Chat.cs",
+              "RelativeDocumentMoniker": "TMD\\Models\\Chat.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Models\\Chat.cs",
+              "RelativeToolTip": "TMD\\Models\\Chat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:21:26.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "TMD\\Controllers\\StaffController.cs",
+              "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "TMD\\Controllers\\StaffController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAmwGIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:10:02.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TMD\\appsettings.Development.json",
@@ -42,25 +227,23 @@
               "RelativeToolTip": "TMD\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-26T11:58:35.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T11:58:35.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "TmdContext.cs",
               "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\TmdContext.cs",
               "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Models\\TmdContext.cs",
               "RelativeToolTip": "TMD\\Models\\TmdContext.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAYwFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAA2wEwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T11:54:03.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T11:54:03.022Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Models\\Role.cs",
               "RelativeDocumentMoniker": "TMD\\Models\\Role.cs",
@@ -68,12 +251,11 @@
               "RelativeToolTip": "TMD\\Models\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T11:53:50.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T11:53:50.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\appsettings.json",
               "RelativeDocumentMoniker": "TMD\\appsettings.json",
@@ -81,18 +263,17 @@
               "RelativeToolTip": "TMD\\appsettings.json",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-26T11:05:21.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T11:05:21.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TMD_SYSTEM\\TMD\\TMD\\Program.cs",
               "RelativeDocumentMoniker": "TMD\\Program.cs",
               "ToolTip": "D:\\TMD_SYSTEM\\TMD\\TMD\\Program.cs",
               "RelativeToolTip": "TMD\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAwwIwAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T11:05:14.427Z",
               "EditorCaption": ""

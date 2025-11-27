@@ -3,6 +3,8 @@ using TMD.Models;
 using TMDSystem.Helpers;
 using TMDSystem.Services;
 using TMDSystem.Hubs;
+using TMD.Services;
+using Microsoft.AspNetCore.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,10 +46,13 @@ builder.Services.AddScoped<AuditHelper>();
 // Services
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddHostedService<AutoRejectRequestsService>();
+builder.Services.AddScoped<ChatService>();
+
+
 
 // SignalR
 builder.Services.AddSignalR();
-
+builder.Services.AddSingleton<IUserIdProvider, ClaimBasedUserIdProvider>();
 // ============================================
 // 4. CONFIGURATION SETTINGS
 // ============================================
@@ -85,6 +90,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCors(policy => policy
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+    .SetIsOriginAllowed(origin => true));
 app.UseRouting();
 
 // ✅ IMPORTANT: Session must be before UseAuthorization
@@ -97,7 +107,7 @@ app.UseAuthorization();
 
 // SignalR Hub
 app.MapHub<NotificationHub>("/notificationHub");
-
+app.MapHub<ChatHub>("/chatHub");
 // Default Controller Route
 app.MapControllerRoute(
 	name: "default",

@@ -129,6 +129,10 @@
       "PackagePath": "staticwebassets\\js\\resetpass.js"
     },
     {
+      "Id": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\signalr-client.js",
+      "PackagePath": "staticwebassets\\js\\signalr-client.js"
+    },
+    {
       "Id": "D:\\TMD_SYSTEM\\TMD\\TMD\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
